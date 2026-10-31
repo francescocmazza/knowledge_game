@@ -1,0 +1,1735 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c1121">
+<title>STONA · Il gioco dell'intuizione</title>
+<style>
+:root{--bg:#0c1121;--panel:#151c31;--panel2:#1b2540;--line:#34415e;--ink:#f1f4fa;--muted:#acb9cf;--lime:#d7f58a;--coral:#ff977e;--blue:#88caff;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% 4%,#1e3251 0,transparent 32%),linear-gradient(160deg,#10182b,#0c1121 55%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}button{font:inherit}button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}h1,h2,h3,p{margin-top:0}p{line-height:1.6}.app{max-width:1060px;margin:auto;padding:25px 24px 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.mark{width:43px;height:43px;border:3px solid var(--lime);border-radius:50%;display:grid;place-items:center;position:relative;flex:none}.mark:after{content:'';height:12px;width:12px;background:var(--coral);border-radius:100%;position:absolute;right:-5px;top:-3px}.mark span{font-weight:900;font-size:25px;line-height:1}.brand strong{font-size:23px;letter-spacing:2px}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.12em;text-transform:uppercase}.top-meta{display:flex;align-items:center;gap:13px;flex-wrap:wrap;justify-content:flex-end}.pill{padding:9px 14px;background:#202b44;border:1px solid var(--line);border-radius:40px;font-weight:650;font-size:13px;white-space:nowrap}.pill b{color:var(--lime)}.levelpill{background:#28341e;border-color:#586d37;color:#defbad}.top-menu{display:flex;gap:8px;border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:27px;flex-wrap:wrap}.tab{border:0;background:transparent;color:var(--muted);padding:11px 18px;border-radius:12px;font-weight:700}.tab.active{background:var(--panel2);color:var(--ink)}.section-kicker{letter-spacing:.17em;text-transform:uppercase;font-size:12px;font-weight:800;color:var(--lime);margin-bottom:13px}.section-heading{font-size:clamp(29px,5vw,46px);line-height:1.12;letter-spacing:-.04em;margin-bottom:13px}.lead{color:var(--muted);font-size:15px;max-width:700px}.content-grid{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(255px,1fr);gap:20px}.card{border:1px solid var(--line);background:linear-gradient(160deg,rgba(26,35,59,.94),rgba(16,24,43,.98));border-radius:var(--radius);padding:27px;box-shadow:0 8px 30px #00000020}.card.secondary{background:#151d32}.toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:19px}.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-weight:750}.tiny{font-size:12px;color:var(--muted);line-height:1.5}.tiny b{color:var(--ink)}.stepper{display:flex;gap:6px;align-items:center}.step{height:5px;width:32px;border-radius:10px;background:#35425e}.step.ok{background:var(--lime)}.step.current{background:var(--coral)}.quiz-question{font-size:clamp(25px,3.7vw,36px);letter-spacing:-.025em;line-height:1.2;margin:8px 0 12px}.quiz-sub{font-size:14px;color:var(--muted);min-height:40px}.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:22px 0 22px}.tile{border:1px solid #415271;background:#202b45;color:#f5f7fc;border-radius:15px;min-height:83px;padding:13px 9px;font-size:clamp(13px,1.55vw,17px);font-weight:750;overflow-wrap:anywhere;transition:transform .12s,background .12s,border-color .12s}.tile:not(:disabled):hover{transform:translateY(-2px);background:#2a3958}.tile.wrong{background:#4b2b34;border-color:var(--coral)}.tile.right{background:#344932;border-color:var(--lime)}.tile.locked{opacity:.74}.actionrow{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin:15px 0 0}.btn{padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:#28354f;color:var(--ink);font-weight:750;min-height:46px}.btn:hover{background:#344361}.btn.primary{background:var(--lime);border-color:var(--lime);color:#1b2612}.btn.primary:hover{background:#eeffbd}.btn.soft{background:transparent}.btn.selected{background:#3c4b34;border-color:var(--lime);color:#dcfba6}.btn.corally{background:#4b3438;border-color:#bd7267}.btn:disabled{opacity:.5}.message{padding:13px 15px;border-radius:13px;background:#293c3c;color:#e4f8eb;margin:12px 0;font-size:14px;line-height:1.5}.message.warn{background:#4a353b;color:#ffe2da}.hintbox{border-left:3px solid var(--blue);background:#24354b;color:#d6e8ff;padding:13px 16px;border-radius:0 12px 12px 0;font-size:14px;margin:9px 0}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0}.answer{border:1px solid #415271;background:#23314d;color:var(--ink);text-align:left;padding:15px;border-radius:14px;font-weight:700;min-height:63px}.answer:hover{background:#334462}.answer.wide{grid-column:1/-1}.answer.withbadge{display:flex;gap:12px;align-items:center}.letter{flex:none;border:1px solid #5f7290;color:var(--lime);border-radius:8px;display:grid;place-items:center;width:26px;height:26px;font-size:12px}.success{border:1px solid #546a45;background:#233529;border-radius:18px;padding:20px 23px;margin:14px 0}.success h3{color:var(--lime);font-size:22px}.success p{color:#dde9d0}.statrow{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:20px 0}.statbox{background:#202d46;border-radius:15px;padding:18px}.statbox big{display:block;color:var(--lime);font-size:29px;font-weight:900}.statbox span{color:var(--muted);font-size:12px}.side-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.side-title{font-size:19px;margin-bottom:16px}.smallrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;color:var(--muted);font-size:13px;gap:12px}.smallrow strong{color:#f1f5fd}.bar{height:8px;background:#33405b;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#8cddca,var(--lime));border-radius:20px}.metric{margin:15px 0}.sect-item{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid #2b3652}.sect-icon{width:37px;height:37px;border-radius:12px;background:#2b3b58;display:grid;place-items:center;font-weight:900;color:var(--lime);flex:none}.sect-info{flex:1;min-width:0}.sect-info strong{font-size:14px}.sect-info div{font-size:12px;color:var(--muted)}.sect-number{font-size:13px;color:var(--lime);font-weight:800}.aside-note{margin-top:20px;color:var(--muted);font-size:13px;line-height:1.6}.mode-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.mode-row .btn{font-size:13px;padding:9px 12px;min-height:38px}.glow-number{color:var(--lime);font-weight:800}.muted{color:var(--muted)}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}.interest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}.interest-btn{background:#222f4a;color:var(--ink);border:1px solid #3a4967;padding:15px;text-align:left;border-radius:15px;min-height:70px;display:flex;gap:12px;align-items:center}.interest-btn.selected{border-color:var(--lime);background:#304035}.interest-btn b{display:block;font-size:14px}.interest-btn small{color:var(--muted);font-size:11px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center;margin:25px 0}.hero-graphic{min-height:230px;border:1px solid #405174;background:radial-gradient(circle at center,#324a4b,#1c2b44 45%,#131e32 65%);border-radius:24px;display:grid;place-items:center;position:relative;overflow:hidden}.hero-graphic:before,.hero-graphic:after{content:'';position:absolute;border:2px solid #7ea39a66;border-radius:50%;width:270px;height:270px}.hero-graphic:after{width:180px;height:180px;border-color:#a7e9b487}.hero-graphic span{font-size:80px;color:var(--lime);font-weight:900;z-index:1;transform:rotate(-20deg)}.hero-graphic i{height:29px;width:29px;background:var(--coral);border-radius:100%;position:absolute;left:69%;top:20%;z-index:1}.map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:22px}.map-card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px}.map-card strong{font-size:20px}.map-card p{color:var(--muted);font-size:12px;min-height:34px;margin:8px 0}.map-card .btn{margin-top:14px;font-size:13px}.map-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.circle-score{background:#283b39;border:1px solid #557d62;border-radius:15px;color:var(--lime);font-size:20px;font-weight:850;padding:10px}.details{background:#26344d;border:1px solid var(--line);border-radius:15px;padding:18px;margin-top:16px}.footer{margin-top:32px;padding-top:18px;color:#92a3bd;font-size:12px;border-top:1px solid var(--line);line-height:1.6}.footer a{color:var(--lime)}.banner{padding:15px 19px;border-radius:15px;background:#293e39;border:1px solid #467c63;color:#e3faea;font-size:14px;margin-bottom:18px}.session-done{max-width:700px;margin:36px auto;text-align:center}.session-done .statrow{text-align:left}.outro{font-size:16px;line-height:1.65;color:var(--muted)}
+@media(max-width:760px){.app{padding:17px 14px 34px}.top{align-items:flex-start}.top-meta{gap:7px}.pill{font-size:11px;padding:8px 10px}.content-grid,.hero{grid-template-columns:1fr}.hero-graphic{min-height:145px}.hero-graphic span{font-size:62px}.hero-graphic:before{width:190px;height:190px}.hero-graphic:after{width:120px;height:120px}.card{padding:20px}.tiles{gap:8px}.tile{min-height:78px;font-size:13px}.map-grid{grid-template-columns:1fr}.interest-grid{grid-template-columns:1fr 1fr}.brand strong{font-size:20px}.brand small{display:none}.tab{padding:10px 13px}.section-heading{font-size:31px}}
+@media(max-width:400px){.tiles{grid-template-columns:repeat(2,1fr)}.top{gap:8px}.top-meta .pill:nth-child(2){display:none}.answers{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script id="stona-data" type="application/json">{
+  "domains": {
+    "numeri": {
+      "name": "Numeri",
+      "symbol": "#",
+      "intro": "Sequenze, quantità e relazioni"
+    },
+    "calcio": {
+      "name": "Calcio",
+      "symbol": "⚽",
+      "intro": "Squadre, campioni e ruoli"
+    },
+    "natura": {
+      "name": "Natura",
+      "symbol": "✳",
+      "intro": "Animali, piante e scienza"
+    },
+    "cucina": {
+      "name": "Cucina",
+      "symbol": "◒",
+      "intro": "Ingredienti, tecniche e sapori"
+    },
+    "parole": {
+      "name": "Parole",
+      "symbol": "Aa",
+      "intro": "Lingua, forme e significati"
+    },
+    "geografia": {
+      "name": "Geografia",
+      "symbol": "◎",
+      "intro": "Luoghi e connessioni"
+    },
+    "cinema": {
+      "name": "Cinema",
+      "symbol": "▣",
+      "intro": "Film, personaggi e autori"
+    },
+    "musica": {
+      "name": "Musica",
+      "symbol": "♫",
+      "intro": "Strumenti, note e ascolto"
+    }
+  },
+  "puzzles": [
+    {
+      "id": "numeri-01",
+      "domain": "numeri",
+      "level": 1,
+      "items": [
+        "3",
+        "2",
+        "6",
+        "4",
+        "5",
+        "7",
+        "9",
+        "5"
+      ],
+      "wrong": [
+        4,
+        7
+      ],
+      "correct": "8",
+      "choices": [
+        "8",
+        "0",
+        "1",
+        "6"
+      ],
+      "rule": "Sono presenti una volta ciascuna tutte le cifre dal 2 al 9.",
+      "hints": [
+        "Osserva quali cifre sono presenti, non il loro ordine.",
+        "Una cifra compare due volte; un’altra tra 2 e 9 non compare."
+      ],
+      "why": "Ci sono due 5 e manca l’8: entrambi i 5 sono selezioni valide.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-02",
+      "domain": "numeri",
+      "level": 2,
+      "items": [
+        "2",
+        "3",
+        "5",
+        "7",
+        "9",
+        "11",
+        "13",
+        "17"
+      ],
+      "wrong": [
+        4
+      ],
+      "correct": "19",
+      "choices": [
+        "19",
+        "21",
+        "15",
+        "27"
+      ],
+      "rule": "Sono tutti numeri primi.",
+      "hints": [
+        "Cerca una proprietà condivisa da quasi tutti i numeri.",
+        "I numeri della regola hanno esattamente due divisori positivi."
+      ],
+      "why": "Il 9 è divisibile per 3, quindi non è primo; 19 è primo.",
+      "ordered": false
+    },
+    {
+      "id": "numeri-03",
+      "domain": "numeri",
+      "level": 2,
+      "items": [
+        "3",
+        "6",
+        "9",
+        "12",
+        "14",
+        "18",
+        "21",
+        "24"
+      ],
+      "wrong": [
+        4
+      ],
+      "correct": "15",
+      "choices": [
+        "15",
+        "16",
+        "17",
+        "20"
+      ],
+      "rule": "Sono tutti multipli di tre.",
+      "hints": [
+        "Pensa alle tabelline.",
+        "Quale numero non è divisibile per 3?"
+      ],
+      "why": "Il 14 non è un multiplo di 3; il 15 sì.",
+      "ordered": false
+    },
+    {
+      "id": "numeri-04",
+      "domain": "numeri",
+      "level": 3,
+      "items": [
+        "1",
+        "4",
+        "9",
+        "16",
+        "25",
+        "36",
+        "48",
+        "64"
+      ],
+      "wrong": [
+        6
+      ],
+      "correct": "49",
+      "choices": [
+        "49",
+        "47",
+        "50",
+        "54"
+      ],
+      "rule": "Sono quadrati perfetti consecutivi da 1² a 8².",
+      "hints": [
+        "Questi numeri si possono rappresentare come quadrati.",
+        "La sequenza segue 1×1, 2×2, 3×3 e così via."
+      ],
+      "why": "Il settimo quadrato perfetto è 49, non 48.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-05",
+      "domain": "numeri",
+      "level": 4,
+      "items": [
+        "2",
+        "4",
+        "8",
+        "16",
+        "32",
+        "64",
+        "126",
+        "256"
+      ],
+      "wrong": [
+        6
+      ],
+      "correct": "128",
+      "choices": [
+        "128",
+        "120",
+        "130",
+        "125"
+      ],
+      "rule": "Ogni termine è il doppio del precedente.",
+      "hints": [
+        "Guarda il rapporto fra termini adiacenti.",
+        "Dopo 64 viene il suo doppio."
+      ],
+      "why": "64 × 2 = 128: 126 interrompe la progressione.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-06",
+      "domain": "numeri",
+      "level": 4,
+      "items": [
+        "1",
+        "1",
+        "2",
+        "3",
+        "5",
+        "8",
+        "13",
+        "22"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "21",
+      "choices": [
+        "21",
+        "20",
+        "23",
+        "18"
+      ],
+      "rule": "Ogni termine, dal terzo, è la somma dei due precedenti.",
+      "hints": [
+        "La relazione non riguarda la moltiplicazione.",
+        "Somma gli ultimi due numeri prima dell’intruso."
+      ],
+      "why": "8 + 13 = 21: è la successione di Fibonacci.",
+      "ordered": true
+    },
+    {
+      "id": "calcio-01",
+      "domain": "calcio",
+      "level": 1,
+      "items": [
+        "Totti",
+        "De Rossi",
+        "Džeko",
+        "Pjanić",
+        "Salah",
+        "Nainggolan",
+        "Florenzi",
+        "Buffon"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "El Shaarawy",
+      "choices": [
+        "El Shaarawy",
+        "Del Piero",
+        "Chiellini",
+        "Marchisio"
+      ],
+      "rule": "Tutti hanno giocato con la prima squadra della Roma.",
+      "hints": [
+        "Il collegamento non è il ruolo in campo.",
+        "Pensa alla storia di una squadra della capitale."
+      ],
+      "why": "Buffon non ha giocato nella Roma; El Shaarawy sì.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-02",
+      "domain": "calcio",
+      "level": 2,
+      "items": [
+        "Del Piero",
+        "Buffon",
+        "Chiellini",
+        "Bonucci",
+        "Pirlo",
+        "Pogba",
+        "Dybala",
+        "Totti"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Marchisio",
+      "choices": [
+        "Marchisio",
+        "De Rossi",
+        "Nainggolan",
+        "Insigne"
+      ],
+      "rule": "Tutti hanno giocato con la prima squadra della Juventus.",
+      "hints": [
+        "Non cercare la nazionalità.",
+        "Si tratta di un club di Torino."
+      ],
+      "why": "Totti non ha giocato nella Juventus; Marchisio sì.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-03",
+      "domain": "calcio",
+      "level": 2,
+      "items": [
+        "Maradona",
+        "Hamšík",
+        "Insigne",
+        "Cavani",
+        "Mertens",
+        "Lavezzi",
+        "Osimhen",
+        "Maldini"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Kvaratskhelia",
+      "choices": [
+        "Kvaratskhelia",
+        "Totti",
+        "Del Piero",
+        "Barella"
+      ],
+      "rule": "Tutti hanno giocato nella prima squadra del Napoli.",
+      "hints": [
+        "Pensa a un club con Maradona nella sua storia.",
+        "Il legame è la maglia azzurra di una squadra campana."
+      ],
+      "why": "Paolo Maldini non ha giocato nel Napoli; Kvaratskhelia sì.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-04",
+      "domain": "calcio",
+      "level": 3,
+      "items": [
+        "Maldini",
+        "Kaká",
+        "Seedorf",
+        "Shevchenko",
+        "Ibrahimović",
+        "Nesta",
+        "Pirlo",
+        "Totti"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Gattuso",
+      "choices": [
+        "Gattuso",
+        "De Rossi",
+        "Insigne",
+        "Del Piero"
+      ],
+      "rule": "Tutti hanno giocato nella prima squadra del Milan.",
+      "hints": [
+        "Quale grande club condividono quasi tutti?",
+        "È una delle due squadre di Milano."
+      ],
+      "why": "Totti non ha giocato nel Milan; Gattuso sì.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-05",
+      "domain": "calcio",
+      "level": 3,
+      "items": [
+        "Zanetti",
+        "Milito",
+        "Sneijder",
+        "Materazzi",
+        "Cambiasso",
+        "Stanković",
+        "Lautaro Martínez",
+        "Del Piero"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Barella",
+      "choices": [
+        "Barella",
+        "Totti",
+        "Buffon",
+        "Chiellini"
+      ],
+      "rule": "Tutti hanno giocato nella prima squadra dell’Inter.",
+      "hints": [
+        "È un club italiano, non una nazionale.",
+        "Colori nerazzurri, città di Milano."
+      ],
+      "why": "Del Piero non ha giocato nell’Inter; Barella sì.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-06",
+      "domain": "calcio",
+      "level": 4,
+      "items": [
+        "Brasile",
+        "Germania",
+        "Italia",
+        "Argentina",
+        "Francia",
+        "Spagna",
+        "Inghilterra",
+        "Portogallo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Uruguay",
+      "choices": [
+        "Uruguay",
+        "Paesi Bassi",
+        "Croazia",
+        "Belgio"
+      ],
+      "rule": "Sono nazionali che hanno vinto almeno una Coppa del Mondo FIFA maschile.",
+      "hints": [
+        "Questa volta non sono squadre di club.",
+        "Cerca le nazionali campioni del mondo maschili."
+      ],
+      "why": "Il Portogallo non ha vinto il Mondiale maschile; l’Uruguay lo ha vinto due volte.",
+      "ordered": false
+    },
+    {
+      "id": "natura-01",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Leone",
+        "Tigre",
+        "Leopardo",
+        "Giaguaro",
+        "Puma",
+        "Lince",
+        "Ghepardo",
+        "Lupo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Gatto",
+      "choices": [
+        "Gatto",
+        "Volpe",
+        "Iena",
+        "Sciacallo"
+      ],
+      "rule": "Sono tutti animali della famiglia dei felidi.",
+      "hints": [
+        "Non basta dire che sono mammiferi.",
+        "Il gatto domestico appartiene allo stesso gruppo."
+      ],
+      "why": "Il lupo è un canide; gli altri animali sono felidi.",
+      "ordered": false
+    },
+    {
+      "id": "natura-02",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Aquila",
+        "Falco",
+        "Passero",
+        "Rondine",
+        "Gabbiano",
+        "Corvo",
+        "Pinguino",
+        "Pipistrello"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Civetta",
+      "choices": [
+        "Civetta",
+        "Scoiattolo",
+        "Topo",
+        "Scoiattolo volante"
+      ],
+      "rule": "Sono tutti uccelli.",
+      "hints": [
+        "La capacità di volare non basta.",
+        "Uno degli elementi allatta i piccoli."
+      ],
+      "why": "Il pipistrello è un mammifero; la civetta è un uccello.",
+      "ordered": false
+    },
+    {
+      "id": "natura-03",
+      "domain": "natura",
+      "level": 2,
+      "items": [
+        "Ape",
+        "Farfalla",
+        "Formica",
+        "Coccinella",
+        "Libellula",
+        "Mosca",
+        "Zanzara",
+        "Ragno"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Scarabeo",
+      "choices": [
+        "Scarabeo",
+        "Scorpione",
+        "Acari",
+        "Zecca"
+      ],
+      "rule": "Sono tutti insetti a sei zampe.",
+      "hints": [
+        "Cerca una caratteristica anatomica.",
+        "Uno degli animali ha normalmente otto zampe."
+      ],
+      "why": "Il ragno è un aracnide; lo scarabeo è un insetto.",
+      "ordered": false
+    },
+    {
+      "id": "natura-04",
+      "domain": "natura",
+      "level": 2,
+      "items": [
+        "Mercurio",
+        "Venere",
+        "Terra",
+        "Marte",
+        "Giove",
+        "Saturno",
+        "Urano",
+        "Plutone"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Nettuno",
+      "choices": [
+        "Nettuno",
+        "Cerere",
+        "Eris",
+        "Luna"
+      ],
+      "rule": "Sono gli otto pianeti ufficialmente riconosciuti del Sistema solare.",
+      "hints": [
+        "È una classificazione astronomica.",
+        "Dal 2006 un elemento è classificato come pianeta nano."
+      ],
+      "why": "Plutone è un pianeta nano: nell’elenco dei pianeti manca Nettuno.",
+      "ordered": false
+    },
+    {
+      "id": "natura-05",
+      "domain": "natura",
+      "level": 3,
+      "items": [
+        "Quercia",
+        "Faggio",
+        "Betulla",
+        "Pino",
+        "Abete",
+        "Cipresso",
+        "Ulivo",
+        "Rosa"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Acero",
+      "choices": [
+        "Acero",
+        "Lavanda",
+        "Margherita",
+        "Tulipano"
+      ],
+      "rule": "Sono tutti alberi.",
+      "hints": [
+        "Non basta che siano piante.",
+        "Sette elementi possono sviluppare un vero tronco arboreo."
+      ],
+      "why": "La rosa è generalmente un arbusto; l’acero è un albero.",
+      "ordered": false
+    },
+    {
+      "id": "natura-06",
+      "domain": "natura",
+      "level": 4,
+      "items": [
+        "Balena",
+        "Delfino",
+        "Orca",
+        "Capodoglio",
+        "Beluga",
+        "Focena",
+        "Narvalo",
+        "Squalo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Stenella",
+      "choices": [
+        "Stenella",
+        "Tonno",
+        "Razza",
+        "Pesce spada"
+      ],
+      "rule": "Sono tutti cetacei, mammiferi marini.",
+      "hints": [
+        "La categoria non è semplicemente “animali marini”.",
+        "Uno respira con le branchie anziché con i polmoni."
+      ],
+      "why": "Lo squalo è un pesce; la stenella è un cetaceo.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-01",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Spaghetti",
+        "Penne",
+        "Fusilli",
+        "Farfalle",
+        "Rigatoni",
+        "Linguine",
+        "Tagliatelle",
+        "Risotto"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Orecchiette",
+      "choices": [
+        "Orecchiette",
+        "Polenta",
+        "Cous cous",
+        "Orzotto"
+      ],
+      "rule": "Sono tutti formati di pasta.",
+      "hints": [
+        "Non basta essere primi piatti.",
+        "Uno si prepara normalmente con il riso."
+      ],
+      "why": "Il risotto non è un formato di pasta; le orecchiette sì.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-02",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Basilico",
+        "Prezzemolo",
+        "Rosmarino",
+        "Salvia",
+        "Timo",
+        "Origano",
+        "Menta",
+        "Zucchero"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Erba cipollina",
+      "choices": [
+        "Erba cipollina",
+        "Sale",
+        "Farina",
+        "Burro"
+      ],
+      "rule": "Sono tutte erbe aromatiche.",
+      "hints": [
+        "Sono ingredienti, ma non dello stesso tipo.",
+        "Sette sono foglie o rametti usati per profumare."
+      ],
+      "why": "Lo zucchero è un dolcificante; l’erba cipollina è un’erba aromatica.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-03",
+      "domain": "cucina",
+      "level": 2,
+      "items": [
+        "Mela",
+        "Pera",
+        "Pesca",
+        "Albicocca",
+        "Susina",
+        "Ciliegia",
+        "Ananas",
+        "Carota"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Banana",
+      "choices": [
+        "Banana",
+        "Patata",
+        "Sedano",
+        "Cipolla"
+      ],
+      "rule": "Sono tutti frutti nell’uso alimentare comune.",
+      "hints": [
+        "Considera la distinzione culinaria comune.",
+        "Un elemento è una radice usata come ortaggio."
+      ],
+      "why": "La carota è un ortaggio; la banana è un frutto.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-04",
+      "domain": "cucina",
+      "level": 2,
+      "items": [
+        "Latte",
+        "Yogurt",
+        "Parmigiano",
+        "Mozzarella",
+        "Ricotta",
+        "Burro",
+        "Kefir",
+        "Olio d’oliva"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Pecorino",
+      "choices": [
+        "Pecorino",
+        "Aceto",
+        "Olio di semi",
+        "Succo di mela"
+      ],
+      "rule": "Sono tutti prodotti lattiero-caseari.",
+      "hints": [
+        "Il legame è l’ingrediente di origine.",
+        "Sono prodotti a base di latte."
+      ],
+      "why": "L’olio d’oliva non deriva dal latte; il pecorino sì.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-05",
+      "domain": "cucina",
+      "level": 3,
+      "items": [
+        "Bollire",
+        "Friggere",
+        "Arrostire",
+        "Grigliare",
+        "Stufare",
+        "Cuocere al vapore",
+        "Rosolare",
+        "Tagliare"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Brasare",
+      "choices": [
+        "Brasare",
+        "Lavare",
+        "Affettare",
+        "Sbucciare"
+      ],
+      "rule": "Sono tutte tecniche di cottura.",
+      "hints": [
+        "Quasi tutti trasformano il cibo mediante il calore.",
+        "Una è solo un’operazione di preparazione."
+      ],
+      "why": "Tagliare non è una cottura; brasare è una tecnica di cottura.",
+      "ordered": false
+    },
+    {
+      "id": "cucina-06",
+      "domain": "cucina",
+      "level": 3,
+      "items": [
+        "Limone",
+        "Arancia",
+        "Mandarino",
+        "Pompelmo",
+        "Lime",
+        "Cedro",
+        "Bergamotto",
+        "Pesca"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Clementina",
+      "choices": [
+        "Clementina",
+        "Mela",
+        "Pera",
+        "Albicocca"
+      ],
+      "rule": "Sono tutti agrumi.",
+      "hints": [
+        "Il punto non è il colore della buccia.",
+        "Pensa alla famiglia dei limoni."
+      ],
+      "why": "La pesca non è un agrume; la clementina sì.",
+      "ordered": false
+    },
+    {
+      "id": "parole-01",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "ANNA",
+        "OSSO",
+        "OTTO",
+        "ALA",
+        "RADAR",
+        "ORO",
+        "ANILINA",
+        "CASA"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "ERE",
+      "choices": [
+        "ERE",
+        "VITA",
+        "MARE",
+        "LUNA"
+      ],
+      "rule": "Tutte le parole si leggono allo stesso modo da sinistra a destra e viceversa.",
+      "hints": [
+        "Prova a leggere le parole al contrario.",
+        "Le parole valide sono palindrome."
+      ],
+      "why": "CASA al contrario non è CASA; ERE invece è palindroma.",
+      "ordered": false
+    },
+    {
+      "id": "parole-02",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "CANE",
+        "CIELO",
+        "CASA",
+        "CUORE",
+        "CINEMA",
+        "COLLE",
+        "CARTA",
+        "FOGLIA"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "CORSO",
+      "choices": [
+        "CORSO",
+        "BOSCO",
+        "FESTA",
+        "PORTA"
+      ],
+      "rule": "Tutte le parole cominciano con la lettera C.",
+      "hints": [
+        "Guarda il principio di ogni parola.",
+        "Le prime lettere sono la chiave."
+      ],
+      "why": "FOGLIA comincia con F, CORSO con C.",
+      "ordered": false
+    },
+    {
+      "id": "parole-03",
+      "domain": "parole",
+      "level": 2,
+      "items": [
+        "Palla",
+        "Gatto",
+        "Notte",
+        "Ferro",
+        "Tazza",
+        "Bello",
+        "Troppo",
+        "Cane"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Terra",
+      "choices": [
+        "Terra",
+        "Sole",
+        "Mare",
+        "Vino"
+      ],
+      "rule": "Tutte le parole contengono almeno una consonante doppia consecutiva.",
+      "hints": [
+        "Guarda le lettere, non il significato.",
+        "Una lettera compare due volte di seguito nelle parole valide."
+      ],
+      "why": "Cane non contiene doppie; terra contiene RR.",
+      "ordered": false
+    },
+    {
+      "id": "parole-04",
+      "domain": "parole",
+      "level": 2,
+      "items": [
+        "Imparare",
+        "Leggere",
+        "Scrivere",
+        "Correre",
+        "Dormire",
+        "Partire",
+        "Ridere",
+        "Tavolo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Cantare",
+      "choices": [
+        "Cantare",
+        "Giocoso",
+        "Attento",
+        "Leggibile"
+      ],
+      "rule": "Tutte le parole sono verbi all’infinito.",
+      "hints": [
+        "Pensa alla grammatica.",
+        "Le parole corrette indicano azioni alla forma base del verbo."
+      ],
+      "why": "Tavolo è un nome; cantare è un verbo all’infinito.",
+      "ordered": false
+    },
+    {
+      "id": "parole-05",
+      "domain": "parole",
+      "level": 3,
+      "items": [
+        "Rosso",
+        "Giallo",
+        "Azzurro",
+        "Viola",
+        "Verde",
+        "Arancione",
+        "Grigio",
+        "Quadrato"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Bianco",
+      "choices": [
+        "Bianco",
+        "Cerchio",
+        "Triangolo",
+        "Rettangolo"
+      ],
+      "rule": "Tutte le parole sono nomi di colori.",
+      "hints": [
+        "Pensa a ciò che indicano, non alla loro forma.",
+        "Sette descrivono tonalità cromatiche."
+      ],
+      "why": "Quadrato è una forma geometrica; bianco è un colore.",
+      "ordered": false
+    },
+    {
+      "id": "parole-06",
+      "domain": "parole",
+      "level": 3,
+      "items": [
+        "Rumori",
+        "Motori",
+        "Dolori",
+        "Tesori",
+        "Sapori",
+        "Colori",
+        "Amori",
+        "Cavallo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Onori",
+      "choices": [
+        "Onori",
+        "Casetta",
+        "Nuvola",
+        "Giardino"
+      ],
+      "rule": "Tutte le parole terminano con la sequenza di lettere ORI.",
+      "hints": [
+        "Osserva la parte finale delle parole.",
+        "Le tre lettere finali sono identiche."
+      ],
+      "why": "Cavallo non termina con ORI; onori sì.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-01",
+      "domain": "geografia",
+      "level": 1,
+      "items": [
+        "Roma",
+        "Berlino",
+        "Madrid",
+        "Parigi",
+        "Lisbona",
+        "Vienna",
+        "Atene",
+        "Milano"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Praga",
+      "choices": [
+        "Praga",
+        "Napoli",
+        "Barcellona",
+        "Marsiglia"
+      ],
+      "rule": "Sono tutte capitali nazionali europee.",
+      "hints": [
+        "Non basta che siano città europee.",
+        "Quasi tutte ospitano il governo di uno Stato."
+      ],
+      "why": "Milano non è capitale nazionale; Praga è la capitale della Cechia.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-02",
+      "domain": "geografia",
+      "level": 2,
+      "items": [
+        "Sicilia",
+        "Sardegna",
+        "Elba",
+        "Capri",
+        "Ischia",
+        "Procida",
+        "Ponza",
+        "Corsica"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Lipari",
+      "choices": [
+        "Lipari",
+        "Maiorca",
+        "Creta",
+        "Ibiza"
+      ],
+      "rule": "Sono tutte isole appartenenti all’Italia.",
+      "hints": [
+        "Sono tutte isole, ma non tutte dello stesso Paese.",
+        "Una appartiene alla Francia."
+      ],
+      "why": "La Corsica è francese; Lipari è italiana.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-03",
+      "domain": "geografia",
+      "level": 2,
+      "items": [
+        "Tevere",
+        "Po",
+        "Arno",
+        "Adige",
+        "Piave",
+        "Brenta",
+        "Adda",
+        "Vesuvio"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Reno",
+      "choices": [
+        "Reno",
+        "Etna",
+        "Stromboli",
+        "Vulcano"
+      ],
+      "rule": "Sono tutti fiumi italiani.",
+      "hints": [
+        "Un elemento ha una natura fisica diversa.",
+        "Sette scorrono, uno erutta."
+      ],
+      "why": "Il Vesuvio è un vulcano; il Reno è anche un fiume italiano.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-04",
+      "domain": "geografia",
+      "level": 3,
+      "items": [
+        "Alpi",
+        "Appennini",
+        "Pirenei",
+        "Carpazi",
+        "Ande",
+        "Himalaya",
+        "Urali",
+        "Sahara"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Atlante",
+      "choices": [
+        "Atlante",
+        "Gobi",
+        "Atacama",
+        "Kalahari"
+      ],
+      "rule": "Sono tutte catene montuose.",
+      "hints": [
+        "Non tutte le grandi formazioni naturali sono uguali.",
+        "Un elemento è soprattutto un deserto."
+      ],
+      "why": "Il Sahara è un deserto; l’Atlante è una catena montuosa.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-05",
+      "domain": "geografia",
+      "level": 3,
+      "items": [
+        "Lazio",
+        "Lombardia",
+        "Veneto",
+        "Toscana",
+        "Piemonte",
+        "Liguria",
+        "Puglia",
+        "Ticino"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Umbria",
+      "choices": [
+        "Umbria",
+        "Vaud",
+        "Grigioni",
+        "Vallese"
+      ],
+      "rule": "Sono tutte regioni amministrative italiane.",
+      "hints": [
+        "Le aree geografiche hanno una stessa appartenenza nazionale.",
+        "Uno è un cantone svizzero."
+      ],
+      "why": "Il Ticino è un cantone svizzero; l’Umbria è una regione italiana.",
+      "ordered": false
+    },
+    {
+      "id": "geografia-06",
+      "domain": "geografia",
+      "level": 4,
+      "items": [
+        "Brasile",
+        "Argentina",
+        "Cile",
+        "Perù",
+        "Colombia",
+        "Ecuador",
+        "Bolivia",
+        "Portogallo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Uruguay",
+      "choices": [
+        "Uruguay",
+        "Spagna",
+        "Messico",
+        "Canada"
+      ],
+      "rule": "Sono tutti Stati del Sud America.",
+      "hints": [
+        "La lingua non è la regola.",
+        "Sette Stati si trovano nello stesso continente."
+      ],
+      "why": "Il Portogallo è europeo; l’Uruguay è sudamericano.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-01",
+      "domain": "cinema",
+      "level": 1,
+      "items": [
+        "Toy Story",
+        "Cars",
+        "Alla ricerca di Nemo",
+        "WALL-E",
+        "Ratatouille",
+        "Gli Incredibili",
+        "Monsters & Co.",
+        "Shrek"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Up",
+      "choices": [
+        "Up",
+        "Dragon Trainer",
+        "Kung Fu Panda",
+        "Madagascar"
+      ],
+      "rule": "Sono tutti film prodotti da Pixar Animation Studios.",
+      "hints": [
+        "Sono film d’animazione, ma non tutti dello stesso studio.",
+        "Uno è prodotto da DreamWorks."
+      ],
+      "why": "Shrek è di DreamWorks; Up è di Pixar.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-02",
+      "domain": "cinema",
+      "level": 2,
+      "items": [
+        "Iron Man",
+        "Thor",
+        "The Avengers",
+        "Captain America: Il primo Vendicatore",
+        "Black Panther",
+        "Doctor Strange",
+        "Ant-Man",
+        "Batman Begins"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Guardiani della Galassia",
+      "choices": [
+        "Guardiani della Galassia",
+        "Il cavaliere oscuro",
+        "Joker",
+        "Man of Steel"
+      ],
+      "rule": "Sono tutti film del Marvel Cinematic Universe (MCU).",
+      "hints": [
+        "Il legame è un universo cinematografico, non solo il genere.",
+        "Uno riguarda un supereroe DC invece di Marvel."
+      ],
+      "why": "Batman Begins è un film DC, non MCU; Guardiani della Galassia è MCU.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-03",
+      "domain": "cinema",
+      "level": 2,
+      "items": [
+        "Fellini",
+        "Sorrentino",
+        "Benigni",
+        "Tornatore",
+        "De Sica",
+        "Visconti",
+        "Rossellini",
+        "Spielberg"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Antonioni",
+      "choices": [
+        "Antonioni",
+        "Scorsese",
+        "Nolan",
+        "Tarantino"
+      ],
+      "rule": "Sono tutti registi italiani.",
+      "hints": [
+        "Il collegamento è geografico e professionale.",
+        "Uno è un famoso regista statunitense."
+      ],
+      "why": "Spielberg è statunitense; Antonioni era italiano.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-04",
+      "domain": "cinema",
+      "level": 3,
+      "items": [
+        "La pietra filosofale",
+        "La camera dei segreti",
+        "Il prigioniero di Azkaban",
+        "Il calice di fuoco",
+        "L’Ordine della Fenice",
+        "Il principe mezzosangue",
+        "I doni della morte – Parte 1",
+        "Il Signore degli Anelli"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "I doni della morte – Parte 2",
+      "choices": [
+        "I doni della morte – Parte 2",
+        "Lo Hobbit",
+        "Animali fantastici",
+        "Le cronache di Narnia"
+      ],
+      "rule": "Sono gli otto film della saga cinematografica principale di Harry Potter.",
+      "hints": [
+        "Sono film fantasy, ma solo alcuni appartengono alla stessa saga.",
+        "Una saga ha otto film: nell’elenco ne manca l’ultimo."
+      ],
+      "why": "Il Signore degli Anelli è un’altra saga; manca il secondo film dei Doni della morte.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-05",
+      "domain": "cinema",
+      "level": 3,
+      "items": [
+        "John Williams",
+        "Hans Zimmer",
+        "Ennio Morricone",
+        "Howard Shore",
+        "Alexandre Desplat",
+        "Danny Elfman",
+        "Michael Giacchino",
+        "J. K. Rowling"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "James Newton Howard",
+      "choices": [
+        "James Newton Howard",
+        "Stephen King",
+        "George R. R. Martin",
+        "J. R. R. Tolkien"
+      ],
+      "rule": "Sono tutti compositori di colonne sonore per il cinema.",
+      "hints": [
+        "Pensa alle professioni dietro un film.",
+        "Uno è famoso soprattutto per avere scritto romanzi."
+      ],
+      "why": "J. K. Rowling è una scrittrice; James Newton Howard è un compositore cinematografico.",
+      "ordered": false
+    },
+    {
+      "id": "cinema-06",
+      "domain": "cinema",
+      "level": 4,
+      "items": [
+        "Oscar",
+        "Palma d’Oro",
+        "Leone d’Oro",
+        "Orso d’Oro",
+        "David di Donatello",
+        "BAFTA",
+        "Golden Globe",
+        "Grammy"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Premio Goya",
+      "choices": [
+        "Premio Goya",
+        "Premio Strega",
+        "Premio Nobel",
+        "Brit Award"
+      ],
+      "rule": "Sono tutti riconoscimenti assegnati nell’ambito del cinema, e non premi musicali.",
+      "hints": [
+        "Sono tutti riconoscimenti, ma di quali arti?",
+        "Uno è dedicato principalmente alla musica registrata."
+      ],
+      "why": "I Grammy premiano la musica; i Goya riconoscono il cinema.",
+      "ordered": false
+    },
+    {
+      "id": "musica-01",
+      "domain": "musica",
+      "level": 1,
+      "items": [
+        "Pianoforte",
+        "Violino",
+        "Chitarra",
+        "Flauto",
+        "Tromba",
+        "Arpa",
+        "Batteria",
+        "Pennello"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Sassofono",
+      "choices": [
+        "Sassofono",
+        "Scalpello",
+        "Pennarello",
+        "Righello"
+      ],
+      "rule": "Sono tutti strumenti musicali.",
+      "hints": [
+        "Pensa a cosa possono produrre gli oggetti.",
+        "Sette sono strumenti per fare musica."
+      ],
+      "why": "Il pennello serve a dipingere, non è uno strumento musicale.",
+      "ordered": false
+    },
+    {
+      "id": "musica-02",
+      "domain": "musica",
+      "level": 2,
+      "items": [
+        "Do",
+        "Re",
+        "Mi",
+        "Fa",
+        "Sol",
+        "La",
+        "Arancio",
+        "Do"
+      ],
+      "wrong": [
+        6
+      ],
+      "correct": "Si",
+      "choices": [
+        "Si",
+        "Fa diesis",
+        "Do diesis",
+        "Sol diesis"
+      ],
+      "rule": "Le otto note seguono la scala di Do maggiore in salita fino alla nota Do dell’ottava successiva.",
+      "hints": [
+        "Osserva la successione anziché il significato delle parole.",
+        "Fra La e Do, nella scala naturale, quale nota manca?"
+      ],
+      "why": "Fra La e Do deve esserci Si: Arancio non è una nota della scala.",
+      "ordered": true
+    },
+    {
+      "id": "musica-03",
+      "domain": "musica",
+      "level": 2,
+      "items": [
+        "Violino",
+        "Viola",
+        "Violoncello",
+        "Contrabbasso",
+        "Arpa",
+        "Mandolino",
+        "Chitarra",
+        "Tromba"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Banjo",
+      "choices": [
+        "Banjo",
+        "Clarinetto",
+        "Flauto",
+        "Oboe"
+      ],
+      "rule": "Sono tutti strumenti a corde.",
+      "hints": [
+        "La regola riguarda come nasce il suono.",
+        "Uno emette il suono grazie alla vibrazione dell’aria attraverso le labbra."
+      ],
+      "why": "La tromba è un aerofono a bocchino; il banjo è uno strumento a corde.",
+      "ordered": false
+    },
+    {
+      "id": "musica-04",
+      "domain": "musica",
+      "level": 3,
+      "items": [
+        "Mozart",
+        "Beethoven",
+        "Bach",
+        "Chopin",
+        "Vivaldi",
+        "Verdi",
+        "Rossini",
+        "Picasso"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Schubert",
+      "choices": [
+        "Schubert",
+        "Dalí",
+        "Van Gogh",
+        "Michelangelo"
+      ],
+      "rule": "Sono tutti compositori della tradizione musicale classica occidentale.",
+      "hints": [
+        "Cerca una professione artistica comune.",
+        "Uno era soprattutto un pittore."
+      ],
+      "why": "Picasso è noto come pittore; Schubert era un compositore.",
+      "ordered": false
+    },
+    {
+      "id": "musica-05",
+      "domain": "musica",
+      "level": 4,
+      "items": [
+        "Adagio",
+        "Allegro",
+        "Andante",
+        "Presto",
+        "Largo",
+        "Moderato",
+        "Vivace",
+        "Fortissimo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Prestissimo",
+      "choices": [
+        "Prestissimo",
+        "Pianissimo",
+        "Crescendo",
+        "Diminuendo"
+      ],
+      "rule": "Sono tutte indicazioni di tempo o velocità nell’esecuzione musicale.",
+      "hints": [
+        "Questi termini musicali non indicano strumenti.",
+        "Uno definisce l’intensità sonora, non la velocità."
+      ],
+      "why": "Fortissimo indica una dinamica elevata; Prestissimo indica un tempo molto rapido.",
+      "ordered": false
+    },
+    {
+      "id": "musica-06",
+      "domain": "musica",
+      "level": 4,
+      "items": [
+        "Soprano",
+        "Mezzosoprano",
+        "Contralto",
+        "Tenore",
+        "Baritono",
+        "Basso",
+        "Basso-baritono",
+        "Violinista"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Controtenore",
+      "choices": [
+        "Controtenore",
+        "Violoncellista",
+        "Pianista",
+        "Direttore d’orchestra"
+      ],
+      "rule": "Sono tutte classificazioni di registri vocali umani per il canto.",
+      "hints": [
+        "Non pensare a singole persone.",
+        "Sette nomi descrivono tipi di voce."
+      ],
+      "why": "Violinista indica chi suona il violino; controtenore è una tipologia vocale.",
+      "ordered": false
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const PACK = JSON.parse(document.getElementById('stona-data').textContent);
+const DOMAINS=PACK.domains, PUZZLES=PACK.puzzles;
+const STORE='stona-alpha-v1';
+const INITIAL={xp:0, interests:['numeri','calcio','natura'], mode:'relax', history:[], completed:{}, onboardingDone:false};
+let state=load();
+let view='play', chosenDomain='mix', editingInterests=false, active=null, session={count:0,total:10,gained:0,done:false,perfect:0};
+let notice='';
+function load(){try{const x=JSON.parse(localStorage.getItem(STORE)||'null');return x&&typeof x==='object'?{...INITIAL,...x}:structuredClone(INITIAL)}catch(e){return {...INITIAL}}}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){}}
+function esc(t){return String(t).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+function shuffle(a){let arr=[...a];for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
+function history(d){return state.history.filter(x=>x.domain===d)}
+function mastery(d){const a=history(d).slice(-15);const prior=3*45;return Math.round((prior+a.reduce((s,p)=>s+p.quality,0))/(3+a.length))}
+function title(){const ranks=[[0,'Curioso'],[110,'Esploratore'],[300,'Cercatore'],[560,'Intuitivo'],[850,'Decifratore'],[1200,'Visionario'],[1600,'Cartografo'],[2050,'Maestro degli schemi']];return ranks.filter(r=>state.xp>=r[0]).slice(-1)[0][1]}
+function xpNext(){const t=[110,300,560,850,1200,1600,2050];return t.find(x=>x>state.xp)||null}
+function progress(d){return Object.keys(state.completed).filter(id=>id.startsWith(d+'-')).length}
+function instinctCount(){return state.history.filter(x=>x.intuition && x.spot).length}
+function dname(d){return DOMAINS[d]?.name||d}
+function choosePuzzle(){
+  let domains=chosenDomain==='mix'?(state.interests.length?state.interests:Object.keys(DOMAINS)):[chosenDomain];
+  let all=PUZZLES.filter(p=>domains.includes(p.domain));
+  let fresh=all.filter(p=>!state.completed[p.id]);
+  const replay=fresh.length===0;
+  if(!replay && state.history.length===0 && domains.includes('numeri')){
+    const intro=fresh.find(p=>p.id==='numeri-01');if(intro) return {p:intro,replay:false};
+  }
+  let list=fresh.length?fresh:all;
+  const weights=list.map(p=>{
+     const count=history(p.domain).length;
+     const aim=count<2?1.5:count<4?2.5:1+mastery(p.domain)/30;
+     return 1/(1+Math.abs(aim-p.level)*1.6);
+  });
+  let total=weights.reduce((a,b)=>a+b,0);let roll=Math.random()*total;
+  for(let i=0;i<list.length;i++){roll-=weights[i];if(roll<=0)return {p:list[i],replay}}
+  return {p:list[list.length-1],replay};
+}
+function next(){
+  if(session.count>=session.total){active=null;session.done=true;render();return;}
+  const {p,replay}=choosePuzzle();
+  let mapped=p.items.map((text,original)=>({text,original}));if(!p.ordered)mapped=shuffle(mapped);
+  let other=shuffle(PUZZLES.filter(x=>x.domain===p.domain&&x.id!==p.id&&x.rule!==p.rule)).slice(0,2).map(x=>x.rule);
+  let options=shuffle([p.rule,...other]);
+  active={p,replay,items:mapped,step:'spot',hints:0,intuition:false,mistakes:0,fixMistakes:0,ruleMistakes:0,spot:false,fix:false,rule:false,skipped:false,message:'',options,earned:0};
+  render();
+}
+function markDone(){
+  if(!active||active.step==='result')return;
+  const a=active,p=a.p;
+  const cleanSpot=a.spot&&a.mistakes===0;
+  let quality=0;
+  if(a.spot)quality+=cleanSpot?40:25;
+  if(a.fix)quality+=a.fixMistakes===0?25:15;
+  if(a.rule)quality+=a.ruleMistakes===0?25:15;
+  if(a.spot&&a.fix&&a.hints===0)quality+=10;
+  quality=Math.min(100,Math.round(quality*(1+0.035*(p.level-1))));
+  let pts=a.skipped?4:(a.spot?10:0)+(a.fix?10:0)+(a.rule?10:0)+(a.intuition&&a.spot?5:0)+(a.hints===0&&a.spot?5:0);
+  if(state.mode==='sfida'&&!a.skipped&&a.hints===0&&a.spot&&a.fix&&a.rule)pts+=5;
+  if(a.replay)pts=0;
+  a.earned=pts;
+  if(!state.completed[p.id]){
+    state.completed[p.id]=true;
+    state.xp+=pts;
+    state.history.push({id:p.id,domain:p.domain,quality,level:p.level,spot:a.spot,fix:a.fix,rule:a.rule,intuition:a.intuition&&a.spot,hints:a.hints,skipped:a.skipped,xp:pts,date:new Date().toISOString()});
+    save();
+  }
+  session.count++;
+  session.gained+=pts;
+  if(a.spot&&a.fix&&a.rule&&a.hints===0&&a.mistakes+a.fixMistakes+a.ruleMistakes===0)session.perfect++;
+  a.step='result';render();
+}
+function chooseSpot(original){if(!active||active.step!=='spot')return;
+  const a=active;
+  if(a.p.wrong.includes(original)){a.spot=true;a.step='fix';a.message='Hai individuato l’anomalia. Ora prova a riparare la sequenza.'}
+  else{a.mistakes++;a.message='Non è l’elemento che rompe il collegamento. Puoi riprovare o chiedere un indizio.'}
+  render();
+}
+function chooseFix(value){if(!active||active.step!=='fix')return;const a=active;
+  if(value===a.p.correct){a.fix=true;a.step='rule';a.message='Correzione riuscita. Qual è la regola che tiene insieme gli elementi?'}
+  else{a.fixMistakes++;a.message='Questa sostituzione non ricrea lo schema previsto. Riprova o chiedi un indizio.'}
+  render();
+}
+function chooseRule(rule){if(!active||active.step!=='rule')return;const a=active;
+  if(rule===a.p.rule){a.rule=true;markDone()}
+  else{a.ruleMistakes++;a.message='Non è la regola del quesito. Puoi riprovare oppure scoprire la spiegazione.';render()}
+}
+function skip(){if(!active)return;active.skipped=true;markDone()}
+function toggleInterest(d){const s=new Set(state.interests);if(s.has(d))s.delete(d);else s.add(d);state.interests=[...s];save();render()}
+function modalStart(){if(!state.interests.length)state.interests=Object.keys(DOMAINS);state.onboardingDone=true;editingInterests=false;save();if(!active)next();else render()}
+function header(){return `<header class="top"><div class="brand"><div class="mark" aria-hidden="true"><span>?</span></div><div><strong>STONA</strong><small>Il gioco dell’intuizione</small></div></div><div class="top-meta"><span class="pill">✦ <b>${state.xp.toLocaleString('it-IT')}</b> XP</span><span class="pill levelpill">${esc(title())}</span></div></header>`}
+function navbar(){return `<nav class="top-menu" aria-label="Navigazione principale"><button class="tab ${view==='play'?'active':''}" data-action="view" data-val="play">Gioca</button><button class="tab ${view==='map'?'active':''}" data-action="view" data-val="map">La mia mappa</button><button class="tab ${view==='about'?'active':''}" data-action="view" data-val="about">Come funziona</button><button class="tab" data-action="interests">⚙ Interessi</button></nav>`}
+function onboarding(){return `${header()}<div class="hero"><div><div class="section-kicker">Il primo passo</div><h1 class="section-heading">Quanto conosci ciò che ami?</h1><p class="lead">Otto elementi. Un collegamento nascosto. Qualcosa non torna. Scoprilo, correggilo e costruisci la tua mappa personale.</p></div><div class="hero-graphic" aria-hidden="true"><span>8</span><i></i></div></div><section class="card"><div class="section-kicker">Personalizza la tua esperienza</div><h2>Scegli gli argomenti che ti incuriosiscono</h2><p class="muted">Non è un test d’ingresso. Puoi cambiare tutto in qualsiasi momento, e anche scegliere soltanto un settore.</p><div class="interest-grid">${Object.entries(DOMAINS).map(([d,m])=>`<button class="interest-btn ${state.interests.includes(d)?'selected':''}" data-action="interest" data-val="${d}" aria-pressed="${state.interests.includes(d)}"><span class="sect-icon">${m.symbol}</span><span><b>${m.name}</b><small>${m.intro}</small></span></button>`).join('')}</div><div class="actionrow"><button class="btn primary" data-action="start">Cominciamo →</button><button class="btn soft" data-action="all-interests">Sorprendimi con tutti i settori</button></div></section>`}
+function modeBar(){return `<div class="label" style="margin:14px 0 9px">Modalità</div><div class="mode-row">${[['relax','☁ Relax'],['esplora','◎ Esplora'],['sfida','⚑ Sfida personale']].map(([val,label])=>`<button class="btn ${state.mode===val?'selected':''}" data-action="mode" data-val="${val}" aria-pressed="${state.mode===val}">${label}</button>`).join('')}</div><p class="tiny">${state.mode==='relax'?'Senza timer e senza penalità.':state.mode==='esplora'?'Osserva le connessioni e amplia la tua mappa.':'Bonus esperienza per una soluzione completa senza indizi. Nessuna classifica online.'}</p>`}
+function sidePanel(){const nextXP=xpNext();return `<aside class="card secondary"><div class="side-head"><h2 class="side-title">Il tuo percorso</h2><span class="label">personale</span></div><div class="statrow"><div class="statbox"><big>${Object.keys(state.completed).length}</big><span>enigmi esplorati</span></div><div class="statbox"><big>${instinctCount()}</big><span>intuizioni corrette</span></div></div><div class="smallrow"><span>Grado: <strong>${esc(title())}</strong></span><span>${nextXP?`${nextXP-state.xp} XP al prossimo`:'Grado massimo'}</span></div><div class="bar"><i style="width:${nextXP?Math.max(3,state.xp/nextXP*100):100}%"></i></div><h3 style="font-size:15px;margin:22px 0 9px">Competenze in esplorazione</h3>${Object.entries(DOMAINS).slice().sort((a,b)=>history(b[0]).length-history(a[0]).length).slice(0,5).map(([d,m])=>`<div class="metric"><div class="smallrow"><span>${m.symbol} ${m.name}</span><strong>${mastery(d)}/100</strong></div><div class="bar"><i style="width:${mastery(d)}%"></i></div></div>`).join('')}<p class="aside-note">La padronanza è una stima basata sulle prove giocate; non misura il QI. I progressi restano su questo dispositivo.</p><button class="btn" data-action="view" data-val="map">Apri la mappa →</button></aside>`}
+function questionStep(){const a=active,p=a.p;const stepIdx=['spot','fix','rule','result'].indexOf(a.step);const msg=a.step==='spot'?'Tocca l’elemento che non appartiene allo stesso schema degli altri.':a.step==='fix'?'Quale elemento inseriresti al suo posto?':a.step==='rule'?'Prova a riconoscere il collegamento nascosto.':'Ecco il collegamento che rende coerente la sequenza.';
+ let mid='';
+ if(a.step==='spot')mid=`<div class="tiles">${a.items.map(({text,original})=>`<button class="tile" data-action="spot" data-val="${original}" aria-label="Scegli ${esc(text)}">${esc(text)}</button>`).join('')}</div><div class="actionrow"><button class="btn ${a.intuition?'selected':''}" data-action="intuition" aria-pressed="${a.intuition}">✦ ${a.intuition?'Scelto d’istinto':'Lo sento d’istinto'}</button><span class="tiny">Puoi indicarlo prima della risposta.</span></div>`;
+ else if(a.step==='fix')mid=`<div class="tiles">${a.items.map(({text,original})=>`<div class="tile ${p.wrong.includes(original)?'wrong':'locked'}" style="display:grid;place-items:center;text-align:center" aria-label="${esc(text)}">${esc(text)}</div>`).join('')}</div><div class="label">Quale sostituzione funziona?</div><div class="answers">${shuffle(p.choices).map(c=>`<button class="answer" data-action="fix" data-val="${esc(c)}">${esc(c)}</button>`).join('')}</div>`;
+ else if(a.step==='rule')mid=`<div class="label" style="margin-top:22px">Scegli la spiegazione</div><div class="answers">${a.options.map((r,i)=>`<button class="answer wide withbadge" data-action="rule" data-val="${esc(r)}"><span class="letter">${String.fromCharCode(65+i)}</span>${esc(r)}</button>`).join('')}</div>`;
+ else mid=`<div class="success"><div class="section-kicker">Schema scoperto</div><h3>${esc(p.rule)}</h3><p>${esc(p.why)}</p><div class="pill" style="display:inline-block">+${a.earned} XP ${a.replay?' · ripasso senza nuovi punti':''}</div></div><div class="statrow"><div class="statbox"><big>${a.spot?'✓':'—'}</big><span>anomalia riconosciuta</span></div><div class="statbox"><big>${a.intuition&&a.spot?'✦':'—'}</big><span>intuizione dichiarata</span></div></div><button class="btn primary" data-action="next">${session.count>=session.total?'Vedi il riepilogo →':'Prossima sfida →'}</button>`;
+ return `<section class="card"><div class="toolbar"><span class="label">${esc(dname(p.domain))} · difficoltà ${p.level}/5 ${a.replay?'· ripasso':''}</span><span class="label">Sfida ${Math.min(session.count+1,session.total)} / ${session.total}</span></div><div class="stepper" aria-label="Progressione: anomalia, sostituzione, regola">${[0,1,2].map((n)=>`<div class="step ${stepIdx>n?'ok':stepIdx===n?'current':''}"></div>`).join('')}</div><h2 class="quiz-question">${a.step==='spot'?'Cosa c’è di sbagliato?':a.step==='fix'?'Come lo correggeresti?':a.step==='rule'?'Qual è la regola nascosta?':'Adesso tutto torna.'}</h2><p class="quiz-sub">${msg}</p>${a.message&&a.step!=='result'?`<div class="message ${a.mistakes+a.fixMistakes+a.ruleMistakes>0?'warn':''}" role="status">${esc(a.message)}</div>`:''}${mid}${a.step!=='result'?`<div class="actionrow">${a.hints<2?`<button class="btn" data-action="hint">◇ Un indizio (${a.hints}/2)</button>`:''}<button class="btn soft" data-action="skip">Scopri la soluzione</button></div>${a.hints>0?`<div class="hintbox"><b>Indizio ${a.hints}:</b> ${esc(p.hints[a.hints-1])}</div>`:''}`:''}</section>`
+}
+function game(){if(session.done)return `<div class="card session-done"><div class="section-kicker">Una tappa completata</div><h1 class="section-heading">Hai esplorato ${session.count} collegamenti.</h1><p class="outro">Ogni enigma è una piccola scoperta. Puoi continuare con i tuoi settori oppure provare qualcosa di nuovo.</p><div class="statrow"><div class="statbox"><big>+${session.gained}</big><span>XP in questa sessione</span></div><div class="statbox"><big>${session.perfect}</big><span>soluzioni complete senza errori</span></div></div><div class="actionrow" style="justify-content:center"><button class="btn primary" data-action="new-session">Altre 10 sfide →</button><button class="btn" data-action="view" data-val="map">Esplora la tua mappa</button></div></div>`;
+ if(!active)next();
+ return `<div class="section-kicker">Allenati a vedere oltre</div><h1 class="section-heading" style="margin-bottom:9px">C’è qualcosa che non torna.</h1><p class="lead">Non conosci la regola. Devi scoprirla.</p><div class="toolbar" style="margin-top:20px"><div class="mode-row" style="margin:0"><button class="btn ${chosenDomain==='mix'?'selected':''}" data-action="domain" data-val="mix">Misto</button>${Object.entries(DOMAINS).filter(([d])=>state.interests.includes(d)).map(([d,m])=>`<button class="btn ${chosenDomain===d?'selected':''}" data-action="domain" data-val="${d}">${m.name}</button>`).join('')}</div></div><div class="content-grid"><div><div class="card" style="padding:14px 20px;margin-bottom:15px">${modeBar()}</div>${questionStep()}</div>${sidePanel()}</div>`;
+}
+function mapView(){return `<div class="section-kicker">Il tuo atlante personale</div><h1 class="section-heading">La mappa delle tue competenze.</h1><p class="lead">Un ritratto delle tue prestazioni nel gioco, non un giudizio sulle tue capacità o sul tuo valore.</p><div class="statrow" style="max-width:590px"><div class="statbox"><big>${state.xp}</big><span>esperienza accumulata</span></div><div class="statbox"><big>${instinctCount()}</big><span>intuizioni riconosciute</span></div></div><div class="map-grid">${Object.entries(DOMAINS).map(([d,m])=>`<div class="map-card"><div class="map-top"><span class="sect-icon">${m.symbol}</span><span class="circle-score">${mastery(d)}<small style="font-size:11px;color:#a1c69e">/100</small></span></div><h2 style="margin:17px 0 0">${m.name}</h2><p>${m.intro}</p><div class="smallrow"><span>${progress(d)} enigmi visti / ${PUZZLES.filter(p=>p.domain===d).length}</span><span>Padronanza stimata</span></div><div class="bar"><i style="width:${mastery(d)}%"></i></div><button class="btn" data-action="domain" data-val="${d}">Gioca in ${m.name} →</button></div>`).join('')}</div><div class="details"><h3>Come leggere questi valori</h3><p class="muted">L’esperienza aumenta quando scopri nuovi enigmi. La padronanza è una stima prudente delle risposte, degli indizi usati e della difficoltà affrontata, aggiornata per settore. Con poche prove è indicativa, non diagnostica. Le intuizioni vengono contate solo se le dichiari prima della risposta e individui l’anomalia.</p><button class="btn corally" data-action="reset">Azzera i progressi su questo dispositivo</button></div>`}
+function aboutView(){return `<div class="section-kicker">Le regole del mondo STONA</div><h1 class="section-heading">Non sapere la risposta è parte del gioco.</h1><p class="lead">Un cruciverba d’intuizione: chiunque può esplorare, e nessuno viene giudicato per una risposta sbagliata.</p><div class="map-grid"><div class="card"><div class="section-kicker">01 · Guarda</div><h2>Trova l’anomalia</h2><p class="muted">Otto elementi sono mostrati senza categoria dichiarata. Trova quello che non si accorda con gli altri.</p></div><div class="card"><div class="section-kicker">02 · Ripara</div><h2>Sostituiscilo</h2><p class="muted">Scegli una sostituzione coerente. Nella versione finale potranno essere accettate più correzioni diverse.</p></div><div class="card"><div class="section-kicker">03 · Comprendi</div><h2>Scopri il filo nascosto</h2><p class="muted">Individua la regola, oppure leggi la spiegazione senza alcuna penalizzazione emotiva.</p></div><div class="card"><div class="section-kicker">✦ · Intuizione</div><h2>«Lo sento d’istinto»</h2><p class="muted">Dichiara la scelta istintiva prima di indicare l’anomalia: il gioco registrerà quante intuizioni sono corrette, senza attribuirti un QI.</p></div></div><div class="details"><h3>Cosa esiste in questa versione</h3><p class="muted">48 enigmi in 8 settori, livelli 1–5, interessi personalizzabili, 2 indizi per enigma, 3 modalità, sessioni di 10 sfide, esperienza persistente, mappa e padronanza stimata per settore. Funziona offline: i dati sono salvati soltanto nel browser di questo dispositivo. La modalità «Sfida personale» non è una classifica online.</p><p class="muted"><b>In progetto:</b> 20 settori, contenuti visivi e audio, regole alternative validate, accessibilità avanzata, motore di generazione con controllo di qualità, sfide tra amici e sincronizzazione tra dispositivi.</p><button class="btn primary" data-action="view" data-val="play">Torna alle sfide →</button></div>`}
+function render(){const app=document.getElementById('app');if(!state.onboardingDone||editingInterests){app.innerHTML=`<div class="app">${onboarding()}<footer class="footer">Prototype α · Nessun account richiesto · Le preferenze restano su questo dispositivo.</footer></div>`;return;}
+ app.innerHTML=`<div class="app">${header()}${navbar()}<main>${view==='map'?mapView():view==='about'?aboutView():game()}</main><footer class="footer">STONA · Prototipo interattivo α · Uso locale, nessun account, nessun tracciamento. Le misure descrivono soltanto le risposte date nel gioco.</footer></div>`;
+}
+document.getElementById('app').addEventListener('click',e=>{
+ const b=e.target.closest('[data-action]');if(!b)return;
+ const act=b.dataset.action,val=b.dataset.val;
+ if(act==='start'){modalStart();return;}
+ if(act==='all-interests'){state.interests=Object.keys(DOMAINS);modalStart();return;}
+ if(act==='interest'){toggleInterest(val);return;}
+ if(act==='interests'){editingInterests=true;render();return;}
+ if(act==='view'){view=val;if(view==='play'&&!active&&!session.done)next();else render();return;}
+ if(act==='mode'){state.mode=val;save();render();return;}
+ if(act==='domain'){chosenDomain=val;view='play';session={count:0,total:10,gained:0,done:false,perfect:0};next();return;}
+ if(act==='spot'){chooseSpot(Number(val));return;}
+ if(act==='fix'){chooseFix(val);return;}
+ if(act==='rule'){chooseRule(val);return;}
+ if(act==='intuition'&&active&&active.step==='spot'){active.intuition=!active.intuition;render();return;}
+ if(act==='hint'&&active&&active.step!=='result'){active.hints=Math.min(2,active.hints+1);render();return;}
+ if(act==='skip'){skip();return;}
+ if(act==='next'){next();return;}
+ if(act==='new-session'){session={count:0,total:10,gained:0,done:false,perfect:0};next();return;}
+ if(act==='reset'){if(confirm('Vuoi azzerare tutti i progressi salvati su questo browser? Questa operazione non si può annullare.')){state=structuredClone(INITIAL);save();active=null;session={count:0,total:10,gained:0,done:false,perfect:0};editingInterests=false;view='play';render()}return;}
+});
+render();
+</script>
+</body></html>
