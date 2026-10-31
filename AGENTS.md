@@ -39,3 +39,6 @@ Se un riepilogo conversazionale è in conflitto con codice e documentazione vers
 
 ## Alpha 0.2 autorizzata
 Accesso ospite immediato; profili opzionali locali cifrati, export/import JSON, GitHub Pages esplicitamente richiesti. Leggere anche docs/PROFILES.md. Non scrivere dati utente né credenziali nel repository. Per la distribuzione: .github/workflows/pages.yml.
+
+## Icone nelle risposte
+Usare solo icone che rappresentano l’elemento concreto. Nessun fallback al simbolo del settore (ABC, pallone, nota musicale ecc.) e nessun oggetto vagamente simile. Se manca un’immagine appropriata, mostrare solo il testo senza uno spazio icona vuoto. Normalizzare maiuscole/minuscole; distinguere parole ambigue come rosa/viola dal contesto.

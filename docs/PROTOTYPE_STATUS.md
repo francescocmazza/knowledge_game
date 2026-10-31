@@ -38,3 +38,5 @@ Nessuna sincronizzazione cloud automatica: il trasferimento avviene tramite file
 La versione è destinata al **primo playtest del concetto**, non è il precedente obiettivo di MVP commerciale con almeno 250 enigmi. Checklist in [FIRST_PLAYTEST.md](FIRST_PLAYTEST.md).
 
 Verificato anche in Chromium: otto settori visibili con salvataggio preesistente, livello 1 bloccante per le sfide avanzate, percorso di correzione e spiegazione, due stelle per risposta rapida. Il primo ripasso corretto di una domanda prima rivelata può recuperare stelle, senza duplicare XP.
+
+Correzione icone: eliminate icone di settore ripetute e associazioni approssimative nei tasselli/opzioni. Associazioni esatte e sensibili al contesto, riconosciute anche in maiuscolo. Nessuna immagine se non c’è una rappresentazione appropriata. Aggiunta verifica in tests/progression.mjs.

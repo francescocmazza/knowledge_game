@@ -28,3 +28,15 @@ replay.run('active=null;state.completed={};next();skip();next()');
 const firstId=replay.run('state.history[0].id');
 replay.run('state.completed=Object.fromEntries(PUZZLES.map(p=>[p.id,true]));choosePuzzle=()=>({p:PUZZLES.find(p=>p.id==='+JSON.stringify(firstId)+'),replay:true});next()');
 const oldXP=replay.run('state.xp');replay.run(solve);assert.equal(replay.run('state.xp'),oldXP);assert.equal(replay.run('levelCredits(1)'),2,'first clean replay can earn stars after a reveal');replay.run('next()');replay.run(solve);assert.equal(replay.run('levelCredits(1)'),2,'repeated clean replay cannot farm stars');
+
+const visual=app();
+assert(visual.run('visualLabel("MELA",{domain:"parole"})').includes('🍎'),'uppercase labels get object-specific icons');
+assert(visual.run('visualLabel("CANE",{domain:"parole"})').includes('🐶'));
+assert(visual.run('visualLabel("RE",{domain:"parole"})').includes('🤴'));
+for(const text of ['CASA','LUNA','SOLE','MARE','PERA'])assert(visual.run('visualLabel('+JSON.stringify(text)+',{domain:"parole"})').includes('tile-visual'));
+for(const text of ['Fischietto dell’arbitro','Parastinchi','Colino','Cuscino','Roma','Mestolo','Pizzaiolo','16','CENA'])assert(!visual.run('visualLabel('+JSON.stringify(text)+',{domain:"parole"})').includes('tile-visual'),'no approximate or generic icon: '+text);
+assert(visual.run('visualLabel("Rosa",{domain:"natura"})').includes('🌹'));
+assert(visual.run('visualLabel("ROSA",{domain:"parole"})').includes('🩷'));
+assert(!visual.run('visualLabel("Viola",{domain:"musica"})').includes('🟣'));
+assert(visual.run('visualLabel("<test>",{domain:"parole"})').includes('&lt;test&gt;'),'plain text remains escaped');
+console.log('OK: exact icons, uppercase, ambiguous meanings, plain-text fallback without category symbols.');
