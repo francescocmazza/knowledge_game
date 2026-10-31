@@ -20,6 +20,7 @@ jobs:
       - run: node tests/catalog.mjs
       - run: node tests/profiles.mjs
       - run: node tests/content.mjs
+      - run: node tests/progression.mjs
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: test

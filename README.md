@@ -1,12 +1,12 @@
-# Knowledge Game — STONA α 0.2
+# Knowledge Game — STONA α 0.3
 
 **Cosa c’è di sbagliato?** Otto elementi, una regola nascosta: trova l’anomalia, correggila e scopri il collegamento.
 
-**96 enigmi, 8 domini, 12 enigmi per dominio.** Nessuna installazione, email o registrazione obbligatoria. L’alpha ha raddoppiato i 48 enigmi della versione precedente.
+**128 enigmi, 8 domini, 16 enigmi per dominio.** Nessuna installazione, email o registrazione obbligatoria. 32 nuovi enigmi introduttivi si aggiungono ai 96 precedenti.
 
 ## Giocare
 
-Apri il link GitHub Pages del repository (quando la pubblicazione è attiva) e premi **Gioca subito**. Un solo clic avvia il primo enigma come ospite. I progressi di ogni enigma completato si salvano automaticamente su quel browser. Il file `index.html` contiene tutta l’app e funziona anche scaricato; la cifratura richiede un browser moderno con Web Crypto e un contesto sicuro, normalmente HTTPS.
+Apri [STONA su GitHub Pages](https://francescocmazza.github.io/knowledge_game/) e premi **Gioca subito**. Un solo clic avvia il primo enigma come ospite. I progressi di ogni enigma completato si salvano automaticamente su quel browser. Il file `index.html` contiene tutta l’app e funziona anche scaricato; la cifratura richiede un browser moderno con Web Crypto e un contesto sicuro, normalmente HTTPS.
 
 ## Profilo facoltativo
 
@@ -22,7 +22,7 @@ I profili nominativi si salvano cifrati nel browser e nei backup; la chiave rima
 
 ## Cosa include
 
-Numeri · Parole · Natura · Cucina · Geografia · Calcio · Cinema · Musica. Due indizi per enigma, tre fasi (individuazione, riparazione, spiegazione), intuizione dichiarata, sessioni da dieci, interessi personalizzabili, modalità Relax/Esplora/Sfida personale, XP e mappa per settore. Nessun timer obbligatorio e nessuna classifica pubblica.
+Numeri · Parole · Natura · Cucina · Geografia · Calcio · Cinema · Musica. Due indizi per enigma, tre fasi (individuazione, riparazione, spiegazione), sessioni da dieci, interessi personalizzabili, modalità Relax/Esplora/Sfida personale, XP e mappa per settore. Nessun timer obbligatorio e nessuna classifica pubblica.
 
 La padronanza descrive le prove nel gioco; **non misura il QI**. Gli otto domini sono una scelta progettuale qualitativa, non una selezione scientificamente validata. Senza prove un settore mostra «Da esplorare», senza una percentuale attribuita alla persona.
 
@@ -32,6 +32,7 @@ La padronanza descrive le prove nel gioco; **non misura il QI**. Gli otto domini
 node tests/catalog.mjs
 node tests/content.mjs
 node tests/profiles.mjs
+node tests/progression.mjs
 ```
 
 Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeriche/linguistiche e i profili; poi pubblica soltanto `index.html` su GitHub Pages da `main`. L’amministratore deve abilitare **Settings → Pages → Source: GitHub Actions** una volta. Le modifiche successive vengono pubblicate automaticamente. Uno stato CI verde per i test non equivale a una pubblicazione completata: controllare il job `deploy`.
@@ -46,3 +47,7 @@ Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeri
 - [Primo giro di test](docs/FIRST_PLAYTEST.md)
 
 **Diritti:** la pubblicazione del codice non implica concessione di licenze ulteriori.
+
+## Alpha 0.3: primi passi e livelli
+
+Tutti gli otto settori sono sempre selezionabili; Misto segue gli interessi. Quattro gradi: Primi passi, Collegamenti, Esploratore, Sfide esperte. I 32 nuovi enigmi del livello 1 usano numeri piccoli e oggetti familiari, con icone e testi, pensati anche per 10 anni (ipotesi da verificare in playtest). Una soluzione completa senza errori o indizi dà una stella; entro 45 secondi di gioco attivo ne dà due. Quattro stelle nello stesso livello aprono il successivo. Nessuna scadenza o sottrazione di punti; si può tornare a un livello più facile. Errori, aiuti e soluzioni mostrate non danno stelle. Ogni enigma può dare stelle una sola volta: un ripasso risolto correttamente dopo un errore o una rivelazione può recuperarle, senza nuovi XP. Lo storico e gli XP precedenti sono conservati, ma non sbloccano automaticamente difficoltà maggiori. Il tasto dell’istinto e il relativo bonus sono rimossi.

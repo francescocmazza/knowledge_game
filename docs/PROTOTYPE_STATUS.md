@@ -1,3 +1,9 @@
+# Stato attuale: alpha 0.3
+
+128 enigmi, 8 settori sempre visibili, 4 livelli con 4 quesiti per settore/livello. Rimosso il tasto dell’istinto. Aggiunti 32 enigmi introduttivi illustrati con icone e testi. Il livello iniziale è pensato anche per un ragazzo di 10 anni; non è una validazione empirica su bambini. Dettagli e soglie aggiornati in README.md e GAME_DESIGN.md.
+
+`node tests/progression.mjs` verifica porte di accesso ai livelli, sblocco rapido e lento, esclusione di errori/indizi/rivelazioni/ripassi, tempo in background e navigazione, persistenza dei metadati ed esclusione dello storico precedente dagli sblocchi. `tests/profiles.mjs` verifica ora tutti i 128 percorsi. Le verifiche sotto sono il registro storico della 0.2.
+
 # STONA alpha 0.2 — stato e collaudo
 
 31 ottobre 2026 · repository `francescocmazza/knowledge_game`.
@@ -30,3 +36,5 @@ L’anteprima HTTP non espone Web Crypto per i profili; la cifratura va anche pr
 Nessuna sincronizzazione cloud automatica: il trasferimento avviene tramite file. Nessun recupero password, multiplayer o classifica pubblica. Un tentativo incompleto può ripartire dopo il ricaricamento; gli enigmi completati sono conservati. Le sostituzioni sono scelte fra opzioni predefinite; le regole alternative libere non sono giudicate automaticamente. Padronanza e difficoltà sono euristiche del gioco, non misure scientifiche.
 
 La versione è destinata al **primo playtest del concetto**, non è il precedente obiettivo di MVP commerciale con almeno 250 enigmi. Checklist in [FIRST_PLAYTEST.md](FIRST_PLAYTEST.md).
+
+Verificato anche in Chromium: otto settori visibili con salvataggio preesistente, livello 1 bloccante per le sfide avanzate, percorso di correzione e spiegazione, due stelle per risposta rapida. Il primo ripasso corretto di una domanda prima rivelata può recuperare stelle, senza duplicare XP.

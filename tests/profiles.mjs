@@ -7,12 +7,12 @@ const pack=html.match(/<script id="stona-data" type="application\/json">([\s\S]*
 const code=html.match(/<script>\s*('use strict';[\s\S]*?)<\/script>/)[1];
 function app(storage=new Map()){
  const root={innerHTML:'',addEventListener(){}};
- const context=vm.createContext({crypto:webcrypto,TextEncoder,TextDecoder,structuredClone,console,setTimeout,Blob,URL,btoa,atob,confirm:()=>true,document:{getElementById:id=>id==='stona-data'?{textContent:pack}:root},localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)}});
+ const context=vm.createContext({crypto:webcrypto,TextEncoder,TextDecoder,structuredClone,console,setTimeout,Blob,URL,btoa,atob,confirm:()=>true,document:{addEventListener(){},hidden:false,getElementById:id=>id==='stona-data'?{textContent:pack}:root},localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)}});
  vm.runInContext(code,context);return {run:(s)=>vm.runInContext(s,context),storage,root};
 }
 const a=app();
 assert(a.root.innerHTML.includes('Gioca subito'));
-a.run('quickPlay(); chooseSpot(4); chooseFix("8"); chooseRule(active.p.rule)');
+a.run('quickPlay(); chooseSpot(active.p.wrong[0]); chooseFix(active.p.correct); chooseRule(active.p.rule)');
 assert.equal(a.run('state.xp'),35);
 assert.equal(a.run('session.count'),1);
 assert.equal(a.run('state.history.length'),1);
@@ -22,7 +22,7 @@ assert.equal(a.run('state.xp'),35);
 assert.equal(a.run('currentId!=="guest"'),true);
 const disk=a.storage.get('stona-profiles-v2');
 assert(!disk.includes('test-only-password'));
-assert(!disk.includes('numeri-01'),'progress is encrypted');
+assert(!disk.includes('numeri-13'),'progress is encrypted');
 assert.equal(a.run('vault.guest.state.xp'),0,'guest adopted, not duplicated');
 const reloaded=app(a.storage);
 await assert.rejects(reloaded.run('loginProfile({username:"Test Alpha",password:"wrong"})'),/Password errata/);
@@ -55,6 +55,6 @@ assert.equal(other.run('vault.profiles.length'),2);
 const legacyState=a.run('JSON.stringify({...state,xp:35})');
 const legacy=app(new Map([['stona-alpha-v1',legacyState]]));
 assert.equal(legacy.run('state.xp'),35,'v1 migration');
-for(const p of JSON.parse(pack).puzzles){const c=app();c.run('state.onboardingDone=true');c.run('chosenDomain='+JSON.stringify(p.domain));c.run('state.completed=Object.fromEntries(PUZZLES.filter(p=>p.id!=='+JSON.stringify(p.id)+').map(p=>[p.id,true]));next()');assert.equal(c.run('active.p.id'),p.id);c.run('chooseSpot(active.p.wrong[0]);chooseFix(active.p.correct);chooseRule(active.p.rule)');assert.equal(c.run('active.step'),'result');assert.equal(c.run('state.history.length'),1);}
+for(const p of JSON.parse(pack).puzzles){const c=app();c.run('state.onboardingDone=true;unlockedLevel=()=>4;state.playLevel='+p.level);c.run('chosenDomain='+JSON.stringify(p.domain));c.run('state.completed=Object.fromEntries(PUZZLES.filter(p=>p.id!=='+JSON.stringify(p.id)+').map(p=>[p.id,true]));next()');assert.equal(c.run('active.p.id'),p.id);c.run('chooseSpot(active.p.wrong[0]);chooseFix(active.p.correct);chooseRule(active.p.rule)');assert.equal(c.run('active.step'),'result');assert.equal(c.run('state.history.length'),1);}
 const denied=app();denied.run('localStorage.setItem=()=>{throw Error("quota")}');denied.run('quickPlay();skip()');assert(denied.run('storageError.length>0'));
-console.log('OK: guest, migration, encrypted login, bad password, portable restore, stale merge, isolation, tamper rejection, all 96 solution paths, storage failure.');
+console.log('OK: guest, migration, encrypted login, bad password, portable restore, stale merge, isolation, tamper rejection, all 128 solution paths, storage failure.');

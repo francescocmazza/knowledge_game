@@ -142,3 +142,6 @@ Le otto aree sono una distribuzione iniziale sensata **per prototipare**, non «
 
 I dati effettivi del catalogo sono incorporati in [../index.html](../index.html) nel blocco JSON `<script id="stona-data" type="application/json">`.
 
+
+## Alpha 0.3
+Catalogo attuale: 128 enigmi, 16 per settore, di cui quattro introduttivi nuovi per ogni dominio. Le sezioni sopra documentano le versioni iniziali. Ora tutti i settori sono visibili e il livello 1 è separato dai fatti specialistici. Icone Unicode illustrate accompagnano parole e oggetti; le etichette restano sempre leggibili.

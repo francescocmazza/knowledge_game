@@ -11,3 +11,6 @@
 9. Gioca una sessione da dieci e prova almeno un enigma in ciascuno degli otto settori, anche su smartphone.
 
 Annota ID o testo dell’enigma, comportamento osservato, dispositivo/browser e ciò che ti aspettavi. Il primo test serve soprattutto a verificare semplicità, piacere del gioco, chiarezza degli indizi e regole ambigue. Non è una validazione psicometrica.
+
+## Prove alpha 0.3
+Verificare tutti gli otto pulsanti settore; nessun tasto dell’istinto. Iniziare al livello 1, provare due soluzioni complete rapide per aprire il 2, e quattro soluzioni complete lente con un altro profilo: entrambe le strade devono funzionare. Verificare che errori, indizi e soluzioni mostrate non aprano livelli. Valutare i 32 enigmi iniziali con un ragazzo di 10 anni, senza assumere che i livelli siano già calibrati.

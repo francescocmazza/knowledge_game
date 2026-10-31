@@ -60,7 +60,6 @@ Valorizza attività nuove, correzioni e comprensione; aumenta nel tempo, **non d
 - +10 XP individuando correttamente l'anomalia;
 - +10 XP per la correzione;
 - +10 XP per la regola;
-- +5 XP per intuizione dichiarata e corretta;
 - +5 XP per individuazione senza indizi;
 - +5 XP nella modalità Sfida solo per soluzione completa senza indizi;
 - +4 XP se si scopre la soluzione senza risolverla;
@@ -73,15 +72,8 @@ Valore indicativo 0–100 per dominio. Nel prototipo si basa sulla qualità dell
 
 **Da progettare per la release:** affidabilità/ampiezza del campione, prove di controllo non ripetute, indici di confidenza e comprensibilità della formula. Mostrare «padronanza stimata nel gioco», non «intelligenza: 78».
 
-## 7. Intuizione, l'elemento differenziante
-Interazione dedicata: prima di scegliere, il giocatore può dichiarare **«Lo sento d'istinto»**. Si registra:
-- numero delle intuizioni dichiarate;
-- numero e percentuale corrette;
-- differenza tra identificazione e spiegazione;
-- necessità di indizi;
-- progressione nel tempo.
-
-Non basta l'accuratezza: in futuro confrontare **intuizione dichiarata + incertezza dichiarata**, senza assimilare il tutto a fenomeni paranormali o a una misura del pensiero inconscio. Nel prototipo la statistica conta le intuizioni dichiarate e corrette.
+## 7. Risposta diretta (alpha 0.3)
+Il tasto «Lo sento d’istinto» è rimosso su richiesta dell’utente: la risposta avviene direttamente selezionando l’anomalia. Rimane la distinzione fra individuazione, riparazione e spiegazione. Nessun bonus XP per dichiarazioni d’istinto; i vecchi punti restano.
 
 ## 8. Livelli, classi e tono
 **Classi trasversali XP** (nomi non denigratori): Curioso → Esploratore → Cercatore → Intuitivo → Decifratore → Visionario → Cartografo → Maestro degli schemi. Questi titoli riconoscono l'attività, non certificano abilità.
@@ -148,3 +140,6 @@ Vedi [DOMAINS.md](DOMAINS.md) e [PROTOTYPE_STATUS.md](PROTOTYPE_STATUS.md).
 ## 14. Aggiornamento implementato alpha 0.2
 
 Il catalogo è ora di 96 enigmi, 12 per settore. Il primo accesso ha un pulsante «Gioca subito»: la personalizzazione non è obbligatoria. Sono implementati profili facoltativi con nome/password senza email, adozione degli XP ospite, cifratura locale e trasferimento JSON. Non è implementata sincronizzazione cloud; su un nuovo computer serve importare un file. Le decisioni sull’identità qui descritte aggiornano le voci future delle sezioni precedenti. Vedi PROFILES.md e PROTOTYPE_STATUS.md.
+
+## 15. Alpha 0.3: accessibilità iniziale
+128 enigmi, 16 per settore; tutti gli otto settori sempre selezionabili. Quattro livelli effettivi, quattro enigmi per dominio e per livello. Livello 1 pensato anche per 10 anni: sequenze piccole, categorie comuni, icone con testo. Una soluzione completa senza errori/indizi: 1 stella; entro 45 secondi: 2. Ogni livello richiede 4 stelle uniche per aprire il successivo; lo sblocco è globale. Il timer accumula solo tempo con pagina visibile e vista gioco attiva; non ha countdown. La rivelazione non dà stelle; il primo ripasso pulito può recuperare stelle mai ottenute da quell’enigma, senza nuovi XP. I nuovi livelli sostituiscono la precedente selezione euristica e la vecchia scala autoriale. Le soglie sono parametri di playtest.

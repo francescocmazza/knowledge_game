@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="STONA: 96 enigmi, otto mondi da esplorare. Gioca subito, senza registrazione. Conserva il tuo percorso con un profilo portatile.">
+<meta name="description" content="STONA: 128 enigmi, otto mondi da esplorare. Gioca subito, senza registrazione. Conserva il tuo percorso con un profilo portatile.">
 <meta name="theme-color" content="#0c1121">
 <title>STONA · Il gioco dell'intuizione</title>
 <style>
@@ -14,6 +14,8 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);border:1px solid #61718f;border-radius:10px;padding:13px;margin:8px 0 18px;min-width:0}label{display:block;font-size:14px;font-weight:650;color:var(--muted)}input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}input[type=file]{font-size:13px}form .btn{width:100%}.card{min-width:0}.profile-pill{color:var(--ink)}.welcome{max-width:760px;margin:35px auto}.welcome .section-heading{font-size:clamp(36px,6vw,62px)}.welcome-actions{margin:26px 0}.welcome-actions .primary{font-size:18px;padding:17px 28px}.preview-tiles{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin:28px 0}.preview-tiles span{display:grid;place-items:center;background:#23304b;border:1px solid var(--line);border-radius:14px;min-height:60px;font-weight:800;font-size:22px}.preview-tiles span:nth-child(6){border-color:var(--coral);color:var(--coral);transform:rotate(6deg)}.save-note{font-size:12px;color:var(--muted);margin-top:14px}.status-error{border:1px solid var(--coral);background:#4a353b;padding:14px;border-radius:12px;margin-bottom:15px}.busy{opacity:.7;pointer-events:none}main{outline:none}.footer{max-width:100%}@media(max-width:600px){.preview-tiles{grid-template-columns:repeat(4,1fr)}.two-cols{grid-template-columns:1fr}.top-meta{max-width:58%}.profile-pill{max-width:170px;overflow:hidden;text-overflow:ellipsis}.tab{padding:10px}.welcome{margin-top:18px}}
+.tile-visual{display:block;font-size:34px;line-height:1.2;margin-bottom:8px}.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:112px}.answer .tile-visual{font-size:28px}.level-panel{border:1px solid var(--line);background:var(--panel);padding:18px;border-radius:18px;margin:14px 0 20px}.level-buttons{display:flex;gap:8px;flex-wrap:wrap}.level-buttons .btn{font-size:13px;padding:10px 13px}.level-panel .tiny{margin:12px 0 0}.level-panel .smallrow{flex-wrap:wrap}.tiles .tile span:last-child{text-align:center}.mode-row{row-gap:9px}@media(max-width:760px){.tile-visual{font-size:30px}.tile{min-height:104px}.level-buttons{display:grid;grid-template-columns:1fr 1fr}.level-buttons .btn{font-size:12px}.mode-row .btn{min-height:44px}}
+.mode-compact{margin-bottom:14px}.mode-compact>.label{display:none}.mode-compact .mode-row{margin-bottom:4px}.mode-compact>.tiny{margin:5px 0 10px}.mode-compact .btn{min-height:40px}
 </style>
 </head>
 <body>
@@ -22,7 +24,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
   "domains": {
     "numeri": {
       "name": "Numeri",
-      "symbol": "#",
+      "symbol": "🔢",
       "intro": "Sequenze, quantità e relazioni"
     },
     "calcio": {
@@ -32,32 +34,32 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     },
     "natura": {
       "name": "Natura",
-      "symbol": "✳",
+      "symbol": "🦋",
       "intro": "Animali, piante e scienza"
     },
     "cucina": {
       "name": "Cucina",
-      "symbol": "◒",
+      "symbol": "🍎",
       "intro": "Ingredienti, tecniche e sapori"
     },
     "parole": {
       "name": "Parole",
-      "symbol": "Aa",
+      "symbol": "🔤",
       "intro": "Lingua, forme e significati"
     },
     "geografia": {
       "name": "Geografia",
-      "symbol": "◎",
+      "symbol": "🌍",
       "intro": "Luoghi e connessioni"
     },
     "cinema": {
       "name": "Cinema",
-      "symbol": "▣",
+      "symbol": "🎬",
       "intro": "Film, personaggi e autori"
     },
     "musica": {
       "name": "Musica",
-      "symbol": "♫",
+      "symbol": "🎵",
       "intro": "Strumenti, note e ascolto"
     }
   },
@@ -65,7 +67,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "numeri-01",
       "domain": "numeri",
-      "level": 1,
+      "level": 2,
       "items": [
         "3",
         "2",
@@ -258,7 +260,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-01",
       "domain": "calcio",
-      "level": 1,
+      "level": 2,
       "items": [
         "Totti",
         "De Rossi",
@@ -322,7 +324,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-03",
       "domain": "calcio",
-      "level": 2,
+      "level": 3,
       "items": [
         "Maradona",
         "Hamšík",
@@ -450,7 +452,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-01",
       "domain": "natura",
-      "level": 1,
+      "level": 2,
       "items": [
         "Leone",
         "Tigre",
@@ -482,7 +484,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-02",
       "domain": "natura",
-      "level": 1,
+      "level": 2,
       "items": [
         "Aquila",
         "Falco",
@@ -546,7 +548,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-04",
       "domain": "natura",
-      "level": 2,
+      "level": 3,
       "items": [
         "Mercurio",
         "Venere",
@@ -578,7 +580,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-05",
       "domain": "natura",
-      "level": 3,
+      "level": 4,
       "items": [
         "Quercia",
         "Faggio",
@@ -642,7 +644,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-01",
       "domain": "cucina",
-      "level": 1,
+      "level": 2,
       "items": [
         "Spaghetti",
         "Penne",
@@ -674,7 +676,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-02",
       "domain": "cucina",
-      "level": 1,
+      "level": 2,
       "items": [
         "Basilico",
         "Prezzemolo",
@@ -706,7 +708,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-03",
       "domain": "cucina",
-      "level": 2,
+      "level": 3,
       "items": [
         "Mela",
         "Pera",
@@ -738,7 +740,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-04",
       "domain": "cucina",
-      "level": 2,
+      "level": 3,
       "items": [
         "Latte",
         "Yogurt",
@@ -802,7 +804,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-06",
       "domain": "cucina",
-      "level": 3,
+      "level": 4,
       "items": [
         "Limone",
         "Arancia",
@@ -834,7 +836,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-01",
       "domain": "parole",
-      "level": 1,
+      "level": 2,
       "items": [
         "ANNA",
         "OSSO",
@@ -866,7 +868,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-02",
       "domain": "parole",
-      "level": 1,
+      "level": 2,
       "items": [
         "CANE",
         "CIELO",
@@ -898,7 +900,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-03",
       "domain": "parole",
-      "level": 2,
+      "level": 3,
       "items": [
         "Palla",
         "Gatto",
@@ -930,7 +932,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-04",
       "domain": "parole",
-      "level": 2,
+      "level": 3,
       "items": [
         "Imparare",
         "Leggere",
@@ -962,7 +964,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-05",
       "domain": "parole",
-      "level": 3,
+      "level": 4,
       "items": [
         "Rosso",
         "Giallo",
@@ -994,7 +996,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-06",
       "domain": "parole",
-      "level": 3,
+      "level": 4,
       "items": [
         "Rumori",
         "Motori",
@@ -1026,7 +1028,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-01",
       "domain": "geografia",
-      "level": 1,
+      "level": 2,
       "items": [
         "Roma",
         "Berlino",
@@ -1058,7 +1060,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-02",
       "domain": "geografia",
-      "level": 2,
+      "level": 3,
       "items": [
         "Sicilia",
         "Sardegna",
@@ -1090,7 +1092,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-03",
       "domain": "geografia",
-      "level": 2,
+      "level": 3,
       "items": [
         "Tevere",
         "Po",
@@ -1122,7 +1124,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-04",
       "domain": "geografia",
-      "level": 3,
+      "level": 4,
       "items": [
         "Alpi",
         "Appennini",
@@ -1154,7 +1156,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-05",
       "domain": "geografia",
-      "level": 3,
+      "level": 4,
       "items": [
         "Lazio",
         "Lombardia",
@@ -1218,7 +1220,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-01",
       "domain": "cinema",
-      "level": 1,
+      "level": 2,
       "items": [
         "Toy Story",
         "Cars",
@@ -1282,7 +1284,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-03",
       "domain": "cinema",
-      "level": 2,
+      "level": 3,
       "items": [
         "Fellini",
         "Sorrentino",
@@ -1346,7 +1348,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-05",
       "domain": "cinema",
-      "level": 3,
+      "level": 4,
       "items": [
         "John Williams",
         "Hans Zimmer",
@@ -1410,7 +1412,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-01",
       "domain": "musica",
-      "level": 1,
+      "level": 2,
       "items": [
         "Pianoforte",
         "Violino",
@@ -1474,7 +1476,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-03",
       "domain": "musica",
-      "level": 2,
+      "level": 3,
       "items": [
         "Violino",
         "Viola",
@@ -1506,7 +1508,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-04",
       "domain": "musica",
-      "level": 3,
+      "level": 4,
       "items": [
         "Mozart",
         "Beethoven",
@@ -1602,7 +1604,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "numeri-07",
       "domain": "numeri",
-      "level": 1,
+      "level": 2,
       "items": [
         "2",
         "4",
@@ -1730,7 +1732,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "numeri-11",
       "domain": "numeri",
-      "level": 2,
+      "level": 3,
       "items": [
         "81",
         "72",
@@ -1794,7 +1796,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-07",
       "domain": "parole",
-      "level": 1,
+      "level": 2,
       "items": [
         "MARE",
         "SOLE",
@@ -1826,7 +1828,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-08",
       "domain": "parole",
-      "level": 1,
+      "level": 2,
       "items": [
         "GELATO",
         "GIRASOLE",
@@ -1858,7 +1860,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-09",
       "domain": "parole",
-      "level": 2,
+      "level": 3,
       "items": [
         "CAMMINANDO",
         "RIDENDO",
@@ -1890,7 +1892,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-10",
       "domain": "parole",
-      "level": 2,
+      "level": 3,
       "items": [
         "CASA",
         "COSA",
@@ -1922,7 +1924,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-11",
       "domain": "parole",
-      "level": 2,
+      "level": 4,
       "items": [
         "SCALA",
         "SPADA",
@@ -1954,7 +1956,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "parole-12",
       "domain": "parole",
-      "level": 2,
+      "level": 4,
       "items": [
         "LENTAMENTE",
         "RAPIDAMENTE",
@@ -1986,7 +1988,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-07",
       "domain": "natura",
-      "level": 2,
+      "level": 3,
       "items": [
         "Cane",
         "Gatto",
@@ -2018,7 +2020,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-08",
       "domain": "natura",
-      "level": 2,
+      "level": 3,
       "items": [
         "Rame",
         "Ferro",
@@ -2050,7 +2052,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-09",
       "domain": "natura",
-      "level": 2,
+      "level": 3,
       "items": [
         "Granito",
         "Basalto",
@@ -2082,7 +2084,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-10",
       "domain": "natura",
-      "level": 1,
+      "level": 2,
       "items": [
         "Radice",
         "Fusto",
@@ -2114,7 +2116,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-11",
       "domain": "natura",
-      "level": 2,
+      "level": 4,
       "items": [
         "Ghiaccio",
         "Acqua liquida",
@@ -2146,7 +2148,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "natura-12",
       "domain": "natura",
-      "level": 3,
+      "level": 4,
       "items": [
         "Quarzo",
         "Diamante",
@@ -2178,7 +2180,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-07",
       "domain": "cucina",
-      "level": 3,
+      "level": 4,
       "items": [
         "Ceci",
         "Lenticchie",
@@ -2210,7 +2212,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-08",
       "domain": "cucina",
-      "level": 2,
+      "level": 3,
       "items": [
         "Frumento",
         "Riso",
@@ -2242,7 +2244,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-09",
       "domain": "cucina",
-      "level": 1,
+      "level": 2,
       "items": [
         "Chiodi di garofano",
         "Cannella",
@@ -2274,7 +2276,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-10",
       "domain": "cucina",
-      "level": 3,
+      "level": 4,
       "items": [
         "Julienne",
         "Brunoise",
@@ -2306,7 +2308,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-11",
       "domain": "cucina",
-      "level": 3,
+      "level": 4,
       "items": [
         "Pizza",
         "Pane",
@@ -2338,7 +2340,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cucina-12",
       "domain": "cucina",
-      "level": 1,
+      "level": 2,
       "items": [
         "Espresso",
         "Cappuccino",
@@ -2370,7 +2372,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-07",
       "domain": "geografia",
-      "level": 1,
+      "level": 2,
       "items": [
         "Parigi",
         "Lione",
@@ -2402,7 +2404,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-08",
       "domain": "geografia",
-      "level": 1,
+      "level": 2,
       "items": [
         "Egitto",
         "Kenya",
@@ -2434,7 +2436,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-09",
       "domain": "geografia",
-      "level": 1,
+      "level": 2,
       "items": [
         "Giappone",
         "Cina",
@@ -2466,7 +2468,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-10",
       "domain": "geografia",
-      "level": 3,
+      "level": 4,
       "items": [
         "Everest",
         "K2",
@@ -2498,7 +2500,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-11",
       "domain": "geografia",
-      "level": 1,
+      "level": 3,
       "items": [
         "Lago di Garda",
         "Lago Maggiore",
@@ -2530,7 +2532,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "geografia-12",
       "domain": "geografia",
-      "level": 1,
+      "level": 3,
       "items": [
         "Norvegia",
         "Svezia",
@@ -2562,7 +2564,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-07",
       "domain": "calcio",
-      "level": 1,
+      "level": 2,
       "items": [
         "Buffon",
         "Zoff",
@@ -2626,7 +2628,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-09",
       "domain": "calcio",
-      "level": 1,
+      "level": 2,
       "items": [
         "Manchester United",
         "Liverpool",
@@ -2658,7 +2660,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-10",
       "domain": "calcio",
-      "level": 3,
+      "level": 4,
       "items": [
         "Italia 1934",
         "Italia 1938",
@@ -2690,7 +2692,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-11",
       "domain": "calcio",
-      "level": 3,
+      "level": 4,
       "items": [
         "Real Madrid",
         "Barcellona",
@@ -2722,7 +2724,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "calcio-12",
       "domain": "calcio",
-      "level": 3,
+      "level": 4,
       "items": [
         "Messi",
         "Cristiano Ronaldo",
@@ -2754,7 +2756,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-07",
       "domain": "cinema",
-      "level": 2,
+      "level": 3,
       "items": [
         "Biancaneve e i sette nani",
         "Pinocchio",
@@ -2786,7 +2788,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-08",
       "domain": "cinema",
-      "level": 1,
+      "level": 2,
       "items": [
         "Guerre stellari",
         "L’Impero colpisce ancora",
@@ -2818,7 +2820,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-09",
       "domain": "cinema",
-      "level": 2,
+      "level": 3,
       "items": [
         "Woody",
         "Buzz Lightyear",
@@ -2850,7 +2852,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-10",
       "domain": "cinema",
-      "level": 1,
+      "level": 2,
       "items": [
         "Sceneggiatore",
         "Regista",
@@ -2914,7 +2916,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "cinema-12",
       "domain": "cinema",
-      "level": 3,
+      "level": 4,
       "items": [
         "Lo squalo",
         "E.T.",
@@ -2946,7 +2948,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-07",
       "domain": "musica",
-      "level": 1,
+      "level": 2,
       "items": [
         "Flauto traverso",
         "Clarinetto",
@@ -2978,7 +2980,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-08",
       "domain": "musica",
-      "level": 2,
+      "level": 3,
       "items": [
         "Pianissimo",
         "Piano",
@@ -3010,7 +3012,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-09",
       "domain": "musica",
-      "level": 2,
+      "level": 3,
       "items": [
         "Timpano",
         "Tamburo",
@@ -3042,7 +3044,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-10",
       "domain": "musica",
-      "level": 2,
+      "level": 3,
       "items": [
         "Do",
         "Si",
@@ -3074,7 +3076,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-11",
       "domain": "musica",
-      "level": 3,
+      "level": 4,
       "items": [
         "La traviata",
         "Rigoletto",
@@ -3106,7 +3108,7 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
     {
       "id": "musica-12",
       "domain": "musica",
-      "level": 1,
+      "level": 2,
       "items": [
         "Beatles",
         "Queen",
@@ -3134,6 +3136,1338 @@ input{font:inherit;width:100%;display:block;background:#10192c;color:var(--ink);
       ],
       "why": "Radiohead è un gruppo; Mozart è il cognome di un compositore.",
       "ordered": false
+    },
+    {
+      "id": "numeri-13",
+      "domain": "numeri",
+      "level": 1,
+      "items": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "9"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "8",
+      "choices": [
+        "8",
+        "10",
+        "11",
+        "12"
+      ],
+      "rule": "I numeri vanno da 1 a 8, uno dopo l’altro.",
+      "hints": [
+        "Conta da uno, seguendo le caselle.",
+        "Dopo il 7 viene…"
+      ],
+      "why": "Dopo 7 viene 8: il 9 è arrivato troppo presto.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-14",
+      "domain": "numeri",
+      "level": 1,
+      "items": [
+        "2",
+        "4",
+        "6",
+        "8",
+        "10",
+        "12",
+        "14",
+        "17"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "16",
+      "choices": [
+        "16",
+        "15",
+        "19",
+        "21"
+      ],
+      "rule": "Ogni volta aggiungiamo 2.",
+      "hints": [
+        "Conta saltando un numero alla volta.",
+        "Dopo 14, aggiungi ancora 2."
+      ],
+      "why": "14 + 2 = 16, non 17.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-15",
+      "domain": "numeri",
+      "level": 1,
+      "items": [
+        "10",
+        "9",
+        "8",
+        "7",
+        "6",
+        "5",
+        "4",
+        "1"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "3",
+      "choices": [
+        "3",
+        "0",
+        "2",
+        "11"
+      ],
+      "rule": "Ogni numero è uno in meno del precedente.",
+      "hints": [
+        "È un conto alla rovescia.",
+        "Dopo 4 viene…"
+      ],
+      "why": "Nel conto alla rovescia, dopo 4 viene 3.",
+      "ordered": true
+    },
+    {
+      "id": "numeri-16",
+      "domain": "numeri",
+      "level": 1,
+      "items": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "Mela"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "8",
+      "choices": [
+        "8",
+        "Pera",
+        "Sole",
+        "Cane"
+      ],
+      "rule": "Le caselle contengono i numeri da 1 a 8.",
+      "hints": [
+        "Guarda quale casella non contiene un numero.",
+        "La mela non è un numero."
+      ],
+      "why": "Al posto della mela va 8, per completare i numeri da 1 a 8.",
+      "ordered": true,
+      "visuals": {
+        "1": "1️⃣",
+        "2": "2️⃣",
+        "3": "3️⃣",
+        "4": "4️⃣",
+        "5": "5️⃣",
+        "6": "6️⃣",
+        "7": "7️⃣",
+        "Mela": "🍎",
+        "8": "8️⃣",
+        "Pera": "🍐",
+        "Sole": "☀️",
+        "Cane": "🐶"
+      }
+    },
+    {
+      "id": "natura-13",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Cane",
+        "Gatto",
+        "Coniglio",
+        "Leone",
+        "Elefante",
+        "Cavallo",
+        "Orso",
+        "Bicicletta"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Volpe",
+      "choices": [
+        "Volpe",
+        "Automobile",
+        "Treno",
+        "Barca"
+      ],
+      "rule": "Sono tutti animali.",
+      "hints": [
+        "Sette possono muoversi da soli e sono esseri viventi.",
+        "Una casella mostra un mezzo di trasporto."
+      ],
+      "why": "La bicicletta non è un animale; la volpe sì.",
+      "ordered": false,
+      "visuals": {
+        "Cane": "🐶",
+        "Gatto": "🐱",
+        "Coniglio": "🐰",
+        "Leone": "🦁",
+        "Elefante": "🐘",
+        "Cavallo": "🐴",
+        "Orso": "🐻",
+        "Bicicletta": "🚲",
+        "Volpe": "🦊",
+        "Automobile": "🚗",
+        "Treno": "🚆",
+        "Barca": "⛵"
+      }
+    },
+    {
+      "id": "natura-14",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Rosa",
+        "Tulipano",
+        "Girasole",
+        "Margherita",
+        "Ibisco",
+        "Loto",
+        "Papavero",
+        "Scarpa"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Fiore di ciliegio",
+      "choices": [
+        "Fiore di ciliegio",
+        "Cappello",
+        "Guanto",
+        "Calzino"
+      ],
+      "rule": "Sono tutti fiori.",
+      "hints": [
+        "Pensa a un giardino.",
+        "Una cosa si indossa ai piedi."
+      ],
+      "why": "La scarpa non è un fiore; il fiore di ciliegio sì.",
+      "ordered": false,
+      "visuals": {
+        "Rosa": "🌹",
+        "Tulipano": "🌷",
+        "Girasole": "🌻",
+        "Margherita": "🌼",
+        "Ibisco": "🌺",
+        "Loto": "🪷",
+        "Papavero": "🌸",
+        "Scarpa": "👟",
+        "Fiore di ciliegio": "🌸",
+        "Cappello": "🎩",
+        "Guanto": "🧤",
+        "Calzino": "🧦"
+      }
+    },
+    {
+      "id": "natura-15",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Aquila",
+        "Gufo",
+        "Pinguino",
+        "Anatra",
+        "Pulcino",
+        "Cigno",
+        "Pappagallo",
+        "Gatto"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Fenicottero",
+      "choices": [
+        "Fenicottero",
+        "Cane",
+        "Coniglio",
+        "Cavallo"
+      ],
+      "rule": "Sono tutti uccelli.",
+      "hints": [
+        "Cerca piume e becco, non soltanto chi vola.",
+        "Anche il pinguino è un uccello."
+      ],
+      "why": "Il gatto ha il pelo; il fenicottero ha piume e becco.",
+      "ordered": false,
+      "visuals": {
+        "Aquila": "🦅",
+        "Gufo": "🦉",
+        "Pinguino": "🐧",
+        "Anatra": "🦆",
+        "Pulcino": "🐥",
+        "Cigno": "🦢",
+        "Pappagallo": "🦜",
+        "Gatto": "🐱",
+        "Fenicottero": "🦩",
+        "Cane": "🐶",
+        "Coniglio": "🐰",
+        "Cavallo": "🐴"
+      }
+    },
+    {
+      "id": "natura-16",
+      "domain": "natura",
+      "level": 1,
+      "items": [
+        "Quercia",
+        "Pino",
+        "Palma",
+        "Abete",
+        "Melo",
+        "Pero",
+        "Ulivo",
+        "Automobile"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Ciliegio",
+      "choices": [
+        "Ciliegio",
+        "Autobus",
+        "Bicicletta",
+        "Treno"
+      ],
+      "rule": "Sono tutti alberi.",
+      "hints": [
+        "Pensa a tronchi, rami e foglie.",
+        "L’automobile non cresce nel terreno."
+      ],
+      "why": "L’automobile non è un albero; il ciliegio sì.",
+      "ordered": false,
+      "visuals": {
+        "Quercia": "🌳",
+        "Pino": "🌲",
+        "Palma": "🌴",
+        "Abete": "🌲",
+        "Melo": "🌳",
+        "Pero": "🌳",
+        "Ulivo": "🌳",
+        "Automobile": "🚗",
+        "Ciliegio": "🌳",
+        "Autobus": "🚌",
+        "Bicicletta": "🚲",
+        "Treno": "🚆"
+      }
+    },
+    {
+      "id": "cucina-13",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Mela",
+        "Pera",
+        "Banana",
+        "Arancia",
+        "Fragola",
+        "Ciliegia",
+        "Uva",
+        "Martello"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Pesca",
+      "choices": [
+        "Pesca",
+        "Cacciavite",
+        "Pinza",
+        "Sega"
+      ],
+      "rule": "Sono tutti frutti che si mangiano.",
+      "hints": [
+        "Pensa a una macedonia.",
+        "Un oggetto serve per piantare chiodi."
+      ],
+      "why": "Il martello è un attrezzo; la pesca è un frutto.",
+      "ordered": false,
+      "visuals": {
+        "Mela": "🍎",
+        "Pera": "🍐",
+        "Banana": "🍌",
+        "Arancia": "🍊",
+        "Fragola": "🍓",
+        "Ciliegia": "🍒",
+        "Uva": "🍇",
+        "Martello": "🔨",
+        "Pesca": "🍑",
+        "Cacciavite": "🪛",
+        "Pinza": "🔧",
+        "Sega": "🪚"
+      }
+    },
+    {
+      "id": "cucina-14",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Cucchiaio",
+        "Forchetta",
+        "Pentola",
+        "Padella",
+        "Piatto",
+        "Ciotola",
+        "Colino",
+        "Pallone"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Mestolo",
+      "choices": [
+        "Mestolo",
+        "Racchetta",
+        "Pattini",
+        "Casco"
+      ],
+      "rule": "Sono oggetti usati in cucina o a tavola.",
+      "hints": [
+        "Pensa a preparare e servire il pranzo.",
+        "Una cosa serve per giocare a calcio."
+      ],
+      "why": "Il pallone non è un utensile da cucina; il mestolo sì.",
+      "ordered": false,
+      "visuals": {
+        "Cucchiaio": "🥄",
+        "Forchetta": "🍴",
+        "Pentola": "🍲",
+        "Padella": "🍳",
+        "Piatto": "🍽️",
+        "Ciotola": "🥣",
+        "Colino": "🥣",
+        "Pallone": "⚽",
+        "Mestolo": "🥄",
+        "Racchetta": "🎾",
+        "Pattini": "⛸️",
+        "Casco": "⛑️"
+      }
+    },
+    {
+      "id": "cucina-15",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Acqua",
+        "Latte",
+        "Tè",
+        "Succo d’arancia",
+        "Cioccolata calda",
+        "Limonata",
+        "Frullato",
+        "Sedia"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Succo di mela",
+      "choices": [
+        "Succo di mela",
+        "Tavolo",
+        "Sgabello",
+        "Poltrona"
+      ],
+      "rule": "Sono tutte bevande.",
+      "hints": [
+        "Pensa a ciò che puoi bere.",
+        "Una cosa serve per sedersi."
+      ],
+      "why": "La sedia non si beve; il succo di mela è una bevanda.",
+      "ordered": false,
+      "visuals": {
+        "Acqua": "💧",
+        "Latte": "🥛",
+        "Tè": "🍵",
+        "Succo d’arancia": "🧃",
+        "Cioccolata calda": "☕",
+        "Limonata": "🍋",
+        "Frullato": "🥤",
+        "Sedia": "🪑",
+        "Succo di mela": "🧃",
+        "Tavolo": "🪑",
+        "Sgabello": "🪑",
+        "Poltrona": "🛋️"
+      }
+    },
+    {
+      "id": "cucina-16",
+      "domain": "cucina",
+      "level": 1,
+      "items": [
+        "Gelato",
+        "Torta",
+        "Biscotto",
+        "Ciambella",
+        "Cioccolato",
+        "Caramella",
+        "Lecca-lecca",
+        "Bullone"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Cupcake",
+      "choices": [
+        "Cupcake",
+        "Chiodo",
+        "Vite",
+        "Dado metallico"
+      ],
+      "rule": "Sono tutti dolci.",
+      "hints": [
+        "Pensa alla merenda o al dessert.",
+        "Un elemento è di metallo e non si mangia."
+      ],
+      "why": "Il bullone non è un dolce; il cupcake sì.",
+      "ordered": false,
+      "visuals": {
+        "Gelato": "🍦",
+        "Torta": "🍰",
+        "Biscotto": "🍪",
+        "Ciambella": "🍩",
+        "Cioccolato": "🍫",
+        "Caramella": "🍬",
+        "Lecca-lecca": "🍭",
+        "Bullone": "🔩",
+        "Cupcake": "🧁",
+        "Chiodo": "🔨",
+        "Vite": "🔩",
+        "Dado metallico": "🔩"
+      }
+    },
+    {
+      "id": "parole-13",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "CASA",
+        "CANE",
+        "CIELO",
+        "CUORE",
+        "CARTA",
+        "COLLA",
+        "CUBO",
+        "SOLE"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "CODA",
+      "choices": [
+        "CODA",
+        "LUNA",
+        "MARE",
+        "PANE"
+      ],
+      "rule": "Tutte le parole iniziano con C.",
+      "hints": [
+        "Guarda la prima lettera.",
+        "SOLE comincia con S."
+      ],
+      "why": "CODA inizia con C; SOLE no.",
+      "ordered": false
+    },
+    {
+      "id": "parole-14",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "MELA",
+        "PERA",
+        "CASA",
+        "CANE",
+        "LUNA",
+        "SOLE",
+        "MARE",
+        "RE"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "PANE",
+      "choices": [
+        "PANE",
+        "IO",
+        "TU",
+        "NO"
+      ],
+      "rule": "Tutte le parole hanno quattro lettere.",
+      "hints": [
+        "Conta le lettere di ogni parola.",
+        "RE ne ha soltanto due."
+      ],
+      "why": "PANE ha quattro lettere; RE ne ha due.",
+      "ordered": false
+    },
+    {
+      "id": "parole-15",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "GATTO",
+        "GOMMA",
+        "GONNA",
+        "GUFO",
+        "GELATO",
+        "GAMBA",
+        "GOLA",
+        "PALLA"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "GARA",
+      "choices": [
+        "GARA",
+        "NOTTE",
+        "RANA",
+        "FIORE"
+      ],
+      "rule": "Tutte le parole iniziano con G.",
+      "hints": [
+        "Osserva la lettera iniziale.",
+        "PALLA inizia con P."
+      ],
+      "why": "GARA inizia con G; PALLA no.",
+      "ordered": false
+    },
+    {
+      "id": "parole-16",
+      "domain": "parole",
+      "level": 1,
+      "items": [
+        "ROSSO",
+        "VERDE",
+        "GIALLO",
+        "BLU",
+        "ROSA",
+        "VIOLA",
+        "BIANCO",
+        "TAVOLO"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "NERO",
+      "choices": [
+        "NERO",
+        "SEDIA",
+        "LETTO",
+        "ARMADIO"
+      ],
+      "rule": "Sono tutti nomi di colori.",
+      "hints": [
+        "Pensa ai pennarelli.",
+        "Una parola indica un mobile."
+      ],
+      "why": "TAVOLO è un mobile; NERO è un colore.",
+      "ordered": false,
+      "visuals": {
+        "ROSSO": "🔴",
+        "VERDE": "🟢",
+        "GIALLO": "🟡",
+        "BLU": "🔵",
+        "ROSA": "🩷",
+        "VIOLA": "🟣",
+        "BIANCO": "⚪",
+        "TAVOLO": "🪑",
+        "NERO": "⚫",
+        "SEDIA": "🪑",
+        "LETTO": "🛏️",
+        "ARMADIO": "🚪"
+      }
+    },
+    {
+      "id": "geografia-13",
+      "domain": "geografia",
+      "level": 1,
+      "items": [
+        "Italia",
+        "Francia",
+        "Spagna",
+        "Germania",
+        "Giappone",
+        "Brasile",
+        "Canada",
+        "Pizza"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Grecia",
+      "choices": [
+        "Grecia",
+        "Pasta",
+        "Gelato",
+        "Pane"
+      ],
+      "rule": "Sono tutti nomi di Paesi.",
+      "hints": [
+        "Pensa a una carta del mondo.",
+        "Una cosa si mangia."
+      ],
+      "why": "La pizza è un cibo; la Grecia è un Paese.",
+      "ordered": false,
+      "visuals": {
+        "Italia": "🇮🇹",
+        "Francia": "🇫🇷",
+        "Spagna": "🇪🇸",
+        "Germania": "🇩🇪",
+        "Giappone": "🇯🇵",
+        "Brasile": "🇧🇷",
+        "Canada": "🇨🇦",
+        "Pizza": "🍕",
+        "Grecia": "🇬🇷",
+        "Pasta": "🍝",
+        "Gelato": "🍦",
+        "Pane": "🍞"
+      }
+    },
+    {
+      "id": "geografia-14",
+      "domain": "geografia",
+      "level": 1,
+      "items": [
+        "Montagna",
+        "Fiume",
+        "Lago",
+        "Mare",
+        "Isola",
+        "Deserto",
+        "Bosco",
+        "Divano"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Spiaggia",
+      "choices": [
+        "Spiaggia",
+        "Letto",
+        "Sedia",
+        "Armadio"
+      ],
+      "rule": "Sono elementi del paesaggio naturale.",
+      "hints": [
+        "Pensa a ciò che vedi all’aperto, nella natura.",
+        "Un oggetto si trova di solito in salotto."
+      ],
+      "why": "Il divano è un mobile; la spiaggia è parte del paesaggio.",
+      "ordered": false,
+      "visuals": {
+        "Montagna": "⛰️",
+        "Fiume": "🏞️",
+        "Lago": "🏞️",
+        "Mare": "🌊",
+        "Isola": "🏝️",
+        "Deserto": "🏜️",
+        "Bosco": "🌲",
+        "Divano": "🛋️",
+        "Spiaggia": "🏖️",
+        "Letto": "🛏️",
+        "Sedia": "🪑",
+        "Armadio": "🚪"
+      }
+    },
+    {
+      "id": "geografia-15",
+      "domain": "geografia",
+      "level": 1,
+      "items": [
+        "Roma",
+        "Parigi",
+        "Londra",
+        "Madrid",
+        "Berlino",
+        "Napoli",
+        "Milano",
+        "Banana"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Torino",
+      "choices": [
+        "Torino",
+        "Mela",
+        "Pera",
+        "Pesca"
+      ],
+      "rule": "Sono tutti nomi di città.",
+      "hints": [
+        "Pensa a luoghi dove abitano persone.",
+        "Una casella indica un frutto."
+      ],
+      "why": "La banana è un frutto; Torino è una città.",
+      "ordered": false,
+      "visuals": {
+        "Roma": "🏛️",
+        "Parigi": "🗼",
+        "Londra": "🏙️",
+        "Madrid": "🏙️",
+        "Berlino": "🏙️",
+        "Napoli": "🏙️",
+        "Milano": "🏙️",
+        "Banana": "🍌",
+        "Torino": "🏙️",
+        "Mela": "🍎",
+        "Pera": "🍐",
+        "Pesca": "🍑"
+      }
+    },
+    {
+      "id": "geografia-16",
+      "domain": "geografia",
+      "level": 1,
+      "items": [
+        "Aereo",
+        "Treno",
+        "Automobile",
+        "Autobus",
+        "Nave",
+        "Bicicletta",
+        "Elicottero",
+        "Cuscino"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Barca",
+      "choices": [
+        "Barca",
+        "Coperta",
+        "Materasso",
+        "Lenzuolo"
+      ],
+      "rule": "Sono tutti mezzi di trasporto.",
+      "hints": [
+        "Pensa a come raggiungere un altro luogo.",
+        "Il cuscino resta sul letto."
+      ],
+      "why": "Il cuscino non è un mezzo di trasporto; la barca sì.",
+      "ordered": false,
+      "visuals": {
+        "Aereo": "✈️",
+        "Treno": "🚆",
+        "Automobile": "🚗",
+        "Autobus": "🚌",
+        "Nave": "🚢",
+        "Bicicletta": "🚲",
+        "Elicottero": "🚁",
+        "Cuscino": "🛏️",
+        "Barca": "⛵",
+        "Coperta": "🛏️",
+        "Materasso": "🛏️",
+        "Lenzuolo": "🛏️"
+      }
+    },
+    {
+      "id": "calcio-13",
+      "domain": "calcio",
+      "level": 1,
+      "items": [
+        "Pallone da calcio",
+        "Porta da calcio",
+        "Scarpa da calcio",
+        "Maglia da calcio",
+        "Parastinchi",
+        "Guanti da portiere",
+        "Bandierina del calcio d’angolo",
+        "Pentola"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Fischietto dell’arbitro",
+      "choices": [
+        "Fischietto dell’arbitro",
+        "Padella",
+        "Mestolo",
+        "Colino"
+      ],
+      "rule": "Sono tutti oggetti usati nel calcio.",
+      "hints": [
+        "Pensa a ciò che trovi in campo.",
+        "Una cosa serve per cucinare."
+      ],
+      "why": "La pentola si usa in cucina; l’arbitro usa il fischietto.",
+      "ordered": false,
+      "visuals": {
+        "Pallone da calcio": "⚽",
+        "Porta da calcio": "🥅",
+        "Scarpa da calcio": "👟",
+        "Maglia da calcio": "👕",
+        "Parastinchi": "🦵",
+        "Guanti da portiere": "🧤",
+        "Bandierina del calcio d’angolo": "🚩",
+        "Pentola": "🍲",
+        "Fischietto dell’arbitro": "📣",
+        "Padella": "🍳",
+        "Mestolo": "🥄",
+        "Colino": "🥣"
+      }
+    },
+    {
+      "id": "calcio-14",
+      "domain": "calcio",
+      "level": 1,
+      "items": [
+        "Portiere",
+        "Difensore",
+        "Attaccante",
+        "Centrocampista",
+        "Terzino",
+        "Ala",
+        "Centravanti",
+        "Pizzaiolo"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Mediano",
+      "choices": [
+        "Mediano",
+        "Cuoco",
+        "Pasticciere",
+        "Panettiere"
+      ],
+      "rule": "Sono tutti ruoli di chi gioca a calcio.",
+      "hints": [
+        "Pensa ai giocatori in campo.",
+        "Uno è un mestiere della cucina."
+      ],
+      "why": "Il pizzaiolo è un mestiere; il mediano è un ruolo calcistico.",
+      "ordered": false
+    },
+    {
+      "id": "calcio-15",
+      "domain": "calcio",
+      "level": 1,
+      "items": [
+        "Tiro",
+        "Passaggio",
+        "Dribbling",
+        "Parata",
+        "Colpo di testa",
+        "Calcio d’angolo",
+        "Rimessa laterale",
+        "Fare una torta"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Calcio di rigore",
+      "choices": [
+        "Calcio di rigore",
+        "Lavare i piatti",
+        "Apparecchiare",
+        "Bollire la pasta"
+      ],
+      "rule": "Sono azioni o riprese di gioco del calcio.",
+      "hints": [
+        "Pensa a una partita.",
+        "Una cosa si fa in cucina."
+      ],
+      "why": "Fare una torta non fa parte del gioco; il calcio di rigore sì.",
+      "ordered": false,
+      "visuals": {
+        "Tiro": "⚽",
+        "Passaggio": "⚽",
+        "Dribbling": "🏃",
+        "Parata": "🧤",
+        "Colpo di testa": "⚽",
+        "Calcio d’angolo": "🚩",
+        "Rimessa laterale": "⚽",
+        "Fare una torta": "🍰",
+        "Calcio di rigore": "⚽",
+        "Lavare i piatti": "🍽️",
+        "Apparecchiare": "🍽️",
+        "Bollire la pasta": "🍝"
+      }
+    },
+    {
+      "id": "calcio-16",
+      "domain": "calcio",
+      "level": 1,
+      "items": [
+        "Calcio",
+        "Basket",
+        "Tennis",
+        "Pallavolo",
+        "Rugby",
+        "Pallamano",
+        "Pallanuoto",
+        "Scacchi"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Golf",
+      "choices": [
+        "Golf",
+        "Dama",
+        "Domino",
+        "Burraco"
+      ],
+      "rule": "Sono sport che si giocano con una palla.",
+      "hints": [
+        "Non conta la forma della palla.",
+        "Negli scacchi usi pedine su una scacchiera."
+      ],
+      "why": "Negli scacchi non si usa una palla; nel golf sì.",
+      "ordered": false,
+      "visuals": {
+        "Calcio": "⚽",
+        "Basket": "🏀",
+        "Tennis": "🎾",
+        "Pallavolo": "🏐",
+        "Rugby": "🏉",
+        "Pallamano": "🤾",
+        "Pallanuoto": "🤽",
+        "Scacchi": "♟️",
+        "Golf": "⛳",
+        "Dama": "♟️",
+        "Domino": "🁡",
+        "Burraco": "🃏"
+      }
+    },
+    {
+      "id": "cinema-13",
+      "domain": "cinema",
+      "level": 1,
+      "items": [
+        "Attore",
+        "Regista",
+        "Telecamera",
+        "Ciak",
+        "Schermo del cinema",
+        "Proiettore",
+        "Sceneggiatura",
+        "Trattore"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Biglietto del cinema",
+      "choices": [
+        "Biglietto del cinema",
+        "Aratro",
+        "Rastrello",
+        "Vanga"
+      ],
+      "rule": "Sono persone o cose legate alla realizzazione o visione di un film.",
+      "hints": [
+        "Pensa a un set o a una sala cinematografica.",
+        "Una cosa serve per lavorare nei campi."
+      ],
+      "why": "Il trattore è un mezzo agricolo; il biglietto serve per entrare al cinema.",
+      "ordered": false,
+      "visuals": {
+        "Attore": "🎭",
+        "Regista": "🎬",
+        "Telecamera": "🎥",
+        "Ciak": "🎬",
+        "Schermo del cinema": "📽️",
+        "Proiettore": "📽️",
+        "Sceneggiatura": "📜",
+        "Trattore": "🚜",
+        "Biglietto del cinema": "🎟️",
+        "Aratro": "🌾",
+        "Rastrello": "🧹",
+        "Vanga": "🪏"
+      }
+    },
+    {
+      "id": "cinema-14",
+      "domain": "cinema",
+      "level": 1,
+      "items": [
+        "Woody",
+        "Buzz Lightyear",
+        "Nemo",
+        "Dory",
+        "Shrek",
+        "Elsa",
+        "Simba",
+        "Forchetta"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Olaf",
+      "choices": [
+        "Olaf",
+        "Cucchiaio",
+        "Pentola",
+        "Padella"
+      ],
+      "rule": "Sono personaggi di film d’animazione.",
+      "hints": [
+        "Pensa a personaggi che hai visto nei cartoni.",
+        "Una cosa è una posata."
+      ],
+      "why": "La forchetta è un oggetto; Olaf è il pupazzo di neve di Frozen.",
+      "ordered": false,
+      "visuals": {
+        "Woody": "🤠",
+        "Buzz Lightyear": "🚀",
+        "Nemo": "🐠",
+        "Dory": "🐟",
+        "Shrek": "👹",
+        "Elsa": "👸",
+        "Simba": "🦁",
+        "Forchetta": "🍴",
+        "Olaf": "⛄",
+        "Cucchiaio": "🥄",
+        "Pentola": "🍲",
+        "Padella": "🍳"
+      }
+    },
+    {
+      "id": "cinema-15",
+      "domain": "cinema",
+      "level": 1,
+      "items": [
+        "Ridere",
+        "Piangere",
+        "Sorridere",
+        "Avere paura",
+        "Stupirsi",
+        "Emozionarsi",
+        "Commuoversi",
+        "Avvitare un bullone"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Divertirsi",
+      "choices": [
+        "Divertirsi",
+        "Usare un trapano",
+        "Segare una tavola",
+        "Piantare un chiodo"
+      ],
+      "rule": "Sono reazioni emotive che può suscitare un film.",
+      "hints": [
+        "Pensa a come ti senti mentre guardi un film.",
+        "Un’azione richiede un attrezzo da lavoro."
+      ],
+      "why": "Avvitare un bullone è un lavoro manuale; divertirsi è una reazione a un film.",
+      "ordered": false,
+      "visuals": {
+        "Ridere": "😂",
+        "Piangere": "😢",
+        "Sorridere": "🙂",
+        "Avere paura": "😨",
+        "Stupirsi": "😮",
+        "Emozionarsi": "🥹",
+        "Commuoversi": "🥲",
+        "Avvitare un bullone": "🔩",
+        "Divertirsi": "😄",
+        "Usare un trapano": "🛠️",
+        "Segare una tavola": "🪚",
+        "Piantare un chiodo": "🔨"
+      }
+    },
+    {
+      "id": "cinema-16",
+      "domain": "cinema",
+      "level": 1,
+      "items": [
+        "Commedia",
+        "Film d’avventura",
+        "Film d’animazione",
+        "Film di fantascienza",
+        "Film fantastico",
+        "Film poliziesco",
+        "Film musicale",
+        "Ricetta della pizza"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Documentario",
+      "choices": [
+        "Documentario",
+        "Lista della spesa",
+        "Menù",
+        "Scontrino"
+      ],
+      "rule": "Sono tipi di film.",
+      "hints": [
+        "Pensa a come scegli un film da guardare.",
+        "Una cosa ti spiega come cucinare."
+      ],
+      "why": "La ricetta della pizza non è un tipo di film; il documentario sì.",
+      "ordered": false
+    },
+    {
+      "id": "musica-13",
+      "domain": "musica",
+      "level": 1,
+      "items": [
+        "Chitarra",
+        "Pianoforte",
+        "Violino",
+        "Tromba",
+        "Flauto",
+        "Tamburo",
+        "Batteria",
+        "Martello"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Arpa",
+      "choices": [
+        "Arpa",
+        "Cacciavite",
+        "Pinza",
+        "Sega"
+      ],
+      "rule": "Sono tutti strumenti musicali.",
+      "hints": [
+        "Pensa agli strumenti di un’orchestra o di una band.",
+        "Un oggetto serve per piantare chiodi."
+      ],
+      "why": "Il martello è un attrezzo; l’arpa è uno strumento musicale.",
+      "ordered": false,
+      "visuals": {
+        "Chitarra": "🎸",
+        "Pianoforte": "🎹",
+        "Violino": "🎻",
+        "Tromba": "🎺",
+        "Flauto": "🪈",
+        "Tamburo": "🥁",
+        "Batteria": "🥁",
+        "Martello": "🔨",
+        "Arpa": "🪉",
+        "Cacciavite": "🪛",
+        "Pinza": "🔧",
+        "Sega": "🪚"
+      }
+    },
+    {
+      "id": "musica-14",
+      "domain": "musica",
+      "level": 1,
+      "items": [
+        "Do",
+        "Re",
+        "Mi",
+        "Fa",
+        "Sol",
+        "La",
+        "Si",
+        "Pizza"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Do",
+      "choices": [
+        "Do",
+        "Pasta",
+        "Pane",
+        "Gelato"
+      ],
+      "rule": "Sono nomi di note musicali; una nota può ripetersi.",
+      "hints": [
+        "Prova a cantare una scala.",
+        "Una parola indica qualcosa da mangiare."
+      ],
+      "why": "Pizza è un cibo; Do è una nota musicale.",
+      "ordered": false
+    },
+    {
+      "id": "musica-15",
+      "domain": "musica",
+      "level": 1,
+      "items": [
+        "Cantante",
+        "Pianista",
+        "Chitarrista",
+        "Violinista",
+        "Batterista",
+        "Flautista",
+        "Trombettista",
+        "Muratore"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Arpista",
+      "choices": [
+        "Arpista",
+        "Idraulico",
+        "Elettricista",
+        "Falegname"
+      ],
+      "rule": "Sono persone che cantano o suonano uno strumento.",
+      "hints": [
+        "Pensa a chi si esibisce in un concerto.",
+        "Una persona costruisce muri."
+      ],
+      "why": "Il muratore non è un ruolo musicale; l’arpista suona l’arpa.",
+      "ordered": false
+    },
+    {
+      "id": "musica-16",
+      "domain": "musica",
+      "level": 1,
+      "items": [
+        "Chitarra",
+        "Violino",
+        "Arpa",
+        "Pianoforte",
+        "Tromba",
+        "Flauto",
+        "Tamburo",
+        "Divano"
+      ],
+      "wrong": [
+        7
+      ],
+      "correct": "Fisarmonica",
+      "choices": [
+        "Fisarmonica",
+        "Poltrona",
+        "Sedia",
+        "Letto"
+      ],
+      "rule": "Sono oggetti costruiti per suonare musica.",
+      "hints": [
+        "Immagina il palco di un concerto.",
+        "Una cosa serve per sedersi in salotto."
+      ],
+      "why": "Il divano è un mobile; la fisarmonica è uno strumento musicale.",
+      "ordered": false,
+      "visuals": {
+        "Chitarra": "🎸",
+        "Violino": "🎻",
+        "Arpa": "🪉",
+        "Pianoforte": "🎹",
+        "Tromba": "🎺",
+        "Flauto": "🪈",
+        "Tamburo": "🥁",
+        "Divano": "🛋️",
+        "Fisarmonica": "🪗",
+        "Poltrona": "🛋️",
+        "Sedia": "🪑",
+        "Letto": "🛏️"
+      }
     }
   ]
 }</script>
@@ -3144,17 +4478,17 @@ const DOMAINS=PACK.domains, PUZZLES=PACK.puzzles;
 const VAULT_STORE='stona-profiles-v2', FORMAT='stona-profile', ITERATIONS=210000;
 let storageError='', profileMessage='', busy=false, currentId='guest', currentKey=null, writeQueue=Promise.resolve();
 function newId(){return Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('')}
-const freshState=()=>({xp:0,interests:['numeri','calcio','natura'],mode:'relax',history:[],completed:{},onboardingDone:false});
+const freshState=()=>({xp:0,interests:Object.keys(DOMAINS),playLevel:1,mode:'relax',history:[],completed:{},onboardingDone:false});
 function readVault(){try{const raw=localStorage.getItem(VAULT_STORE);if(raw){const v=JSON.parse(raw);if(v.version!==2||!v.guest||!Array.isArray(v.profiles))throw Error();return v;}}catch(e){storageError='Il salvataggio locale non è disponibile o non è leggibile. Esporta il profilo prima di chiudere la pagina.';}
  let old=null;try{old=JSON.parse(localStorage.getItem('stona-alpha-v1')||'null')}catch(e){}
  return {version:2,guest:{id:newId(),name:'Ospite',createdAt:new Date().toISOString(),state:old?normalizeState(old):freshState()},profiles:[]};}
 function normalizeState(x){if(!x||typeof x!=='object'||!Array.isArray(x.history)||x.history.length>2000)throw Error('Progressi non validi.');
  const seen=new Set(), h=x.history.filter(r=>r&&PUZZLES.some(p=>p.id===r.id&&p.domain===r.domain)&&!seen.has(r.id)&&(seen.add(r.id)));
  for(const r of h){if(!Number.isFinite(r.quality)||r.quality<0||r.quality>100||!Number.isInteger(r.xp)||r.xp<0||r.xp>45||typeof r.date!=='string'||!Number.isFinite(Date.parse(r.date)))throw Error('Cronologia non valida.');}
- return {...freshState(),xp:h.reduce((n,r)=>n+r.xp,0),history:h.map(r=>({id:r.id,domain:r.domain,quality:r.quality,level:r.level,spot:!!r.spot,fix:!!r.fix,rule:!!r.rule,intuition:!!r.intuition,hints:Math.max(0,Math.min(2,Number(r.hints)||0)),skipped:!!r.skipped,xp:r.xp,date:r.date})),completed:Object.fromEntries(h.map(r=>[r.id,true])),interests:Array.isArray(x.interests)&&x.interests.filter(d=>DOMAINS[d]).length?Array.from(new Set(x.interests.filter(d=>DOMAINS[d]))):freshState().interests,mode:['relax','esplora','sfida'].includes(x.mode)?x.mode:'relax',onboardingDone:!!x.onboardingDone};}
+ return {...freshState(),xp:h.reduce((n,r)=>n+r.xp,0),history:h.map(r=>({id:r.id,domain:r.domain,quality:r.quality,level:r.level,tierVersion:r.tierVersion===1?1:0,clean:r.clean===true,durationMs:Number.isFinite(r.durationMs)&&r.durationMs>=0?r.durationMs:null,spot:!!r.spot,fix:!!r.fix,rule:!!r.rule,intuition:!!r.intuition,hints:Math.max(0,Math.min(2,Number(r.hints)||0)),skipped:!!r.skipped,xp:r.xp,date:r.date})),completed:Object.fromEntries(h.map(r=>[r.id,true])),interests:Array.isArray(x.interests)&&x.interests.filter(d=>DOMAINS[d]).length?Array.from(new Set(x.interests.filter(d=>DOMAINS[d]))):freshState().interests,mode:['relax','esplora','sfida'].includes(x.mode)?x.mode:'relax',playLevel:Number.isInteger(x.playLevel)&&x.playLevel>=1&&x.playLevel<=4?x.playLevel:1,onboardingDone:!!x.onboardingDone};}
 let vault=readVault();
 function persistVault(){try{localStorage.setItem(VAULT_STORE,JSON.stringify(vault));storageError='';return true}catch(e){storageError='Non riesco a salvare su questo browser. Mantieni aperta la pagina ed esporta il profilo.';return false}}
-function load(){return structuredClone(vault.guest.state)}
+function load(){return normalizeState(vault.guest.state)}
 function currentProfile(){return currentId==='guest'?vault.guest:vault.profiles.find(p=>p.id===currentId)}
 function save(){const snapshot=structuredClone(state);if(currentId==='guest'){vault.guest.state=snapshot;persistVault();return writeQueue;}
  const record=currentProfile(),key=currentKey;
@@ -3195,38 +4529,36 @@ function mastery(d){const a=history(d).slice(-15);const prior=3*45;return Math.r
 function title(){const ranks=[[0,'Curioso'],[110,'Esploratore'],[300,'Cercatore'],[560,'Intuitivo'],[850,'Decifratore'],[1200,'Visionario'],[1600,'Cartografo'],[2050,'Maestro degli schemi']];return ranks.filter(r=>state.xp>=r[0]).slice(-1)[0][1]}
 function xpNext(){const t=[110,300,560,850,1200,1600,2050];return t.find(x=>x>state.xp)||null}
 function progress(d){return Object.keys(state.completed).filter(id=>id.startsWith(d+'-')).length}
-function instinctCount(){return state.history.filter(x=>x.intuition && x.spot).length}
+function solvedCount(){return state.history.filter(x=>x.spot&&x.fix&&x.rule).length}
 function dname(d){return DOMAINS[d]?.name||d}
+const LEVELS=['','Primi passi','Collegamenti','Esploratore','Sfide esperte'];
+function levelCredits(level){const seen=new Set();return state.history.reduce((n,r)=>{if(r.tierVersion!==1||r.level!==level||!r.clean||seen.has(r.id))return n;seen.add(r.id);return n+(r.durationMs!==null&&r.durationMs<=45000?2:1)},0)}
+function unlockedLevel(){let n=1;while(n<4&&levelCredits(n)>=4)n++;return n}
+function playLevel(){return Math.min(state.playLevel||1,unlockedLevel())}
+function tickClock(){if(!active)return;const now=Date.now();if(active.clockRunning)active.elapsedMs+=Math.max(0,now-active.clockSince);active.clockSince=now;active.clockRunning=view==='play'&&!editingInterests&&!document.hidden&&active.step!=='result';}
 function choosePuzzle(){
-  let domains=chosenDomain==='mix'?(state.interests.length?state.interests:Object.keys(DOMAINS)):[chosenDomain];
-  let all=PUZZLES.filter(p=>domains.includes(p.domain));
-  let fresh=all.filter(p=>!state.completed[p.id]);
-  const replay=fresh.length===0;
-  if(!replay && state.history.length===0 && domains.includes('numeri')){
-    const intro=fresh.find(p=>p.id==='numeri-01');if(intro) return {p:intro,replay:false};
-  }
-  let list=fresh.length?fresh:all;
-  const weights=list.map(p=>{
-     const count=history(p.domain).length;
-     const aim=count<2?1.5:count<4?2.5:1+mastery(p.domain)/30;
-     return 1/(1+Math.abs(aim-p.level)*1.6);
-  });
-  let total=weights.reduce((a,b)=>a+b,0);let roll=Math.random()*total;
-  for(let i=0;i<list.length;i++){roll-=weights[i];if(roll<=0)return {p:list[i],replay}}
-  return {p:list[list.length-1],replay};
+ const domains=chosenDomain==='mix'?(state.interests.length?state.interests:Object.keys(DOMAINS)):[chosenDomain];
+ const all=PUZZLES.filter(p=>domains.includes(p.domain)&&p.level===playLevel());
+ const fresh=all.filter(p=>!state.completed[p.id]);
+ const pool=fresh.length?fresh:all;
+ if(state.history.length===0&&!state.completed['numeri-13']&&domains.includes('numeri')&&playLevel()===1)return {p:PUZZLES.find(p=>p.id==='numeri-13'),replay:false};
+ const list=pool.filter(p=>!active||p.id!==active.p.id);const candidates=list.length?list:pool;
+ const p=candidates[Math.floor(Math.random()*candidates.length)];return {p,replay:!!state.completed[p.id]};
 }
+function visualLabel(text,p=active?.p){const icon=p?.visuals?.[text]||(/^\d$/.test(text)?text+'️⃣':null)||({Cane:'🐶',Gatto:'🐱',Leone:'🦁',Tigre:'🐯',Elefante:'🐘',Cavallo:'🐴',Volpe:'🦊',Coniglio:'🐰',Mela:'🍎',Pera:'🍐',Banana:'🍌',Arancia:'🍊',Limone:'🍋',Pesca:'🍑',Fragola:'🍓',Ciliegia:'🍒',Uva:'🍇',Carota:'🥕',Pianoforte:'🎹',Chitarra:'🎸',Violino:'🎻',Tromba:'🎺',Flauto:'🪈',Arpa:'🪉',Batteria:'🥁',Tamburo:'🥁',Gufo:'🦉',Pinguino:'🐧',Aquila:'🦅',Rosa:'🌹',Girasole:'🌻',Tulipano:'🌷'})[text];return `<span class="tile-visual" aria-hidden="true">${esc(icon||DOMAINS[p?.domain]?.symbol||'✦')}</span><span>${esc(text)}</span>`;}
+function levelBar(){const unlocked=unlockedLevel(),selected=playLevel();return `<section class="level-panel" aria-label="Livelli di difficoltà"><div class="smallrow"><strong>Il tuo ritmo · livello ${selected} di 4</strong><span>${LEVELS[selected]}</span></div><div class="level-buttons">${[1,2,3,4].map(n=>`<button class="btn ${n===selected?'selected':''}" data-action="level" data-val="${n}" ${n>unlocked?'disabled':''} aria-pressed="${n===selected}">${n>unlocked?'🔒':'🌟'} ${n} · ${LEVELS[n]}</button>`).join('')}</div><p class="tiny">${unlocked<4?`Prossimo livello: ${Math.min(4,levelCredits(unlocked))}/4 stelle. Una soluzione completa senza errori o indizi vale ★; entro 45 secondi vale ★★.`:'Hai aperto tutti i livelli. Puoi sempre tornare a quelli più facili.'} Nessun conto alla rovescia: prenditi il tuo tempo.</p></section>`;}
 function next(){
   if(session.count>=session.total){active=null;session.done=true;render();return;}
   const {p,replay}=choosePuzzle();
   let mapped=p.items.map((text,original)=>({text,original}));if(!p.ordered)mapped=shuffle(mapped);
-  let other=shuffle(PUZZLES.filter(x=>x.domain===p.domain&&x.id!==p.id&&x.rule!==p.rule)).slice(0,2).map(x=>x.rule);
+  let other=p.level===1?['Sono tutti giorni della settimana.','Sono tutti mesi dell’anno.']:shuffle(PUZZLES.filter(x=>x.domain===p.domain&&x.level===p.level&&x.id!==p.id&&x.rule!==p.rule)).slice(0,2).map(x=>x.rule);
   let options=shuffle([p.rule,...other]);
-  active={p,replay,items:mapped,step:'spot',hints:0,intuition:false,mistakes:0,fixMistakes:0,ruleMistakes:0,spot:false,fix:false,rule:false,skipped:false,message:'',options,earned:0};
+  active={p,replay,items:mapped,step:'spot',hints:0,elapsedMs:0,clockSince:Date.now(),clockRunning:true,mistakes:0,fixMistakes:0,ruleMistakes:0,spot:false,fix:false,rule:false,skipped:false,message:'',options,earned:0};
   render();
 }
 function markDone(){
   if(!active||active.step==='result')return;
-  const a=active,p=a.p;
+  tickClock();const a=active,p=a.p;const beforeUnlock=unlockedLevel();
   const cleanSpot=a.spot&&a.mistakes===0;
   let quality=0;
   if(a.spot)quality+=cleanSpot?40:25;
@@ -3234,16 +4566,20 @@ function markDone(){
   if(a.rule)quality+=a.ruleMistakes===0?25:15;
   if(a.spot&&a.fix&&a.hints===0)quality+=10;
   quality=Math.min(100,Math.round(quality*(1+0.035*(p.level-1))));
-  let pts=a.skipped?4:(a.spot?10:0)+(a.fix?10:0)+(a.rule?10:0)+(a.intuition&&a.spot?5:0)+(a.hints===0&&a.spot?5:0);
+  let pts=a.skipped?4:(a.spot?10:0)+(a.fix?10:0)+(a.rule?10:0)+(a.hints===0&&a.spot?5:0);
   if(state.mode==='sfida'&&!a.skipped&&a.hints===0&&a.spot&&a.fix&&a.rule)pts+=5;
-  if(a.replay)pts=0;
+  if(a.replay||state.completed[p.id])pts=0;
   a.earned=pts;
   if(!state.completed[p.id]){
     state.completed[p.id]=true;
     state.xp+=pts;
-    state.history.push({id:p.id,domain:p.domain,quality,level:p.level,spot:a.spot,fix:a.fix,rule:a.rule,intuition:a.intuition&&a.spot,hints:a.hints,skipped:a.skipped,xp:pts,date:new Date().toISOString()});
-    save();
+    state.history.push({id:p.id,domain:p.domain,quality,level:p.level,tierVersion:1,clean:!!(a.spot&&a.fix&&a.rule&&!a.skipped&&a.hints===0&&a.mistakes+a.fixMistakes+a.ruleMistakes===0),durationMs:Math.round(a.elapsedMs),spot:a.spot,fix:a.fix,rule:a.rule,hints:a.hints,skipped:a.skipped,xp:pts,date:new Date().toISOString()});
+  }else if(a.spot&&a.fix&&a.rule&&!a.skipped&&a.hints===0&&a.mistakes+a.fixMistakes+a.ruleMistakes===0){
+    const previous=state.history.find(r=>r.id===p.id);
+    if(previous&&(previous.tierVersion!==1||!previous.clean))Object.assign(previous,{tierVersion:1,level:p.level,clean:true,durationMs:Math.round(a.elapsedMs),quality,spot:true,fix:true,rule:true,hints:0,skipped:false});
   }
+  const unlocked=unlockedLevel();if(unlocked>beforeUnlock){a.unlocked=unlocked;if(state.playLevel===beforeUnlock)state.playLevel=unlocked;}
+  save();
   session.count++;
   session.gained+=pts;
   if(a.spot&&a.fix&&a.rule&&a.hints===0&&a.mistakes+a.fixMistakes+a.ruleMistakes===0)session.perfect++;
@@ -3271,30 +4607,31 @@ function header(){return `<header class="top"><div class="brand"><div class="mar
 function navbar(){return `<nav class="top-menu" aria-label="Navigazione principale"><button class="tab ${view==='play'?'active':''}" data-action="view" data-val="play">Gioca</button><button class="tab ${view==='map'?'active':''}" data-action="view" data-val="map">La mia mappa</button><button class="tab ${view==='about'?'active':''}" data-action="view" data-val="about">Come funziona</button><button class="tab ${view==='profile'?'active':''}" data-action="view" data-val="profile">Il mio profilo</button><button class="tab" data-action="interests">⚙ Interessi</button></nav>`}
 function onboarding(){return `${header()}<div class="hero"><div><div class="section-kicker">Il primo passo</div><h1 class="section-heading">Quanto conosci ciò che ami?</h1><p class="lead">Otto elementi. Un collegamento nascosto. Qualcosa non torna. Scoprilo, correggilo e costruisci la tua mappa personale.</p></div><div class="hero-graphic" aria-hidden="true"><span>8</span><i></i></div></div><section class="card"><div class="section-kicker">Personalizza la tua esperienza</div><h2>Scegli gli argomenti che ti incuriosiscono</h2><p class="muted">Non è un test d’ingresso. Puoi cambiare tutto in qualsiasi momento, e anche scegliere soltanto un settore.</p><div class="interest-grid">${Object.entries(DOMAINS).map(([d,m])=>`<button class="interest-btn ${state.interests.includes(d)?'selected':''}" data-action="interest" data-val="${d}" aria-pressed="${state.interests.includes(d)}"><span class="sect-icon">${m.symbol}</span><span><b>${m.name}</b><small>${m.intro}</small></span></button>`).join('')}</div><div class="actionrow"><button class="btn primary" data-action="start">Cominciamo →</button><button class="btn soft" data-action="all-interests">Sorprendimi con tutti i settori</button></div></section>`}
 function modeBar(){return `<div class="label" style="margin:14px 0 9px">Modalità</div><div class="mode-row">${[['relax','☁ Relax'],['esplora','◎ Esplora'],['sfida','⚑ Sfida personale']].map(([val,label])=>`<button class="btn ${state.mode===val?'selected':''}" data-action="mode" data-val="${val}" aria-pressed="${state.mode===val}">${label}</button>`).join('')}</div><p class="tiny">${state.mode==='relax'?'Senza timer e senza penalità.':state.mode==='esplora'?'Osserva le connessioni e amplia la tua mappa.':'Bonus esperienza per una soluzione completa senza indizi. Nessuna classifica online.'}</p>`}
-function sidePanel(){const nextXP=xpNext();return `<aside class="card secondary"><div class="side-head"><h2 class="side-title">Il tuo percorso</h2><span class="label">personale</span></div><div class="statrow"><div class="statbox"><big>${Object.keys(state.completed).length}</big><span>enigmi esplorati</span></div><div class="statbox"><big>${instinctCount()}</big><span>intuizioni corrette</span></div></div><div class="smallrow"><span>Grado: <strong>${esc(title())}</strong></span><span>${nextXP?`${nextXP-state.xp} XP al prossimo`:'Grado massimo'}</span></div><div class="bar"><i style="width:${nextXP?Math.max(3,state.xp/nextXP*100):100}%"></i></div><h3 style="font-size:15px;margin:22px 0 9px">Competenze in esplorazione</h3>${Object.entries(DOMAINS).slice().sort((a,b)=>history(b[0]).length-history(a[0]).length).slice(0,5).map(([d,m])=>`<div class="metric"><div class="smallrow"><span>${m.symbol} ${m.name}</span><strong>${history(d).length?mastery(d)+'/100':'Da esplorare'}</strong></div><div class="bar"><i style="width:${history(d).length?mastery(d):0}%"></i></div></div>`).join('')}<p class="aside-note">La padronanza è una stima basata sulle prove giocate; non misura il QI. Salvataggio automatico qui. Trasferisci il percorso da «Il mio profilo».</p><button class="btn" data-action="view" data-val="map">Apri la mappa →</button></aside>`}
+function sidePanel(){const nextXP=xpNext();return `<aside class="card secondary"><div class="side-head"><h2 class="side-title">Il tuo percorso</h2><span class="label">personale</span></div><div class="statrow"><div class="statbox"><big>${Object.keys(state.completed).length}</big><span>enigmi esplorati</span></div><div class="statbox"><big>${solvedCount()}</big><span>soluzioni complete</span></div></div><div class="smallrow"><span>Grado: <strong>${esc(title())}</strong></span><span>${nextXP?`${nextXP-state.xp} XP al prossimo`:'Grado massimo'}</span></div><div class="bar"><i style="width:${nextXP?Math.max(3,state.xp/nextXP*100):100}%"></i></div><h3 style="font-size:15px;margin:22px 0 9px">Competenze in esplorazione</h3>${Object.entries(DOMAINS).slice().sort((a,b)=>history(b[0]).length-history(a[0]).length).map(([d,m])=>`<div class="metric"><div class="smallrow"><span>${m.symbol} ${m.name}</span><strong>${history(d).length?mastery(d)+'/100':'Da esplorare'}</strong></div><div class="bar"><i style="width:${history(d).length?mastery(d):0}%"></i></div></div>`).join('')}<p class="aside-note">La padronanza è una stima basata sulle prove giocate; non misura il QI. Salvataggio automatico qui. Trasferisci il percorso da «Il mio profilo».</p><button class="btn" data-action="view" data-val="map">Apri la mappa →</button></aside>`}
 function questionStep(){const a=active,p=a.p;const stepIdx=['spot','fix','rule','result'].indexOf(a.step);const msg=a.step==='spot'?'Tocca l’elemento che non appartiene allo stesso schema degli altri.':a.step==='fix'?'Quale elemento inseriresti al suo posto?':a.step==='rule'?'Prova a riconoscere il collegamento nascosto.':'Ecco il collegamento che rende coerente la sequenza.';
  let mid='';
- if(a.step==='spot')mid=`<div class="tiles">${a.items.map(({text,original})=>`<button class="tile" data-action="spot" data-val="${original}" aria-label="Scegli ${esc(text)}">${esc(text)}</button>`).join('')}</div><div class="actionrow"><button class="btn ${a.intuition?'selected':''}" data-action="intuition" aria-pressed="${a.intuition}">✦ ${a.intuition?'Scelto d’istinto':'Lo sento d’istinto'}</button><span class="tiny">Puoi indicarlo prima della risposta.</span></div>`;
- else if(a.step==='fix')mid=`<div class="tiles">${a.items.map(({text,original})=>`<div class="tile ${p.wrong.includes(original)?'wrong':'locked'}" style="display:grid;place-items:center;text-align:center" aria-label="${esc(text)}">${esc(text)}</div>`).join('')}</div><div class="label">Quale sostituzione funziona?</div><div class="answers">${shuffle(p.choices).map(c=>`<button class="answer" data-action="fix" data-val="${esc(c)}">${esc(c)}</button>`).join('')}</div>`;
+ if(a.step==='spot')mid=`<div class="tiles">${a.items.map(({text,original})=>`<button class="tile" data-action="spot" data-val="${original}" aria-label="Scegli ${esc(text)}">${visualLabel(text,p)}</button>`).join('')}</div>`;
+ else if(a.step==='fix')mid=`<div class="tiles">${a.items.map(({text,original})=>`<div class="tile ${p.wrong.includes(original)?'wrong':'locked'}" style="display:grid;place-items:center;text-align:center" aria-label="${esc(text)}">${visualLabel(text,p)}</div>`).join('')}</div><div class="label">Quale sostituzione funziona?</div><div class="answers">${shuffle(p.choices).map(c=>`<button class="answer" data-action="fix" data-val="${esc(c)}">${visualLabel(c,p)}</button>`).join('')}</div>`;
  else if(a.step==='rule')mid=`<div class="label" style="margin-top:22px">Scegli la spiegazione</div><div class="answers">${a.options.map((r,i)=>`<button class="answer wide withbadge" data-action="rule" data-val="${esc(r)}"><span class="letter">${String.fromCharCode(65+i)}</span>${esc(r)}</button>`).join('')}</div>`;
- else mid=`<div class="success"><div class="section-kicker">Schema scoperto</div><h3>${esc(p.rule)}</h3><p>${esc(p.why)}</p><div class="pill" style="display:inline-block">+${a.earned} XP ${a.replay?' · ripasso senza nuovi punti':''}</div></div><div class="statrow"><div class="statbox"><big>${a.spot?'✓':'—'}</big><span>anomalia riconosciuta</span></div><div class="statbox"><big>${a.intuition&&a.spot?'✦':'—'}</big><span>intuizione dichiarata</span></div></div><button class="btn primary" data-action="next">${session.count>=session.total?'Vedi il riepilogo →':'Prossima sfida →'}</button>`;
- return `<section class="card"><div class="toolbar"><span class="label">${esc(dname(p.domain))} · difficoltà ${p.level}/5 ${a.replay?'· ripasso':''}</span><span class="label">Sfida ${Math.min(session.count+(a.step==='result'?0:1),session.total)} / ${session.total}</span></div><div class="stepper" aria-label="Progressione: anomalia, sostituzione, regola">${[0,1,2].map((n)=>`<div class="step ${stepIdx>n?'ok':stepIdx===n?'current':''}"></div>`).join('')}</div><h2 class="quiz-question">${a.step==='spot'?'Cosa c’è di sbagliato?':a.step==='fix'?'Come lo correggeresti?':a.step==='rule'?'Qual è la regola nascosta?':'Adesso tutto torna.'}</h2><p class="quiz-sub">${msg}</p>${a.message&&a.step!=='result'?`<div class="message ${a.mistakes+a.fixMistakes+a.ruleMistakes>0?'warn':''}" role="status">${esc(a.message)}</div>`:''}${mid}${a.step!=='result'?`<div class="actionrow">${a.hints<2?`<button class="btn" data-action="hint">◇ Un indizio (${a.hints}/2)</button>`:''}<button class="btn soft" data-action="skip">Scopri la soluzione</button></div>${a.hints>0?`<div class="hintbox"><b>Indizio ${a.hints}:</b> ${esc(p.hints[a.hints-1])}</div>`:''}`:''}</section>`
+ else mid=`${a.unlocked?`<div class="banner" role="status">🌟 Hai sbloccato il livello ${a.unlocked}: ${LEVELS[a.unlocked]}! Puoi provarlo dalla prossima sfida.</div>`:''}<div class="success"><div class="section-kicker">Schema scoperto</div><h3>${esc(p.rule)}</h3><p>${esc(p.why)}</p><div class="pill" style="display:inline-block">+${a.earned} XP ${a.replay?' · ripasso senza nuovi punti':''}</div></div><div class="statrow"><div class="statbox"><big>${a.spot?'✓':'—'}</big><span>anomalia riconosciuta</span></div><div class="statbox"><big>${a.fix&&a.rule?'✓':'—'}</big><span>collegamento compreso</span></div></div><button class="btn primary" data-action="next">${session.count>=session.total?'Vedi il riepilogo →':'Prossima sfida →'}</button>`;
+ return `<section class="card"><div class="toolbar"><span class="label">${esc(dname(p.domain))} · livello ${p.level}/4 · ${LEVELS[p.level]} ${a.replay?'· ripasso':''}</span><span class="label">Sfida ${Math.min(session.count+(a.step==='result'?0:1),session.total)} / ${session.total}</span></div><div class="stepper" aria-label="Progressione: anomalia, sostituzione, regola">${[0,1,2].map((n)=>`<div class="step ${stepIdx>n?'ok':stepIdx===n?'current':''}"></div>`).join('')}</div><h2 class="quiz-question">${a.step==='spot'?'Cosa c’è di sbagliato?':a.step==='fix'?'Come lo correggeresti?':a.step==='rule'?'Qual è la regola nascosta?':'Adesso tutto torna.'}</h2><p class="quiz-sub">${msg}</p>${a.message&&a.step!=='result'?`<div class="message ${a.mistakes+a.fixMistakes+a.ruleMistakes>0?'warn':''}" role="status">${esc(a.message)}</div>`:''}${mid}${a.step!=='result'?`<div class="actionrow">${a.hints<2?`<button class="btn" data-action="hint">◇ Un indizio (${a.hints}/2)</button>`:''}<button class="btn soft" data-action="skip">Scopri la soluzione</button></div>${a.hints>0?`<div class="hintbox"><b>Indizio ${a.hints}:</b> ${esc(p.hints[a.hints-1])}</div>`:''}`:''}</section>`
 }
 function game(){if(session.done)return `<div class="card session-done"><div class="section-kicker">Una tappa completata</div><h1 class="section-heading">Hai esplorato ${session.count} collegamenti.</h1><p class="outro">Ogni enigma è una piccola scoperta. Puoi continuare con i tuoi settori oppure provare qualcosa di nuovo.</p><div class="statrow"><div class="statbox"><big>+${session.gained}</big><span>XP in questa sessione</span></div><div class="statbox"><big>${session.perfect}</big><span>soluzioni complete senza errori</span></div></div><div class="actionrow" style="justify-content:center"><button class="btn primary" data-action="new-session">Altre 10 sfide →</button><button class="btn" data-action="view" data-val="map">Esplora la tua mappa</button></div></div>`;
  if(!active){next();}
- return `<div class="section-kicker">Allenati a vedere oltre</div><h1 class="section-heading" style="margin-bottom:9px">C’è qualcosa che non torna.</h1><p class="lead">Non conosci la regola. Devi scoprirla.</p><div class="toolbar" style="margin-top:20px"><div class="mode-row" style="margin:0"><button class="btn ${chosenDomain==='mix'?'selected':''}" data-action="domain" data-val="mix">Misto</button>${Object.entries(DOMAINS).filter(([d])=>state.interests.includes(d)).map(([d,m])=>`<button class="btn ${chosenDomain===d?'selected':''}" data-action="domain" data-val="${d}">${m.name}</button>`).join('')}</div></div><div class="content-grid"><div><div class="card" style="padding:14px 20px;margin-bottom:15px">${modeBar()}</div>${questionStep()}</div>${sidePanel()}</div>`;
+ return `<div class="section-kicker">Allenati a vedere oltre</div><h1 class="section-heading" style="font-size:32px;margin-bottom:9px">C’è qualcosa che non torna.</h1><p class="lead">Non conosci la regola. Devi scoprirla.</p><div class="toolbar" style="margin-top:20px"><div class="mode-row" style="margin:0"><button class="btn ${chosenDomain==='mix'?'selected':''}" data-action="domain" data-val="mix">Misto</button>${Object.entries(DOMAINS).map(([d,m])=>`<button class="btn ${chosenDomain===d?'selected':''}" data-action="domain" data-val="${d}">${m.symbol} ${m.name}</button>`).join('')}</div></div>${levelBar()}<div class="content-grid"><div><div class="mode-compact">${modeBar()}</div>${questionStep()}</div>${sidePanel()}</div>`;
 }
-function mapView(){return `<div class="section-kicker">Il tuo atlante personale</div><h1 class="section-heading">La mappa delle tue competenze.</h1><p class="lead">Un ritratto delle tue prestazioni nel gioco, non un giudizio sulle tue capacità o sul tuo valore.</p><div class="statrow" style="max-width:590px"><div class="statbox"><big>${state.xp}</big><span>esperienza accumulata</span></div><div class="statbox"><big>${instinctCount()}</big><span>intuizioni riconosciute</span></div></div><div class="map-grid">${Object.entries(DOMAINS).map(([d,m])=>`<div class="map-card"><div class="map-top"><span class="sect-icon">${m.symbol}</span><span class="circle-score">${history(d).length?mastery(d)+'<small style="font-size:11px;color:#a1c69e">/100</small>':'—'}</span></div><h2 style="margin:17px 0 0">${m.name}</h2><p>${m.intro}</p><div class="smallrow"><span>${progress(d)} enigmi visti / ${PUZZLES.filter(p=>p.domain===d).length}</span><span>${history(d).length} prove · stima ${history(d).length<5?'iniziale':'nel gioco'}</span></div><div class="bar"><i style="width:${history(d).length?mastery(d):0}%"></i></div><button class="btn" data-action="domain" data-val="${d}">Gioca in ${m.name} →</button></div>`).join('')}</div><div class="details"><h3>Come leggere questi valori</h3><p class="muted">L’esperienza aumenta quando scopri nuovi enigmi. La padronanza è una stima prudente delle risposte, degli indizi usati e della difficoltà affrontata, aggiornata per settore. Con poche prove è indicativa, non diagnostica. Le intuizioni vengono contate solo se le dichiari prima della risposta e individui l’anomalia.</p><button class="btn corally" data-action="reset">Azzera i progressi su questo dispositivo</button></div>`}
-function aboutView(){return `<div class="section-kicker">Le regole del mondo STONA</div><h1 class="section-heading">Non sapere la risposta è parte del gioco.</h1><p class="lead">Un cruciverba d’intuizione: chiunque può esplorare, e nessuno viene giudicato per una risposta sbagliata.</p><div class="map-grid"><div class="card"><div class="section-kicker">01 · Guarda</div><h2>Trova l’anomalia</h2><p class="muted">Otto elementi sono mostrati senza categoria dichiarata. Trova quello che non si accorda con gli altri.</p></div><div class="card"><div class="section-kicker">02 · Ripara</div><h2>Sostituiscilo</h2><p class="muted">Scegli una sostituzione coerente. Nella versione finale potranno essere accettate più correzioni diverse.</p></div><div class="card"><div class="section-kicker">03 · Comprendi</div><h2>Scopri il filo nascosto</h2><p class="muted">Individua la regola, oppure leggi la spiegazione senza alcuna penalizzazione emotiva.</p></div><div class="card"><div class="section-kicker">✦ · Intuizione</div><h2>«Lo sento d’istinto»</h2><p class="muted">Dichiara la scelta istintiva prima di indicare l’anomalia: il gioco registrerà quante intuizioni sono corrette, senza attribuirti un QI.</p></div></div><div class="details"><h3>Cosa esiste in questa versione</h3><p class="muted">96 enigmi in 8 settori, livelli 1–5, interessi personalizzabili, 2 indizi per enigma, 3 modalità, sessioni di 10 sfide, esperienza persistente, mappa e padronanza stimata per settore. I progressi si salvano nel browser. Puoi proteggerli con un profilo facoltativo ed esportarli in un file cifrato per importarli altrove. La modalità «Sfida personale» non è una classifica online.</p><p class="muted"><b>In progetto:</b> 20 settori, contenuti visivi e audio, regole alternative validate, accessibilità avanzata, motore di generazione con controllo di qualità, sfide tra amici e sincronizzazione tra dispositivi.</p><button class="btn primary" data-action="view" data-val="play">Torna alle sfide →</button></div>`}
-function welcome(){return `<section class="welcome"><div class="section-kicker">96 enigmi · 8 mondi · Il tuo istinto</div><h1 class="section-heading">Qualcosa stona.<br>Tu lo vedi?</h1><p class="lead">Otto elementi. Un filo nascosto. Trova quello fuori posto, correggilo e scopri il perché.</p><div class="preview-tiles" aria-hidden="true">${['3','2','6','4','5','7','9','5'].map(x=>`<span>${x}</span>`).join('')}</div><div class="actionrow welcome-actions"><button class="btn primary" data-action="quick-play">Gioca subito →</button><button class="btn soft" data-action="view" data-val="profile">Ho un profilo / Importa</button></div><p class="save-note">Nessuna registrazione. Nessuna installazione. I progressi si salvano mentre giochi.</p><div class="details"><strong>Un minuto per entrare nel gioco.</strong><p class="muted" style="margin:8px 0 0">Tocca ciò che non torna. Se serve, chiedi un indizio. Il nome e la password possono aspettare.</p></div></section>`;}
-function render(){const app=document.getElementById('app');let content;if(editingInterests)content=onboarding().replace(header(),'');else if(view==='profile')content=profileView();else if(!state.onboardingDone&&view==='play')content=welcome();else content=view==='map'?mapView():view==='about'?aboutView():game();
- app.innerHTML=`<div class="app">${header()}${navbar()}${storageError?`<div class="status-error" role="alert">${esc(storageError)}</div>`:''}<main id="main" tabindex="-1" class="${busy?'busy':''}">${content}</main><footer class="footer">STONA · Alpha 0.2 · 96 enigmi · Nessuna registrazione obbligatoria. Profili e progressi restano nel browser; trasferimento tramite file da «Il mio profilo». Nessun tracciamento.</footer></div>`;
+function mapView(){return `<div class="section-kicker">Il tuo atlante personale</div><h1 class="section-heading">La mappa delle tue competenze.</h1><p class="lead">Un ritratto delle tue prestazioni nel gioco, non un giudizio sulle tue capacità o sul tuo valore.</p><div class="statrow" style="max-width:590px"><div class="statbox"><big>${state.xp}</big><span>esperienza accumulata</span></div><div class="statbox"><big>${solvedCount()}</big><span>soluzioni complete</span></div></div><div class="map-grid">${Object.entries(DOMAINS).map(([d,m])=>`<div class="map-card"><div class="map-top"><span class="sect-icon">${m.symbol}</span><span class="circle-score">${history(d).length?mastery(d)+'<small style="font-size:11px;color:#a1c69e">/100</small>':'—'}</span></div><h2 style="margin:17px 0 0">${m.name}</h2><p>${m.intro}</p><div class="smallrow"><span>${progress(d)} enigmi visti / ${PUZZLES.filter(p=>p.domain===d).length}</span><span>${history(d).length} prove · stima ${history(d).length<5?'iniziale':'nel gioco'}</span></div><div class="bar"><i style="width:${history(d).length?mastery(d):0}%"></i></div><button class="btn" data-action="domain" data-val="${d}">Gioca in ${m.name} →</button></div>`).join('')}</div><div class="details"><h3>Come leggere questi valori</h3><p class="muted">L’esperienza aumenta quando scopri nuovi enigmi. La padronanza è una stima prudente delle risposte, degli indizi usati e della difficoltà affrontata, aggiornata per settore. Con poche prove è indicativa, non diagnostica. I livelli si aprono con soluzioni complete senza errori e senza indizi. Le risposte rapide accelerano lo sblocco; puoi anche procedere con calma.</p><button class="btn corally" data-action="reset">Azzera i progressi su questo dispositivo</button></div>`}
+function aboutView(){return `<div class="section-kicker">Le regole del mondo STONA</div><h1 class="section-heading">Non sapere la risposta è parte del gioco.</h1><p class="lead">Un cruciverba d’intuizione: chiunque può esplorare, e nessuno viene giudicato per una risposta sbagliata.</p><div class="map-grid"><div class="card"><div class="section-kicker">01 · Guarda</div><h2>Trova l’anomalia</h2><p class="muted">Otto elementi sono mostrati senza categoria dichiarata. Trova quello che non si accorda con gli altri.</p></div><div class="card"><div class="section-kicker">02 · Ripara</div><h2>Sostituiscilo</h2><p class="muted">Scegli una sostituzione coerente. Nella versione finale potranno essere accettate più correzioni diverse.</p></div><div class="card"><div class="section-kicker">03 · Comprendi</div><h2>Scopri il filo nascosto</h2><p class="muted">Individua la regola, oppure leggi la spiegazione senza alcuna penalizzazione emotiva.</p></div><div class="card"><div class="section-kicker">🌟 · Il tuo ritmo</div><h2>Parti facile, poi esplora</h2><p class="muted">Quattro livelli. Una soluzione completa senza aiuti vale una stella; entro 45 secondi ne vale due. Quattro stelle nello stesso livello aprono il successivo. Nessuna penalità se rispondi con calma.</p></div></div><div class="details"><h3>Cosa esiste in questa versione</h3><p class="muted">128 enigmi in 8 settori, 4 livelli progressivi, interessi personalizzabili, icone e immagini simboliche, 2 indizi per enigma, 3 modalità, sessioni di 10 sfide, esperienza persistente, mappa e padronanza stimata per settore. I progressi si salvano nel browser. Puoi proteggerli con un profilo facoltativo ed esportarli in un file cifrato per importarli altrove. La modalità «Sfida personale» non è una classifica online.</p><p class="muted"><b>In progetto:</b> 20 settori, contenuti visivi e audio, regole alternative validate, accessibilità avanzata, motore di generazione con controllo di qualità, sfide tra amici e sincronizzazione tra dispositivi.</p><button class="btn primary" data-action="view" data-val="play">Torna alle sfide →</button></div>`}
+function welcome(){return `<section class="welcome"><div class="section-kicker">128 enigmi · 8 mondi · Si parte facile</div><h1 class="section-heading">Qualcosa stona.<br>Tu lo vedi?</h1><p class="lead">Otto elementi. Un filo nascosto. Trova quello fuori posto, correggilo e scopri il perché.</p><div class="preview-tiles" aria-hidden="true">${['🐶','🐱','🐰','🦁','🐘','🚲','🐻','🦊'].map(x=>`<span>${x}</span>`).join('')}</div><div class="actionrow welcome-actions"><button class="btn primary" data-action="quick-play">Gioca subito →</button><button class="btn soft" data-action="view" data-val="profile">Ho un profilo / Importa</button></div><p class="save-note">Nessuna registrazione. Nessuna installazione. I progressi si salvano mentre giochi.</p><div class="details"><strong>Primi passi: semplici e visivi.</strong><p class="muted" style="margin:8px 0 0">Si comincia con numeri piccoli e oggetti familiari, anche a 10 anni. Se serve, chiedi un indizio. Il nome e la password possono aspettare.</p></div></section>`;}
+function render(){tickClock();const app=document.getElementById('app');let content;if(editingInterests)content=onboarding().replace(header(),'');else if(view==='profile')content=profileView();else if(!state.onboardingDone&&view==='play')content=welcome();else content=view==='map'?mapView():view==='about'?aboutView():game();
+ app.innerHTML=`<div class="app">${header()}${navbar()}${storageError?`<div class="status-error" role="alert">${esc(storageError)}</div>`:''}<main id="main" tabindex="-1" class="${busy?'busy':''}">${content}</main><footer class="footer">STONA · Alpha 0.3 · 128 enigmi · Nessuna registrazione obbligatoria. Profili e progressi restano nel browser; trasferimento tramite file da «Il mio profilo». Nessun tracciamento.</footer></div>`;
 }
 function quickPlay(){if(!state.onboardingDone){state.onboardingDone=true;save();}editingInterests=false;view='play';if(!active&&!session.done)next();else render();}
 document.getElementById('app').addEventListener('click',e=>{
  const b=e.target.closest('[data-action]');if(!b)return;
  const act=b.dataset.action,val=b.dataset.val;
  if(busy)return;
+ if(act==='level'){const n=Number(val);if(n>=1&&n<=unlockedLevel()){state.playLevel=n;save();active=null;session={count:0,total:10,gained:0,done:false,perfect:0};view='play';next();}return;}
  if(act==='quick-play'){quickPlay();return;}
  if(act==='export'||act==='logout'){profileAction(act);return;}
  if(act==='start'){modalStart();return;}
@@ -3307,7 +4644,6 @@ document.getElementById('app').addEventListener('click',e=>{
  if(act==='spot'){chooseSpot(Number(val));return;}
  if(act==='fix'){chooseFix(val);return;}
  if(act==='rule'){chooseRule(val);return;}
- if(act==='intuition'&&active&&active.step==='spot'){active.intuition=!active.intuition;render();return;}
  if(act==='hint'&&active&&active.step!=='result'){active.hints=Math.min(2,active.hints+1);render();return;}
  if(act==='skip'){skip();return;}
  if(act==='next'){next();return;}
@@ -3315,6 +4651,7 @@ document.getElementById('app').addEventListener('click',e=>{
  if(act==='reset'){if(confirm('Azzera i progressi di questo percorso? Gli altri profili restano conservati. Esporta prima una copia se vuoi recuperarli.')){state=structuredClone(INITIAL);save();active=null;session={count:0,total:10,gained:0,done:false,perfect:0};editingInterests=false;view='play';render()}return;}
 });
 document.getElementById('app').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,kind=form.dataset.form;if(!kind||busy)return;const values=fields(form);busy=true;profileMessage='';form.querySelector('button').disabled=true;try{if(kind==='register')await registerProfile(values);if(kind==='login')await loginProfile(values);if(kind==='import')await importProfile(form,values);}catch(err){profileMessage=err.message||'Operazione non riuscita. Riprova.';}finally{busy=false;render();}});
+document.addEventListener('visibilitychange',tickClock);
 persistVault();render();
 </script>
 </body></html>
