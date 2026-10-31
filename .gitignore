@@ -1,0 +1,4 @@
+dist/
+.openai/
+_site/
+*.log

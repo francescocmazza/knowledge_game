@@ -143,3 +143,8 @@ Verificare se persone con istruzione, interessi ed età differenti trovano grati
 Brand definitivo (STONA nome provvisorio), piattaforme e distribuzione, classifiche, forme di remunerazione, regole multiple, audio/immagini, sistema di editing contenuti, account opzionali e revisione legale del nome.
 
 Vedi [DOMAINS.md](DOMAINS.md) e [PROTOTYPE_STATUS.md](PROTOTYPE_STATUS.md).
+
+
+## 14. Aggiornamento implementato alpha 0.2
+
+Il catalogo è ora di 96 enigmi, 12 per settore. Il primo accesso ha un pulsante «Gioca subito»: la personalizzazione non è obbligatoria. Sono implementati profili facoltativi con nome/password senza email, adozione degli XP ospite, cifratura locale e trasferimento JSON. Non è implementata sincronizzazione cloud; su un nuovo computer serve importare un file. Le decisioni sull’identità qui descritte aggiornano le voci future delle sezioni precedenti. Vedi PROFILES.md e PROTOTYPE_STATUS.md.

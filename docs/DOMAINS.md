@@ -1,4 +1,4 @@
-# Analisi dei primi otto domini — STONA v0.1
+# Analisi dei primi otto domini — STONA v0.2
 **31 ottobre 2026.** Analisi **qualitativa progettuale**, non ricerca statistica su utenti o mercato. I domini sono un'ipotesi per massimizzare accessibilità, varietà di intuizione e profondità futura.
 
 ## 1. Criteri di scelta
@@ -27,8 +27,8 @@ Non usare queste valutazioni come statistiche sulla popolazione: necessitano pla
 
 Sono **8 percorsi alternativi**, non materie di scuola da superare obbligatoriamente.
 
-## 3. Catalogo α: 48 enigmi totali
-Distribuzione: **6 quesiti per dominio**. La selezione è deliberatamente contenuta e controllabile; 48 quesiti non bastano ancora a sostenere un gioco commerciale né una stima affidabile delle competenze.
+## 3. Catalogo iniziale: 48 enigmi, ora esteso a 96
+La prima versione aveva **6 quesiti per dominio**; l’alpha 0.2 ne ha **12 per dominio**. I sei iniziali sono elencati qui, i sei aggiunti in [CATALOG_ALPHA_02.md](CATALOG_ALPHA_02.md). La selezione è deliberatamente contenuta e controllabile; 48 quesiti non bastano ancora a sostenere un gioco commerciale né una stima affidabile delle competenze.
 
 ### Numeri (6)
 - Introduzione: sequenza delle cifre da 2 a 9 con doppio 5 e 8 mancante; accettare entrambi i 5 come candidati.
@@ -141,3 +141,4 @@ Il design iniziale non prova la popolarità o efficacia dei settori. Per selezio
 Le otto aree sono una distribuzione iniziale sensata **per prototipare**, non «le otto più efficaci» dimostrate. Validare l'interesse e l'assenza di sensazioni denigratorie è più importante che aggiungere subito centinaia di quesiti.
 
 I dati effettivi del catalogo sono incorporati in [../index.html](../index.html) nel blocco JSON `<script id="stona-data" type="application/json">`.
+

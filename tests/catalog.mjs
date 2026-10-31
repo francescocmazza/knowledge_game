@@ -10,7 +10,7 @@ const match = html.match(/<script id="stona-data" type="application\/json">([\s\
 assert(match, 'Catalogo JSON incorporato assente');
 const { domains, puzzles } = JSON.parse(match[1]);
 assert.equal(Object.keys(domains).length, 8, 'Numero di domini');
-assert.equal(puzzles.length, 48, 'Numero di enigmi');
+assert.equal(puzzles.length, 96, 'Numero di enigmi');
 const ids = new Set();
 for (const puzzle of puzzles) {
   assert(!ids.has(puzzle.id), 'ID duplicato: ' + puzzle.id);
@@ -28,7 +28,7 @@ for (const puzzle of puzzles) {
   assert(puzzle.level >= 1 && puzzle.level <= 5, 'Livello invalido: ' + puzzle.id);
 }
 for (const name of Object.keys(domains)) {
-  assert.equal(puzzles.filter(p => p.domain === name).length, 6, 'Distribuzione: ' + name);
+  assert.equal(puzzles.filter(p => p.domain === name).length, 12, 'Distribuzione: ' + name);
 }
 const original = puzzles.find(p => p.id === 'numeri-01');
 assert(original, 'Manca esempio fondativo');
@@ -36,5 +36,6 @@ assert.deepEqual(original.items, ['3','2','6','4','5','7','9','5']);
 assert.deepEqual(original.wrong, [4,7]);
 assert.equal(original.correct, '8');
 assert.equal(puzzles.find(p => p.id === 'musica-02')?.ordered, true);
-console.log('OK: 8 domini, 48 enigmi, struttura valida e regola numerica fondativa coerente.');
+console.log('OK: 8 domini, 96 enigmi, struttura valida e regola numerica fondativa coerente.');
 console.log('Nota: i controlli sintattici NON sostituiscono una revisione fattuale/editoriale.');
+
