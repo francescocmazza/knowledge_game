@@ -25,7 +25,7 @@ Aprire **[index.html](index.html)** in un browser moderno, anche senza Internet.
 Sono scelti per coprire sia ragionamento formale sia competenze acquisite nella vita quotidiana e interessi popolari; rappresentano una **ipotesi iniziale da testare**, non un risultato di ricerca quantitativa.
 
 ## Stato
-**Prototipo α, 31 ottobre 2026.** Catalogo previsto per questa versione: **48 enigmi / 8 domini** (6 per dominio), livelli editoriali 1–5; selezione di interessi; sessioni da dieci; due indizi; intuizione; XP; padronanza; salvataggio sul dispositivo. Una verifica funzionale del percorso numerico originale è stata eseguita in browser Chromium, ma **non** sostituisce collaudo completo o validazione editoriale di tutti gli enigmi.
+**Prototipo α, 31 ottobre 2026.** Catalogo previsto per questa versione: **48 enigmi / 8 domini** (6 per dominio), livelli editoriali attualmente 1–4 (scala prevista 1–5); selezione di interessi; sessioni da dieci; due indizi; intuizione; XP; padronanza; salvataggio sul dispositivo. Una verifica funzionale del percorso numerico originale è stata eseguita in browser Chromium, ma **non** sostituisce collaudo completo o validazione editoriale di tutti gli enigmi.
 
 ## Documentazione
 - [Visione e game design](docs/GAME_DESIGN.md)
