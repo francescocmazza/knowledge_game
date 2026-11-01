@@ -1,8 +1,8 @@
-# Knowledge Game — STONA α 0.5
+# Knowledge Game — STONA α 0.6
 
 **Cosa c’è di sbagliato?** Otto elementi, una regola nascosta: trova l’anomalia, correggila e scopri il collegamento.
 
-**128 enigmi, 8 domini, 16 enigmi per dominio.** Nessuna installazione, email o registrazione obbligatoria. 32 nuovi enigmi introduttivi si aggiungono ai 96 precedenti.
+**320 enigmi, 8 domini, 40 enigmi per dominio e 10 difficoltà.** Nessuna installazione, email o registrazione obbligatoria. I 128 contenuti precedenti restano disponibili, con 192 nuove istanze di logica verificabile.
 
 ## Giocare
 
@@ -39,6 +39,7 @@ Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeri
 
 ## Documentazione
 
+- [Ritmo adattivo, calibrazione e parametri](docs/ADAPTIVE_RHYTHM.md)
 - [Game design e principi](docs/GAME_DESIGN.md)
 - [Studio degli otto domini](docs/DOMAINS.md)
 - [Stato, collaudo e limiti](docs/PROTOTYPE_STATUS.md)
@@ -48,13 +49,13 @@ Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeri
 
 **Diritti:** la pubblicazione del codice non implica concessione di licenze ulteriori.
 
-## Alpha 0.3: primi passi e livelli
+## Evoluzione storica: alpha 0.3 (scala precedente)
 
 Tutti gli otto settori sono sempre selezionabili; Misto segue gli interessi. Quattro gradi: Primi passi, Collegamenti, Esploratore, Sfide esperte. I 32 nuovi enigmi del livello 1 usano numeri piccoli e oggetti familiari, con icone e testi, pensati anche per 10 anni (ipotesi da verificare in playtest). Una soluzione completa senza errori o indizi dà una stella; entro 45 secondi di gioco attivo ne dà due. Quattro stelle nello stesso livello aprono il successivo. Nessuna scadenza o sottrazione di punti; si può tornare a un livello più facile. Errori, aiuti e soluzioni mostrate non danno stelle. Ogni enigma può dare stelle una sola volta: un ripasso risolto correttamente dopo un errore o una rivelazione può recuperarle, senza nuovi XP. Lo storico e gli XP precedenti sono conservati, ma non sbloccano automaticamente difficoltà maggiori. Il tasto dell’istinto e il relativo bonus sono rimossi.
 
 ## Stona Kids (8–14 anni)
 
-[Apri Stona Kids](https://francescocmazza.github.io/knowledge_game/kids/) · [Documentazione Kids](kids/README.md). Versione separata con 128 enigmi e 8 temi: Numeri e logica, Parole, Animali e natura, Pianeta Terra, Spazio, Sport, Musica e Among Us. Quattro livelli, soprannomi e salvataggi autonomi; nessuna registrazione obbligatoria. I backup Kids non si mescolano con quelli classici. Il tema Among Us propone missioni di logica originali e non ufficiali.
+[Apri Stona Kids](https://francescocmazza.github.io/knowledge_game/kids/) · [Documentazione Kids](kids/README.md). Versione separata con 320 enigmi e 8 temi: Numeri e logica, Parole, Animali e natura, Pianeta Terra, Spazio, Sport, Musica e Among Us. Dieci livelli, soprannomi e salvataggi autonomi; nessuna registrazione obbligatoria. I backup Kids non si mescolano con quelli classici. Il tema Among Us propone missioni di logica originali e non ufficiali.
 
 ## Saltare, punti per tema e passaggi di livello
 
@@ -74,3 +75,14 @@ In entrambe le versioni, dopo **5 domande distinte completate** (anche con soluz
 Illustrazioni native SVG e icone concrete nei tasselli e nelle sostituzioni: quantità esatte, orologi, pianeti, oggetti, strumenti, persone con strumenti, posizioni sul campo, ambienti e missioni con personaggi colorati. Le parole prive di un oggetto raffigurabile possono essere composte dalle loro lettere effettive; nessun ABC generico. Nessuna figura approssimativa per nomi di persone o titoli senza un’immagine appropriata. L’interfaccia ha tasselli più ampi, colori morbidi e controlli compatti; su mobile le risposte hanno due colonne.
 
 Verificare anche `node tests/kids.mjs`, `node tests/scoring-and-skips.mjs`, `node tests/engagement.mjs` e `node tests/profiles.mjs kids/index.html`. Il nuovo test copre soglie 5/7, salti, rinunce persistenti, consenso alla classifica, ordine, filtri, cifratura, importazioni vecchie e isolamento delle versioni.
+
+
+## Alpha 0.6: difficoltà 1–10 e ritmo adattivo (Kids 0.4)
+
+Il livello del percorso e quello della domanda sono distinti. A livello 6, il piano base su dieci proposte è **4, 5, 6, 4, 5, 7, 4, 5, 6, 4**: quattro domande di livello 4, tre di livello 5, due di livello 6 e una di livello 7. Confini 1/10, promozioni, recupero e disponibilità possono cambiare la distribuzione reale. «Più tranquillo» evita le anticipazioni sopra il proprio livello. Dopo una risposta faticosa arrivano proposte più leggere, senza perdita di livello o punti.
+
+La difficoltà parte da una stima editoriale e può essere ricalibrata con tempi attivi, aiuti, esiti e salti **contestualizzati al livello del giocatore e del tema**. Un salto neutro o per disinteresse non viene interpretato come incapacità. Servono almeno 8 codici giocatore distinti, di cui 4 vicini al livello della domanda, per modificare la stima; i ripassi non moltiplicano il campione.
+
+I dati restano locali. I giocatori possono esportare un report da Il mio profilo; il curatore può unire i report in locale e distribuire solo aggregati con una release. Nessun invio automatico e nessun dato reale inventato. La specifica completa, la procedura e i limiti delle stime sono in [ADAPTIVE_RHYTHM.md](docs/ADAPTIVE_RHYTHM.md).
+
+Le fonti modificabili sono `config/gameplay.json`, `data/catalog-*.json` e `src/adaptive-*.js/mjs`. Rigenerare con `node scripts/build-adaptive.mjs`; verificare anche `node tests/adaptive.mjs`. I file HTML restano autonomi e il gioco si apre dal link senza installazioni. I salvataggi precedenti mantengono XP, identità e progressi; il vecchio livello acquisito 1/2/3/4 corrisponde a 1/4/7/10 nella nuova scala.

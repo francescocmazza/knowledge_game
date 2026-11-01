@@ -60,7 +60,7 @@ for(const path of ['index.html','kids/index.html']){
  assert(!a.run('visualLabel("Nome sconosciuto",{domain:"cinema"})').includes('tile-figure'));
  assert(!a.run('visualLabel("Viola",{domain:"musica"})').includes('🟣'));
  assert(a.run('pitchFigure("Do",{domain:"musica"},0)').includes('M54 76h34'),'C4 has a ledger line below the staff');
- const coverage=JSON.parse(a.run('JSON.stringify([1,2,3,4].map(level=>{const items=PUZZLES.filter(p=>p.level===level).flatMap(p=>p.items.map((t,i)=>!!tileFigure(t,p,i)));return {level,illustrated:items.filter(Boolean).length,total:items.length}}))'));
+ const coverage=JSON.parse(a.run('JSON.stringify(Array.from({length:10},(_,i)=>i+1).map(level=>{const items=PUZZLES.filter(p=>p.level===level).flatMap(p=>p.items.map((t,i)=>!!tileFigure(t,p,i)));return {level,illustrated:items.filter(Boolean).length,total:items.length}}))'));
  console.log(path,JSON.stringify(coverage));
 }
 const shared=new Map(),adult=app('index.html',shared),kids=app('kids/index.html',shared);

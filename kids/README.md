@@ -1,50 +1,35 @@
-# Stona Kids — alpha 0.2
+# Stona Kids — alpha 0.4
 
-Versione autonoma di STONA per la fascia 8–14 anni, pubblicata a `/knowledge_game/kids/`. Si apre dal browser senza installazione, senza email e senza registrazione obbligatoria. Non è una divisione rigida per età: il primo livello è accessibile e i successivi introducono collegamenti più articolati. La taratura sulla fascia d’età è progettuale, da verificare con playtest reali.
+**320 quesiti · 8 temi · 10 livelli · 8–14 anni.**
 
-## Otto temi
+[Apri Stona Kids](https://francescocmazza.github.io/knowledge_game/kids/). Gioco immediato come ospite, senza installazione o registrazione obbligatoria. Temi: Numeri e logica, Parole, Animali e natura, Pianeta Terra, Spazio, Sport, Musica, Among Us. Ogni tema ha 40 domande, quattro per difficoltà.
 
-Numeri e logica · Parole · Animali e natura · Pianeta Terra · Spazio · Sport · Musica · Among Us.
+## Ritmo e difficoltà
 
-128 enigmi totali, 16 per tema, quattro per ciascuno dei quattro livelli. I contenuti di STONA classico riutilizzati sono stati selezionati/adattati; il catalogo Kids ha ID propri nel suo namespace. Sport, Spazio e Among Us hanno ciascuno 16 mini-enigmi preparati per questa versione. Le parole specialistiche hanno spiegazioni e due indizi; nessun timer blocca la risposta.
+Il livello del percorso è distinto da quello della domanda. A livello 6 il piano base su dieci proposte è 4, 5, 6, 4, 5, 7, 4, 5, 6, 4. Dopo una sfida c’è spazio per consolidare. Confini della scala, recuperi e disponibilità possono modificare la distribuzione. «Più tranquillo» evita le anticipazioni sopra il livello scelto.
 
-## Progressione
+I recuperi dopo una domanda faticosa non abbassano il livello né tolgono punti. Risposte complete e corrette almeno al livello scelto danno stelle, con avanzamento più rapido se veloci. Il tempo di riferimento Kids è 60 secondi +5 per ogni difficoltà oltre 1: nessun conto alla rovescia. Anche chi risponde lentamente può raggiungere il livello 10.
 
-Primi passi → Caccia agli indizi → Connessioni → Super sfide. Una soluzione completa senza errori o indizi vale una stella, due se data entro 60 secondi di gioco attivo. Quattro stelle uniche nello stesso livello aprono il successivo. Anche rispondendo con calma si avanza. Un ripasso può recuperare stelle non ottenute in precedenza, senza duplicare XP. La navigazione in altre sezioni e il tempo con scheda nascosta non contano. La soglia di 60 secondi è un parametro di alpha, non una misura delle capacità del bambino.
+Le figure rappresentano oggetti o dati specifici; niente ABC generico nelle risposte. Conteggi, orologi, pianeti, missioni e registri hanno disegni leggibili e testo accessibile. I nuovi livelli avanzati comprendono relazioni e registri con più condizioni; i dati inventati sono esplicitamente segnalati. Le difficoltà sono stime editoriali da verificare con bambini e ragazzi reali, non etichette scientificamente calibrate.
 
-## Tema speciale Among Us
+## Saltare, identità e classifica
 
-Mini-missioni originali con colori di tute, compiti, schede, collegamenti, pannelli e registri di bordo. I registri sono dichiarati inventati, gli indizi sono nei tasselli e non occorre conoscere il videogioco. Nessuna chat, connessione al gioco o installazione di Among Us. Le descrizioni non sono regole di vere partite e non indicano chi sia un impostore reale.
+«Salta domanda» è illimitato e senza penalità. Non dà XP, non conta come errore o completamento e rinvia il quesito per la sessione. I due motivi facoltativi successivi aiutano a distinguere difficoltà e disinteresse. Gli XP restano attribuiti solo al tema del quesito effettivamente giocato.
 
-Riferimento fattuale primario: [Among Us — Innersloth](https://www.innersloth.com/games/among-us/), consultato il 1 novembre 2026, per il concetto di equipaggio, compiti e impostori. Il tema è non ufficiale e non affiliato a Innersloth. Nessuna immagine o schermata del gioco è incorporata.
+Dopo 5 domande distinte completate si può scegliere un soprannome, dopo 7 si può creare un profilo: nessun obbligo, email o nome reale. Gli inviti declinati non si ripetono. Il profilo con password si può esportare in JSON cifrato e importare su un altro computer. Non c’è sincronizzazione automatica o recupero via email.
 
-## Profili separati
+La classifica facoltativa confronta i profili dello **stesso browser/dispositivo**; è separata dal classico, con podio e filtri per tema. Non è una classifica globale online.
 
-Solo soprannome, password facoltativa e progressi locali. La UI invita a non inserire nome e cognome. Storage `stona-kids-profiles-v1`, formato di esportazione cifrata `stona-kids-profile`, versione envelope 2. Password e dati non vengono inviati a server. Il motore crittografico è lo stesso di STONA classico (PBKDF2/AES-GCM); i formati sono separati e le due versioni rifiutano reciprocamente i backup. Nessuna lettura o migrazione dei salvataggi classici, neppure legacy. Come nel gioco classico, esportare il file per continuare su un altro dispositivo.
+## Feedback per i playtest
 
-## Icone
+Il gioco conserva localmente tempi attivi, aiuti ed esiti. Da Il mio profilo si può esportare un report di test senza soprannome o password; chi organizza i test può importare più report della stessa edizione. Servono almeno 8 codici giocatore distinti, di cui 4 vicini alla difficoltà della domanda, prima di correggere una stima. Salti neutri e ripassi non la alterano automaticamente. Nessun invio automatico dei dati.
 
-Solo corrispondenze pertinenti all’elemento e riconosciute anche in maiuscolo. Nessun simbolo del tema ripetuto automaticamente nelle risposte e nessuna immagine approssimativa. Dove manca un’icona adatta rimane solo il testo.
+Specifica, parametri, procedura per gli aggregati e limiti: [ADAPTIVE_RHYTHM.md](../docs/ADAPTIVE_RHYTHM.md). Non sono stati misurati effetti del gioco sulla neuroplasticità.
 
-## Verifiche
+## Isolamento e distribuzione
 
-- `node tests/kids.mjs`: catalogo e distribuzione, missioni originali, ingresso immediato, livelli, sblocco rapido/lento, separazione dei salvataggi e dei backup, icone pertinenti.
-- `node tests/profiles.mjs kids/index.html`: ciclo dei profili e percorso completo delle 128 soluzioni, con Web Crypto nativo in contesti isolati.
-- I test classici restano nel workflow, che pubblica entrambe le versioni dopo esito positivo.
+Storage `stona-kids-profiles-v1`, backup `stona-kids-profile`, coorte di test `stona-kids-playtest-v2`. Non leggere o migrare i dati degli adulti. I formati dei profili e dei report rifiutano l’altra edizione. I salvataggi precedenti mantengono XP e identità; scala acquisita 1/2/3/4 → 1/4/7/10.
 
-I test automatici non sostituiscono la revisione editoriale indipendente, l’audit di accessibilità e la prova con bambini della fascia indicata.
+Il tema Among Us contiene missioni originali ispirate al gioco, senza affiliazione a Innersloth; non richiede un account e non descrive una vera partita. Per giocare bastano gli indizi mostrati.
 
-Collaudo UI eseguito in Chromium: pagina iniziale e otto temi, ingresso diretto in Among Us, scelta di Missione 9, correzione in Missione 8, spiegazione corretta, risultato +35 XP e due stelle. Controllata visivamente la pagina iniziale desktop. La cifratura è coperta dai test automatici nativi e richiede HTTPS in browser.
-
-## Domande saltate, temi e notifiche
-«Salta domanda» rimanda il quesito senza penalità, stelle, XP, errori o completamento; si può usare più volte anche dopo un tentativo parziale. Se tutti i quesiti attuali sono saltati, l’interfaccia offre di riprovarli o cambiare tema. Nessun riproporsi immediato e nessun blocco definitivo. «Scopri la soluzione» resta distinto.
-
-La mappa mostra XP effettivi per tema (zero per quelli mai giocati), attribuiti tramite ID del catalogo. Il risultato indica il tema: anche una sequenza numerica può essere una missione Among Us. I livelli di difficoltà sono invece globali e non assegnano XP ai temi non giocati. L’avviso di promozione riceve il focus e descrive le risposte veloci soltanto quando il tempo registrato lo giustifica.
-
-`node tests/scoring-and-skips.mjs` verifica entrambe le versioni: sei domande di Numeri senza punti negli altri temi, categorie miste, correzione di etichette discordanti, salto di tutte le domande disponibili senza effetti sui punteggi, salti dopo tentativi parziali, esaurimento e ripresa, messaggi veritieri e progressione dal livello 1 al 4.
-
-
-## Alpha 0.3
-Dopo 5 domande completate si può scegliere un soprannome, dopo 7 si può creare un profilo: nessun obbligo, nessuna email, nessun nome reale richiesto. Le rinunce sono conservate, i salti non contano. Classifica facoltativa separata dal classico, **solo su questo browser/dispositivo**, con podio e filtri per tema. Non è una classifica online tra tutti i bambini.
-
-Più illustrazioni pertinenti: quantità, animali, piante, pianeti, missioni, astronauti colorati, oggetti e diagrammi dei ruoli sportivi. Nel livello iniziale 246 dei 256 tasselli del catalogo hanno una figura; questo conteggio include ripetizioni dello stesso soggetto e non è il numero di immagini uniche. Test aggiuntivo: `node tests/engagement.mjs`.
+Le fonti sono `data/catalog-kids.json` e il motore condiviso. Dopo le modifiche: `node scripts/build-adaptive.mjs`. Verificare `node tests/kids.mjs`, `node tests/profiles.mjs kids/index.html`, `node tests/scoring-and-skips.mjs`, `node tests/engagement.mjs` e `node tests/adaptive.mjs`, oltre ai controlli del classico. Il workflow pubblica entrambi gli HTML su GitHub Pages.

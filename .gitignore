@@ -2,3 +2,6 @@ dist/
 .openai/
 _site/
 *.log
+
+__pycache__/
+playtest-reports/

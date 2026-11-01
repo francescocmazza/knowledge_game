@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node scripts/build-adaptive.mjs
+      - run: git diff --exit-code -- index.html kids/index.html
+      - run: node tests/adaptive.mjs
       - run: node tests/catalog.mjs
       - run: node tests/profiles.mjs
       - run: node tests/content.mjs

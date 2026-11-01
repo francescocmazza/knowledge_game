@@ -10,7 +10,7 @@ const match = html.match(/<script id="stona-data" type="application\/json">([\s\
 assert(match, 'Catalogo JSON incorporato assente');
 const { domains, puzzles } = JSON.parse(match[1]);
 assert.equal(Object.keys(domains).length, 8, 'Numero di domini');
-assert.equal(puzzles.length, 128, 'Numero di enigmi');
+assert.equal(puzzles.length, 320, 'Numero di enigmi');
 const ids = new Set();
 for (const puzzle of puzzles) {
   assert(!ids.has(puzzle.id), 'ID duplicato: ' + puzzle.id);
@@ -25,10 +25,10 @@ for (const puzzle of puzzles) {
   assert(puzzle.wrong.length > 0, 'Anomalia mancante: ' + puzzle.id);
   assert(puzzle.wrong.every(n => Number.isInteger(n) && n >= 0 && n < 8),
     'Indice dell’anomalia invalido: ' + puzzle.id);
-  assert(puzzle.level >= 1 && puzzle.level <= 4, 'Livello invalido: ' + puzzle.id);
+  assert(puzzle.level >= 1 && puzzle.level <= 10, 'Livello invalido: ' + puzzle.id);
 }
 for (const name of Object.keys(domains)) {
-  assert.equal(puzzles.filter(p => p.domain === name).length, 16, 'Distribuzione: ' + name);
+  assert.equal(puzzles.filter(p => p.domain === name).length, 40, 'Distribuzione: ' + name);
 }
 const original = puzzles.find(p => p.id === 'numeri-01');
 assert(original, 'Manca esempio fondativo');
@@ -36,8 +36,8 @@ assert.deepEqual(original.items, ['3','2','6','4','5','7','9','5']);
 assert.deepEqual(original.wrong, [4,7]);
 assert.equal(original.correct, '8');
 assert.equal(puzzles.find(p => p.id === 'musica-02')?.ordered, true);
-console.log('OK: 8 domini, 128 enigmi, struttura valida e regola numerica fondativa coerente.');
+console.log('OK: 8 domini, 320 enigmi, struttura valida e regola numerica fondativa coerente.');
 console.log('Nota: i controlli sintattici NON sostituiscono una revisione fattuale/editoriale.');
 
 
-for (const d of Object.keys(domains)) for (const level of [1,2,3,4]) assert.equal(puzzles.filter(p=>p.domain===d&&p.level===level).length,4,`Tier coverage ${d} ${level}`);
+for (const d of Object.keys(domains)) for (const level of Array.from({length:10},(_,i)=>i+1)) assert.equal(puzzles.filter(p=>p.domain===d&&p.level===level).length,4,`Tier coverage ${d} ${level}`);

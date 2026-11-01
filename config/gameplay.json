@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "maxLevel": 10,
+  "levelNames": [
+    "",
+    "Primi passi",
+    "Piccole scoperte",
+    "Collegamenti",
+    "Occhio ai dettagli",
+    "Esploratore",
+    "Incroci",
+    "Strategia",
+    "Indizi multipli",
+    "Sfide esperte",
+    "Maestro degli schemi"
+  ],
+  "rhythm": {
+    "offsets": [
+      -2,
+      -1,
+      0,
+      -2,
+      -1,
+      1,
+      -2,
+      -1,
+      0,
+      -2
+    ],
+    "maxSameKind": 2,
+    "maxSameDomain": 2,
+    "recoveryAfterStrain": 2,
+    "recoveryOffset": -2,
+    "maxStretch": 1
+  },
+  "timing": {
+    "classicBaseMs": 45000,
+    "kidsBaseMs": 60000,
+    "classicPerLevelMs": 4000,
+    "kidsPerLevelMs": 5000,
+    "minimumMs": 1200,
+    "maxUsefulMs": 900000
+  },
+  "progression": {
+    "starsToAdvance": 4,
+    "fastStars": 2,
+    "slowStars": 1,
+    "legacyMap": [
+      0,
+      1,
+      4,
+      7,
+      10
+    ]
+  },
+  "calibration": {
+    "minPlayers": 8,
+    "minNearPlayers": 4,
+    "nearBand": 1.5,
+    "priorWeight": 12,
+    "maxAdjustment": 2,
+    "residualGain": 3,
+    "skipHardWeight": 0.35
+  },
+  "kinds": {
+    "quantita": "Quantità",
+    "sequenza": "Sequenze",
+    "categorie": "Categorie",
+    "parole": "Forme delle parole",
+    "relazioni": "Relazioni",
+    "cultura": "Conoscenze"
+  },
+  "telemetry": {
+    "maxStoredEvents": 1500,
+    "maxCohortEvents": 12000
+  }
+}

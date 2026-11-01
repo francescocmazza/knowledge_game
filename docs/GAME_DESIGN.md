@@ -1,4 +1,4 @@
-# STONA — Game Design Document (GDD) v0.1
+# STONA — Game Design Document (GDD) v0.2
 **Data:** 31 ottobre 2026 · **Stato:** concept consolidato + prototipo α · **Lingua iniziale:** italiano
 
 ## 1. Visione e posizionamento
@@ -76,21 +76,7 @@ Il tasto «Lo sento d’istinto» è rimosso su richiesta dell’utente: la risp
 ## 8. Livelli, classi e tono
 **Classi trasversali XP** (nomi non denigratori): Curioso → Esploratore → Cercatore → Intuitivo → Decifratore → Visionario → Cartografo → Maestro degli schemi. Questi titoli riconoscono l'attività, non certificano abilità.
 
-**12 gradi di difficoltà aspirazionali**:
-1. intruso visivamente/semanticamente evidente;
-2. categoria condivisa semplice;
-3. sequenza aritmetica nota;
-4. caratteristica linguistica osservabile;
-5. memoria culturale popolare;
-6. eccezione fra caratteristiche sovrapposte;
-7. vincolo temporale o relazionale;
-8. relazione composita;
-9. conoscenza settoriale specialistica;
-10. indizi incrociati fra due domini;
-11. inferenza con più passaggi e falsi candidati;
-12. schema profondo, verificabile con spiegazione non ambigua.
-
-**Attuazione α:** gli enigmi sono etichettati editorialmente 1–4 (scala interna prevista 1–5); non esiste ancora calibrazione empirica dei 12 gradi. I nomi dei livelli e il calcolo effettivo verranno raffinati su dati anonimi/consensuali e test umani.
+**Scala operativa: 10 livelli**, da Primi passi a Maestro degli schemi, con livelli bassi familiari e visivi, relazioni intermedie e vincoli multipli nei livelli alti. Il livello raggiunto è distinto da quello della domanda. Il piano alterna L−2, L−1, L e L+1 nelle proporzioni 4/3/2/1, con recuperi e un ritmo più tranquillo facoltativo. Le difficoltà sono ipotesi editoriali, ricalibrabili in modo sperimentale con osservazioni contestualizzate al profilo. La specifica corrente e i limiti sono in [ADAPTIVE_RHYTHM.md](ADAPTIVE_RHYTHM.md).
 
 ## 9. Scelta del contenuto e soluzione non ambigua
 Ogni enigma ha una **specifica verificabile**:
@@ -152,3 +138,7 @@ L’ospite gioca subito. Dopo 5 ID distinti completati, invito non bloccante al 
 Classifiche separate per le due edizioni, ordinate per XP e filtrabili per tema, limitate a chi sceglie di partecipare sullo stesso browser. Nessun confronto scientifico, premio reale, punteggio inventato o pubblicazione online. Riepiloghi visibili senza aprire i profili; uscita disponibile in ogni momento.
 
 Le figure devono rappresentare l’elemento specifico o un suo dato esatto. Non evidenziare automaticamente l’intruso, non anticipare la regola nascosta e non usare simboli generici di categoria come immagini delle risposte. Figure nascoste agli screen reader accompagnano sempre etichette testuali accessibili. Quantità contabili e orologi rispettano i valori mostrati.
+
+
+## Scala e ritmo effettivi alpha 0.6 / Kids 0.4
+La precedente scala 1–4 è sostituita da dieci livelli. Specifica normativa corrente: [ADAPTIVE_RHYTHM.md](ADAPTIVE_RHYTHM.md). Il percorso alterna 40% a L−2, 30% a L−1, 20% a L, 10% a L+1, con limiti, recuperi e adattamenti documentati. Il catalogo è di 320 quesiti per edizione. Tempi attivi e feedback locale permettono stime empiriche sperimentali relative al profilo, senza dichiarazioni di validazione psicometrica o di neuroplasticità dimostrata.

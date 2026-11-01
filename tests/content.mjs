@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const {puzzles}=JSON.parse(html.match(/<script id="stona-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
 const get=id=>puzzles.find(x=>x.id===id);
-for(const p of puzzles){assert.equal(new Set(p.items).size,p.items.length-(p.id==='numeri-01'||p.id==='numeri-06'||p.id==='musica-02'||p.id==='musica-10'?1:0),'Unexpected duplicate '+p.id);assert(p.items.every(x=>typeof x==='string'&&x.length));}
+for(const p of puzzles.filter(p=>!p.verification)){assert.equal(new Set(p.items).size,p.items.length-(p.id==='numeri-01'||p.id==='numeri-06'||p.id==='musica-02'||p.id==='musica-10'?1:0),'Unexpected duplicate '+p.id);assert(p.items.every(x=>typeof x==='string'&&x.length));}
 const rules={
  'numeri-07':Array.from({length:8},(_,i)=>2*(i+1)),
  'numeri-08':Array.from({length:8},(_,i)=>(i+1)**3),
