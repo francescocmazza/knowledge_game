@@ -11,7 +11,7 @@ const fast=app();fast.run('quickPlay()');assert.equal(fast.run('active.p.level')
 for(const domain of ['numeri','calcio','natura','cucina','parole','geografia','cinema','musica'])assert(fast.root.innerHTML.includes('data-val="'+domain+'"'),domain+' visible');
 assert(!fast.root.innerHTML.includes('data-action="intuition"'));
 fast.advance(10000);fast.run(solve);assert.equal(fast.run('levelCredits(1)'),2);assert.equal(fast.run('unlockedLevel()'),1);
-fast.run('next()');fast.advance(15000);fast.run(solve);assert.equal(fast.run('unlockedLevel()'),2);assert.equal(fast.run('state.playLevel'),2);assert(fast.root.innerHTML.includes('Hai sbloccato il livello 2'));
+fast.run('next()');fast.advance(15000);fast.run(solve);assert.equal(fast.run('unlockedLevel()'),2);assert.equal(fast.run('state.playLevel'),2);assert(fast.run('promotionMessage(active)').includes('livello 2'));assert(fast.run('promotionMessage(active)').includes('veloci'));
 fast.run('next()');assert.equal(fast.run('active.p.level'),2);
 const slow=app();slow.run('chosenDomain="numeri";quickPlay()');for(let i=0;i<4;i++){assert.equal(slow.run('active.p.level'),1);slow.advance(60000);slow.run(solve);if(i<3)slow.run('next()')};assert.equal(slow.run('unlockedLevel()'),2,'four slow solutions unlock too');
 const error=app();error.run('quickPlay();chooseSpot(active.p.wrong.includes(0)?1:0)');error.advance(1000);error.run(solve);assert.equal(error.run('levelCredits(1)'),0,'mistakes do not unlock');

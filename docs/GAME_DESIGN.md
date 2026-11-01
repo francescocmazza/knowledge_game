@@ -67,10 +67,8 @@ Valorizza attività nuove, correzioni e comprensione; aumenta nel tempo, **non d
 
 Queste soglie sono **parametri di test**. Non devono essere pubblicizzate come psicometricamente validate.
 
-### 6.2 Padronanza per settore, variabile
-Valore indicativo 0–100 per dominio. Nel prototipo si basa sulla qualità delle ultime 15 prove del settore con un prior iniziale (3 prove fittizie equivalenti a punteggio 45). Peso a individuazione/correzione/spiegazione, errori, indizi e difficoltà. **Non è una metrica scientifica di abilità o conoscenza reale:** pochi dati producono una stima poco affidabile.
-
-**Da progettare per la release:** affidabilità/ampiezza del campione, prove di controllo non ripetute, indici di confidenza e comprensibilità della formula. Mostrare «padronanza stimata nel gioco», non «intelligenza: 78».
+### 6.2 XP per tema e progressi osservabili (alpha 0.4)
+Mappa e pannello mostrano la somma degli XP realmente ottenuti per ciascun tema, attribuiti tramite l’ID dell’enigma nel catalogo. Senza domande in un tema: zero XP, «Non ancora giocato», barra vuota. La barra rappresenta la copertura del catalogo, non una stima di intelligenza. Nessun prior teorico viene mostrato come risultato personale. Gli eventuali vecchi campi di categoria discordanti sono normalizzati dall’ID, senza cancellare i punti validi.
 
 ## 7. Risposta diretta (alpha 0.3)
 Il tasto «Lo sento d’istinto» è rimosso su richiesta dell’utente: la risposta avviene direttamente selezionando l’anomalia. Rimane la distinzione fra individuazione, riparazione e spiegazione. Nessun bonus XP per dichiarazioni d’istinto; i vecchi punti restano.
@@ -143,3 +141,6 @@ Il catalogo è ora di 96 enigmi, 12 per settore. Il primo accesso ha un pulsante
 
 ## 15. Alpha 0.3: accessibilità iniziale
 128 enigmi, 16 per settore; tutti gli otto settori sempre selezionabili. Quattro livelli effettivi, quattro enigmi per dominio e per livello. Livello 1 pensato anche per 10 anni: sequenze piccole, categorie comuni, icone con testo. Una soluzione completa senza errori/indizi: 1 stella; entro 45 secondi: 2. Ogni livello richiede 4 stelle uniche per aprire il successivo; lo sblocco è globale. Il timer accumula solo tempo con pagina visibile e vista gioco attiva; non ha countdown. La rivelazione non dà stelle; il primo ripasso pulito può recuperare stelle mai ottenute da quell’enigma, senza nuovi XP. I nuovi livelli sostituiscono la precedente selezione euristica e la vecchia scala autoriale. Le soglie sono parametri di playtest.
+
+## 16. Alpha 0.4: salto gratuito e promozioni
+Salto illimitato separato dalla rivelazione della soluzione. Non registra storia, errori, completamento o punti. I quesiti vengono rimandati nella sessione; esaurito il pool, scelta esplicita tra riprovare e cambiare tema. Le risposte rapide accelerano lo sblocco globale dei quattro livelli; un avviso accessibile riceve il focus e comunica il passaggio. Il messaggio cita velocità solo se l’ultima risposta valida è entro la soglia prevista. I punti per tema restano separati dalle stelle globali di difficoltà.

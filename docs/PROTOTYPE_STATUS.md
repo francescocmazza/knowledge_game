@@ -1,3 +1,7 @@
+# Stato attuale: classico alpha 0.4 / Kids alpha 0.2
+
+Aggiunti salto gratuito illimitato con rinvio nella sessione, gestione del pool esaurito, XP effettivi per tema da ID del catalogo, normalizzazione di etichette storiche discordanti e notifiche di promozione accessibili e veritiere. Rimossi i valori iniziali teorici dalle metriche mostrate. `tests/scoring-and-skips.mjs` copre entrambe le versioni, sei risposte numeriche senza XP negli altri temi, miste, salti parziali/ripetuti/esaurimento, nessuna penalità, correzione dello storico e passaggi dal livello 1 al 4. Le sezioni successive sono il registro storico.
+
 # Stato attuale: alpha 0.3
 
 128 enigmi, 8 settori sempre visibili, 4 livelli con 4 quesiti per settore/livello. Rimosso il tasto dell’istinto. Aggiunti 32 enigmi introduttivi illustrati con icone e testi. Il livello iniziale è pensato anche per un ragazzo di 10 anni; non è una validazione empirica su bambini. Dettagli e soglie aggiornati in README.md e GAME_DESIGN.md.
@@ -40,3 +44,5 @@ La versione è destinata al **primo playtest del concetto**, non è il precedent
 Verificato anche in Chromium: otto settori visibili con salvataggio preesistente, livello 1 bloccante per le sfide avanzate, percorso di correzione e spiegazione, due stelle per risposta rapida. Il primo ripasso corretto di una domanda prima rivelata può recuperare stelle, senza duplicare XP.
 
 Correzione icone: eliminate icone di settore ripetute e associazioni approssimative nei tasselli/opzioni. Associazioni esatte e sensibili al contesto, riconosciute anche in maiuscolo. Nessuna immagine se non c’è una rappresentazione appropriata. Aggiunta verifica in tests/progression.mjs.
+
+Collaudo UI Kids alpha 0.2: salto da Pianeta Terra ad altra domanda con XP/stelle/conteggio invariati; risposta rapida successiva con promozione al livello 2, avviso in evidenza e focus sul messaggio; risultato con nome del tema e XP solo in Among Us.

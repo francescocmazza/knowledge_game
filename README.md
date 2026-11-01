@@ -1,4 +1,4 @@
-# Knowledge Game — STONA α 0.3
+# Knowledge Game — STONA α 0.4
 
 **Cosa c’è di sbagliato?** Otto elementi, una regola nascosta: trova l’anomalia, correggila e scopri il collegamento.
 
@@ -24,7 +24,7 @@ I profili nominativi si salvano cifrati nel browser e nei backup; la chiave rima
 
 Numeri · Parole · Natura · Cucina · Geografia · Calcio · Cinema · Musica. Due indizi per enigma, tre fasi (individuazione, riparazione, spiegazione), sessioni da dieci, interessi personalizzabili, modalità Relax/Esplora/Sfida personale, XP e mappa per settore. Nessun timer obbligatorio e nessuna classifica pubblica.
 
-La padronanza descrive le prove nel gioco; **non misura il QI**. Gli otto domini sono una scelta progettuale qualitativa, non una selezione scientificamente validata. Senza prove un settore mostra «Da esplorare», senza una percentuale attribuita alla persona.
+Gli XP per tema sono la somma dei punti delle domande di quel tema; **non misurano il QI**. Gli otto domini sono una scelta progettuale qualitativa, non una selezione scientificamente validata. Un tema non ancora giocato mostra 0 XP e «Non ancora giocato». La barra indica le domande esplorate.
 
 ## Verifica e pubblicazione
 
@@ -55,3 +55,11 @@ Tutti gli otto settori sono sempre selezionabili; Misto segue gli interessi. Qua
 ## Stona Kids (8–14 anni)
 
 [Apri Stona Kids](https://francescocmazza.github.io/knowledge_game/kids/) · [Documentazione Kids](kids/README.md). Versione separata con 128 enigmi e 8 temi: Numeri e logica, Parole, Animali e natura, Pianeta Terra, Spazio, Sport, Musica e Among Us. Quattro livelli, soprannomi e salvataggi autonomi; nessuna registrazione obbligatoria. I backup Kids non si mescolano con quelli classici. Il tema Among Us propone missioni di logica originali e non ufficiali.
+
+## Saltare, punti per tema e passaggi di livello
+
+«Salta domanda» è disponibile prima di completare la risposta, anche dopo un errore o durante la correzione. Non dà né toglie XP o stelle, non registra un errore, non conta come domanda completata e rimanda quel quesito per la sessione. Puoi saltarne quante vuoi. Se termini le domande disponibili, puoi riprovare quelle saltate o scegliere un altro tema. Le domande saltate tornano disponibili in una nuova sessione o al ricaricamento. «Scopri la soluzione» è un comando separato: mostra la spiegazione e conserva la precedente ricompensa di scoperta.
+
+Gli XP sono attribuiti dal tema del catalogo associato all’ID dell’enigma, non dal pulsante Misto o da etichette salvate. L’importazione/ricaricamento corregge eventuali etichette discordanti preservando XP e risposte. Le stime con valore iniziale teorico non sono più presentate come punteggio: mappa e pannello mostrano gli XP effettivi. Anche il risultato nomina il tema, così un enigma numerico all’interno di Among Us è riconoscibile come missione di quel tema.
+
+Lo sblocco rapido mostra un avviso in evidenza: «Bravo, complimenti! Le tue risposte corrette e veloci hanno aperto il livello successivo. Ti abbiamo passato al livello…». Con risposte lente il messaggio riconosce le risposte corrette senza attribuire velocità non dimostrata. Il livello di gioco è comune agli otto temi; le stelle di sblocco non sono XP di una materia.

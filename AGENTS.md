@@ -45,3 +45,6 @@ Usare solo icone che rappresentano l’elemento concreto. Nessun fallback al sim
 
 ## Stona Kids
 `kids/index.html` è la versione separata per 8–14 anni, con 8 temi e 128 enigmi. Leggere kids/README.md. Non mescolare storage, salvataggi legacy o formato dei backup con STONA classico. Eseguire anche `node tests/kids.mjs` e `node tests/profiles.mjs kids/index.html`. Il workflow distribuisce entrambe le versioni. Nessun nome reale o email richiesto: solo soprannome. Il tema Among Us è originale, ispirato e non ufficiale; non presentare i registri inventati come dati di una vera partita.
+
+## Salti, punteggi e livelli (entrambe le versioni)
+«Salta domanda» chiama passQuestion(): nessun XP/stella/errore/storico/completamento, rinvio per la sessione e gestione esplicita del pool esaurito. Non confonderlo con revealSolution() e il suo alias interno legacy skip(). I punteggi per tema sono gli XP effettivi attribuiti dall’ID canonico del catalogo: zero per temi non giocati. Le stelle di difficoltà sono globali. Notificare esplicitamente ogni sblocco e citare velocità solo se dimostrata. Eseguire anche node tests/scoring-and-skips.mjs.

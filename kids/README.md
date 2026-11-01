@@ -1,4 +1,4 @@
-# Stona Kids — alpha 0.1
+# Stona Kids — alpha 0.2
 
 Versione autonoma di STONA per la fascia 8–14 anni, pubblicata a `/knowledge_game/kids/`. Si apre dal browser senza installazione, senza email e senza registrazione obbligatoria. Non è una divisione rigida per età: il primo livello è accessibile e i successivi introducono collegamenti più articolati. La taratura sulla fascia d’età è progettuale, da verificare con playtest reali.
 
@@ -35,3 +35,10 @@ Solo corrispondenze pertinenti all’elemento e riconosciute anche in maiuscolo.
 I test automatici non sostituiscono la revisione editoriale indipendente, l’audit di accessibilità e la prova con bambini della fascia indicata.
 
 Collaudo UI eseguito in Chromium: pagina iniziale e otto temi, ingresso diretto in Among Us, scelta di Missione 9, correzione in Missione 8, spiegazione corretta, risultato +35 XP e due stelle. Controllata visivamente la pagina iniziale desktop. La cifratura è coperta dai test automatici nativi e richiede HTTPS in browser.
+
+## Domande saltate, temi e notifiche
+«Salta domanda» rimanda il quesito senza penalità, stelle, XP, errori o completamento; si può usare più volte anche dopo un tentativo parziale. Se tutti i quesiti attuali sono saltati, l’interfaccia offre di riprovarli o cambiare tema. Nessun riproporsi immediato e nessun blocco definitivo. «Scopri la soluzione» resta distinto.
+
+La mappa mostra XP effettivi per tema (zero per quelli mai giocati), attribuiti tramite ID del catalogo. Il risultato indica il tema: anche una sequenza numerica può essere una missione Among Us. I livelli di difficoltà sono invece globali e non assegnano XP ai temi non giocati. L’avviso di promozione riceve il focus e descrive le risposte veloci soltanto quando il tempo registrato lo giustifica.
+
+`node tests/scoring-and-skips.mjs` verifica entrambe le versioni: sei domande di Numeri senza punti negli altri temi, categorie miste, correzione di etichette discordanti, salto di tutte le domande disponibili senza effetti sui punteggi, salti dopo tentativi parziali, esaurimento e ripresa, messaggi veritieri e progressione dal livello 1 al 4.
