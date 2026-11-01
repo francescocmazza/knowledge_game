@@ -38,7 +38,7 @@ Il gioco **non chiede titoli di studio**, non usa appellativi come «ignorante»
 - UI accessibile su smartphone, testo leggibile e target touch adeguati; in futuro screen-reader, preferenze di contrasto, tastiera e audio.
 
 ## 4. Tre stili d'uso, stessa logica
-**Relax**: nessun timer, nessuna classifica; attenzione alla scoperta e al piacere della soluzione.
+**Relax**: nessun timer o confronto obbligatorio; attenzione alla scoperta e al piacere della soluzione.
 
 **Esplora**: mappa delle prestazioni per settore, scoperta di ambiti nuovi, cronologia dei progressi.
 
@@ -144,3 +144,11 @@ Il catalogo è ora di 96 enigmi, 12 per settore. Il primo accesso ha un pulsante
 
 ## 16. Alpha 0.4: salto gratuito e promozioni
 Salto illimitato separato dalla rivelazione della soluzione. Non registra storia, errori, completamento o punti. I quesiti vengono rimandati nella sessione; esaurito il pool, scelta esplicita tra riprovare e cambiare tema. Le risposte rapide accelerano lo sblocco globale dei quattro livelli; un avviso accessibile riceve il focus e comunica il passaggio. Il messaggio cita velocità solo se l’ultima risposta valida è entro la soglia prevista. I punti per tema restano separati dalle stelle globali di difficoltà.
+
+
+## Inviti e aspetto del gioco (alpha 0.5 / Kids 0.3)
+L’ospite gioca subito. Dopo 5 ID distinti completati, invito non bloccante al soprannome; dopo 7, invito facoltativo a proteggere il percorso con un profilo. Non presentare la registrazione come necessaria per il salvataggio locale, che è già automatico. Una rinuncia non deve diventare un sollecito ripetuto. I salti non contano.
+
+Classifiche separate per le due edizioni, ordinate per XP e filtrabili per tema, limitate a chi sceglie di partecipare sullo stesso browser. Nessun confronto scientifico, premio reale, punteggio inventato o pubblicazione online. Riepiloghi visibili senza aprire i profili; uscita disponibile in ogni momento.
+
+Le figure devono rappresentare l’elemento specifico o un suo dato esatto. Non evidenziare automaticamente l’intruso, non anticipare la regola nascosta e non usare simboli generici di categoria come immagini delle risposte. Figure nascoste agli screen reader accompagnano sempre etichette testuali accessibili. Quantità contabili e orologi rispettano i valori mostrati.

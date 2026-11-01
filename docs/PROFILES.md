@@ -27,3 +27,9 @@ Il file importato deve essere ≤1 MB e rispettare versione e parametri esatti; 
 - Nessuna protezione contro il proprietario del dispositivo che modifica punteggi e codice: non usare per premi o certificazioni.
 
 Riferimenti tecnici: [Web Crypto / MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API), [deriveKey](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/deriveKey), [encrypt](https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt).
+
+
+## Soprannome, inviti e classifica (alpha 0.5 / Kids 0.3)
+Lo stato aggiunge `displayName`, `invites: {name, register}` e `leaderboardEnabled`, normalizzati anche da vecchi salvataggi. Il soprannome non crea un account. Gli inviti arrivano dopo 5 e 7 ID distinti nello storico; salti e ripassi non aumentano quel conteggio. I rifiuti sono conservati anche nei backup.
+
+La classifica è locale e richiede una scelta esplicita, separata dalla registrazione. Il browser conserva in chiaro un riepilogo `rankSummary` **solo per chi partecipa**: soprannome, XP totali e per tema, conteggi e livello. Serve a mostrare i profili anche quando sono chiusi; lo storico delle risposte e gli ID degli enigmi restano cifrati. Nessun dato viene inviato a un server. Uscendo dalla classifica il riepilogo viene eliminato; il giocatore attivo scompare subito anche durante il salvataggio cifrato asincrono. Importare un vecchio backup dello stesso profilo non annulla una successiva uscita locale dalla classifica.

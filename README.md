@@ -1,4 +1,4 @@
-# Knowledge Game — STONA α 0.4
+# Knowledge Game — STONA α 0.5
 
 **Cosa c’è di sbagliato?** Otto elementi, una regola nascosta: trova l’anomalia, correggila e scopri il collegamento.
 
@@ -63,3 +63,14 @@ Tutti gli otto settori sono sempre selezionabili; Misto segue gli interessi. Qua
 Gli XP sono attribuiti dal tema del catalogo associato all’ID dell’enigma, non dal pulsante Misto o da etichette salvate. L’importazione/ricaricamento corregge eventuali etichette discordanti preservando XP e risposte. Le stime con valore iniziale teorico non sono più presentate come punteggio: mappa e pannello mostrano gli XP effettivi. Anche il risultato nomina il tema, così un enigma numerico all’interno di Among Us è riconoscibile come missione di quel tema.
 
 Lo sblocco rapido mostra un avviso in evidenza: «Bravo, complimenti! Le tue risposte corrette e veloci hanno aperto il livello successivo. Ti abbiamo passato al livello…». Con risposte lente il messaggio riconosce le risposte corrette senza attribuire velocità non dimostrata. Il livello di gioco è comune agli otto temi; le stelle di sblocco non sono XP di una materia.
+
+
+## Alpha 0.5: inviti gentili, classifiche locali e figure
+
+In entrambe le versioni, dopo **5 domande distinte completate** (anche con soluzione mostrata) l’ospite riceve un invito facoltativo al soprannome; dopo **7** può creare il profilo con password, mantenendo tutti i punti. Entrambi gli inviti si possono ignorare e non vengono ripetuti. Saltare una domanda non aumenta il conteggio. Se il soprannome è già stato scelto, non viene richiesto di nuovo; chi ha già un profilo non riceve gli inviti.
+
+**Classifica → Partecipa alla classifica locale** abilita il confronto solo per chi lo desidera. Podio, elenco e filtri per tema mostrano gli XP effettivi dei profili di **questo browser/dispositivo**, con classifiche separate per Kids e classico. Si può uscire in qualsiasi momento. Non c’è una classifica online condivisa o sincronizzazione fra browser. Nessun giocatore o punteggio fittizio è inserito per riempirla. Per conservare più giocatori sullo stesso browser, usare i profili facoltativi.
+
+Illustrazioni native SVG e icone concrete nei tasselli e nelle sostituzioni: quantità esatte, orologi, pianeti, oggetti, strumenti, persone con strumenti, posizioni sul campo, ambienti e missioni con personaggi colorati. Le parole prive di un oggetto raffigurabile possono essere composte dalle loro lettere effettive; nessun ABC generico. Nessuna figura approssimativa per nomi di persone o titoli senza un’immagine appropriata. L’interfaccia ha tasselli più ampi, colori morbidi e controlli compatti; su mobile le risposte hanno due colonne.
+
+Verificare anche `node tests/kids.mjs`, `node tests/scoring-and-skips.mjs`, `node tests/engagement.mjs` e `node tests/profiles.mjs kids/index.html`. Il nuovo test copre soglie 5/7, salti, rinunce persistenti, consenso alla classifica, ordine, filtri, cifratura, importazioni vecchie e isolamento delle versioni.

@@ -4,7 +4,7 @@
 - Leggi **README.md**, poi **docs/GAME_DESIGN.md**, **docs/DOMAINS.md** e **docs/PROTOTYPE_STATUS.md** prima di modificare meccaniche, tono, punteggi o catalogo.
 - Il gioco si chiama **STONA** (nome provvisorio), repository **Knowledge Game**.
 - Il prototipo funzionante è **index.html**, file unico offline con CSS, dati JSON e JavaScript.
-- Catalogo attuale **128 enigmi, 8 settori**, 16 ciascuno (alpha 0.3). Non attribuire alla scelta degli otto una validazione scientifica o statistica che non esiste.
+- Catalogo attuale **128 enigmi, 8 settori**, 16 ciascuno (alpha 0.5). Non attribuire alla scelta degli otto una validazione scientifica o statistica che non esiste.
 
 ## Invarianti del prodotto
 1. La domanda è «Cosa c'è di sbagliato?»; **non rivelare la regola** prima del tentativo.
@@ -28,7 +28,7 @@
 
 ## Prossimi interventi prioritari
 1. Gestione sostituzioni multiple e interpretazioni alternative.
-2. Test editoriale e umano dei 96 enigmi.
+2. Test editoriale e umano dei 128 enigmi per edizione.
 3. Misura affidabilità della padronanza, indicatori con campione insufficiente.
 4. Accessibilità e stress test mobile.
 5. Nuove tipologie (visuale, audio, relazioni incrociate) e piano 20 domini.
@@ -48,3 +48,7 @@ Usare solo icone che rappresentano l’elemento concreto. Nessun fallback al sim
 
 ## Salti, punteggi e livelli (entrambe le versioni)
 «Salta domanda» chiama passQuestion(): nessun XP/stella/errore/storico/completamento, rinvio per la sessione e gestione esplicita del pool esaurito. Non confonderlo con revealSolution() e il suo alias interno legacy skip(). I punteggi per tema sono gli XP effettivi attribuiti dall’ID canonico del catalogo: zero per temi non giocati. Le stelle di difficoltà sono globali. Notificare esplicitamente ogni sblocco e citare velocità solo se dimostrata. Eseguire anche node tests/scoring-and-skips.mjs.
+
+
+## Inviti, classifiche e figure
+Dopo 5 domande distinte completate, soprannome facoltativo; dopo 7, profilo facoltativo. Non contare salti/ripassi e non ripetere inviti declinati. Classifiche solo locali a questo browser, separate per edizione, con scelta esplicita e uscita; non chiamarle online. Riepilogo in chiaro solo per i partecipanti, storico cifrato. Le illustrazioni SVG devono riflettere valori e oggetti reali: nessun indizio implicito sull’intruso o immagine generica ripetuta. Eseguire `node tests/engagement.mjs` oltre agli altri controlli.

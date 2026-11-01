@@ -42,3 +42,9 @@ Collaudo UI eseguito in Chromium: pagina iniziale e otto temi, ingresso diretto 
 La mappa mostra XP effettivi per tema (zero per quelli mai giocati), attribuiti tramite ID del catalogo. Il risultato indica il tema: anche una sequenza numerica può essere una missione Among Us. I livelli di difficoltà sono invece globali e non assegnano XP ai temi non giocati. L’avviso di promozione riceve il focus e descrive le risposte veloci soltanto quando il tempo registrato lo giustifica.
 
 `node tests/scoring-and-skips.mjs` verifica entrambe le versioni: sei domande di Numeri senza punti negli altri temi, categorie miste, correzione di etichette discordanti, salto di tutte le domande disponibili senza effetti sui punteggi, salti dopo tentativi parziali, esaurimento e ripresa, messaggi veritieri e progressione dal livello 1 al 4.
+
+
+## Alpha 0.3
+Dopo 5 domande completate si può scegliere un soprannome, dopo 7 si può creare un profilo: nessun obbligo, nessuna email, nessun nome reale richiesto. Le rinunce sono conservate, i salti non contano. Classifica facoltativa separata dal classico, **solo su questo browser/dispositivo**, con podio e filtri per tema. Non è una classifica online tra tutti i bambini.
+
+Più illustrazioni pertinenti: quantità, animali, piante, pianeti, missioni, astronauti colorati, oggetti e diagrammi dei ruoli sportivi. Nel livello iniziale 246 dei 256 tasselli del catalogo hanno una figura; questo conteggio include ripetizioni dello stesso soggetto e non è il numero di immagini uniche. Test aggiuntivo: `node tests/engagement.mjs`.
