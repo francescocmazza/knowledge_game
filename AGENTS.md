@@ -42,3 +42,6 @@ Accesso ospite immediato; profili opzionali locali cifrati, export/import JSON, 
 
 ## Icone nelle risposte
 Usare solo icone che rappresentano l’elemento concreto. Nessun fallback al simbolo del settore (ABC, pallone, nota musicale ecc.) e nessun oggetto vagamente simile. Se manca un’immagine appropriata, mostrare solo il testo senza uno spazio icona vuoto. Normalizzare maiuscole/minuscole; distinguere parole ambigue come rosa/viola dal contesto.
+
+## Stona Kids
+`kids/index.html` è la versione separata per 8–14 anni, con 8 temi e 128 enigmi. Leggere kids/README.md. Non mescolare storage, salvataggi legacy o formato dei backup con STONA classico. Eseguire anche `node tests/kids.mjs` e `node tests/profiles.mjs kids/index.html`. Il workflow distribuisce entrambe le versioni. Nessun nome reale o email richiesto: solo soprannome. Il tema Among Us è originale, ispirato e non ufficiale; non presentare i registri inventati come dati di una vera partita.

@@ -21,6 +21,8 @@ jobs:
       - run: node tests/profiles.mjs
       - run: node tests/content.mjs
       - run: node tests/progression.mjs
+      - run: node tests/kids.mjs
+      - run: node tests/profiles.mjs kids/index.html
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: test
@@ -38,6 +40,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
+          mkdir -p _site/kids
+          cp kids/index.html _site/kids/index.html
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

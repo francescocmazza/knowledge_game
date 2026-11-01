@@ -35,7 +35,7 @@ node tests/profiles.mjs
 node tests/progression.mjs
 ```
 
-Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeriche/linguistiche e i profili; poi pubblica soltanto `index.html` su GitHub Pages da `main`. L’amministratore deve abilitare **Settings → Pages → Source: GitHub Actions** una volta. Le modifiche successive vengono pubblicate automaticamente. Uno stato CI verde per i test non equivale a una pubblicazione completata: controllare il job `deploy`.
+Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeriche/linguistiche e i profili; poi pubblica `index.html` e la versione `kids/` su GitHub Pages da `main`. L’amministratore deve abilitare **Settings → Pages → Source: GitHub Actions** una volta. Le modifiche successive vengono pubblicate automaticamente. Uno stato CI verde per i test non equivale a una pubblicazione completata: controllare il job `deploy`.
 
 ## Documentazione
 
@@ -51,3 +51,7 @@ Il workflow `.github/workflows/pages.yml` verifica il catalogo, le regole numeri
 ## Alpha 0.3: primi passi e livelli
 
 Tutti gli otto settori sono sempre selezionabili; Misto segue gli interessi. Quattro gradi: Primi passi, Collegamenti, Esploratore, Sfide esperte. I 32 nuovi enigmi del livello 1 usano numeri piccoli e oggetti familiari, con icone e testi, pensati anche per 10 anni (ipotesi da verificare in playtest). Una soluzione completa senza errori o indizi dà una stella; entro 45 secondi di gioco attivo ne dà due. Quattro stelle nello stesso livello aprono il successivo. Nessuna scadenza o sottrazione di punti; si può tornare a un livello più facile. Errori, aiuti e soluzioni mostrate non danno stelle. Ogni enigma può dare stelle una sola volta: un ripasso risolto correttamente dopo un errore o una rivelazione può recuperarle, senza nuovi XP. Lo storico e gli XP precedenti sono conservati, ma non sbloccano automaticamente difficoltà maggiori. Il tasto dell’istinto e il relativo bonus sono rimossi.
+
+## Stona Kids (8–14 anni)
+
+[Apri Stona Kids](https://francescocmazza.github.io/knowledge_game/kids/) · [Documentazione Kids](kids/README.md). Versione separata con 128 enigmi e 8 temi: Numeri e logica, Parole, Animali e natura, Pianeta Terra, Spazio, Sport, Musica e Among Us. Quattro livelli, soprannomi e salvataggi autonomi; nessuna registrazione obbligatoria. I backup Kids non si mescolano con quelli classici. Il tema Among Us propone missioni di logica originali e non ufficiali.
